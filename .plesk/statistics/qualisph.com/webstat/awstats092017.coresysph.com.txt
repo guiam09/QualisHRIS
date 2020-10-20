@@ -1,0 +1,643 @@
+AWSTATS DATA FILE 7.2 (build 1.992)
+# If you remove this file, all statistics for date 201709 will be lost/reset.
+# Last config file used to build this data file was C:\Program Files (x86)\Parallels\Plesk\Additional\AWStats\wwwroot\cgi-bin/awstats.coresysph.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 2054                
+POS_TIME 2724                
+POS_VISITOR 15015               
+POS_DAY 18788               
+POS_DOMAIN 3504                
+POS_LOGIN 3736                
+POS_ROBOT 3891                
+POS_WORMS 4504                
+POS_EMAILSENDER 4635                
+POS_EMAILRECEIVER 4778                
+POS_SESSION 19490               
+POS_SIDER 19649               
+POS_FILETYPES 4913                
+POS_DOWNLOADS 5143                
+POS_OS 5191                
+POS_BROWSER 5421                
+POS_SCREENSIZE 6194                
+POS_UNKNOWNREFERER 6268                
+POS_UNKNOWNREFERERBROWSER 6517                
+POS_ORIGIN 6628                
+POS_SEREFERRALS 6765                
+POS_PAGEREFS 6942                
+POS_SEARCHWORDS 7210                
+POS_KEYWORDS 7362                
+POS_MISC 2387                
+POS_ERRORS 7421                
+POS_CLUSTER 3592                
+POS_SIDER_404 7522                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20171001060849 1 0 41868630967
+FirstTime 20170902124549
+LastTime 20170930102810
+LastUpdate 20171003061227 1 0 0 0 0
+TotalVisits 89                  
+TotalUnique 77                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 103                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 33 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 6 82 26306136 28 49 5862275
+1 4 53 11804121 141 193 14228510
+2 10 35 6750562 34 67 257426
+3 9 28 6667114 9 40 5082128
+4 4 42 13159557 20 25 75108
+5 7 95 30756192 12 16 60409
+6 3 41 12411993 3 7 24783
+7 2 2 12874 16 64 7198127
+8 1 1 6434 13 39 6749296
+9 5 5 70712 14 39 530692
+10 4 7 202245 5 10 704818
+11 9 21 234555 17 37 6722159
+12 2 2 12874 4 36 10663653
+13 2 2 12874 4 6 23283
+14 0 1 12915 3 10 63830
+15 2 2 12868 12 38 6749770
+16 4 24 6627844 12 40 6731716
+17 7 51 13436453 6 9 27478
+18 3 3 45018 2 6 24738
+19 1 1 19297 15 19 65367
+20 4 25 6581330 5 12 78332
+21 4 31 6708490 9 20 42001
+22 10 80 19940909 15 24 31780
+23 3 34 13027457 12 25 142840
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 106 668 174820824
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 13
+sogou 144 39199440 20170923230443 0
+googlebot 42 5870766 20170927011440 0
+phantom 42 11285142 20170909161940 0
+bingpreview 40 13538485 20170925031839 0
+baiduspider 38 332064 20170928075552 0
+bingbot 28 611859 20170925021747 0
+bot[\s_+:,\.\;\/\\-] 14 490083 20170915234355 0
+python 5 13199 20170919092612 0
+no_user_agent 5 96504 20170924102942 0
+favicon 5 32188 20170925031034 0
+surveybot 2 12874 20170927010823 0
+mj12bot 2 38586 20170925184410 0
+netcraft 1 19332 20170907102905 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 9
+css 107 1502449 0 0
+eot 1 56324 0 0
+png 54 13114764 0 0
+ttf 1 112474 0 0
+woff 1 65752 0 0
+html 103 1046495 0 0
+js 212 1971384 0 0
+xml 1 512 0 0
+jpg 188 156950670 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 13
+linuxandroid 43 4
+winxp 11 11
+winlong 1 1
+winnt 273 31
+macosx5 1 1
+linux 7 7
+winvista 1 1
+win7 271 32
+macosx 29 10
+win2003 4 1
+macosx9 1 1
+Unknown 6 5
+macosx7 20 1
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 38
+msie6.0 4 4
+chrome52.0.2743.116 1 1
+firefox26.0 2 2
+chrome39.0.2171.95 1 1
+chrome56.0.2924.87 2 2
+chrome38.0.2125.111 1 1
+chrome58.0.3029.110 6 6
+msie8.0 17 7
+chrome46.0.2490.76 20 1
+chrome57.0.2987.110 36 2
+chrome45.0.2454.93 5 2
+msie7.0 4 1
+chrome37.0.2062.120 3 3
+firefox40.1 2 2
+msie9.0 64 10
+chrome51.0.2739.19 1 1
+Unknown 1 1
+firefox27.0 1 1
+chrome60.0.3112.116 20 1
+netscape 1 1
+firefox50.0 4 4
+firefox32.0 1 1
+firefox53.0 4 4
+firefox48.0 20 1
+safari10.0 20 1
+safari6.0 3 3
+chrome51.0.2704.79 1 1
+chrome49.0.2623.75 4 4
+chrome60.0.3112.113 383 22
+chrome45.0.2454.94 1 1
+firefox33.0 1 1
+mozilla 7 6
+msie10.0 1 1
+firefox3.6.3 1 1
+chrome41.0.2228.0 2 2
+chrome60.0.3112.90 20 1
+chrome61.0.3163.98 2 1
+firefox15.0.1 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 4
+Mozilla 20170914035233
+Mozilla/5.0_(compatible;_Dataprovider.com;) 20170922114701
+panscient.com 20170915080114
+Mozilla/5.0_(compatible;_ips-agent) 20170914163330
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+panscient.com 20170915080114
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 60 70
+From1 4 4
+From2 19 19
+From3 6 6
+From4 17 569
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 3
+google 14 14
+bing 3 3
+yandex 2 2
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 4
+http://www.marinetraffic.com 3 3
+http://pizza-tycoon.com 1 1
+http://pizza-imperia.com 1 1
+http://burger-imperia.com 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 2
+405 3 4001
+404 426 549876
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 200
+/blog/wp-includes/wlwmanifest.xml 3 -
+/blogs/wp-admin/setup-config.php 1 -
+/search/upload.php 1 -
+/wordpress/ 2 -
+/admin.php 11 -
+/mp3/list/temp/error.php 1 -
+/flashchat/chat/upload.php 1 -
+/site/wp-includes/wlwmanifest.xml 4 182.50.132.51
+/flikQ/rocketeercms/blob/master/themes/admin/assets/js/tiny_mce/plugins/tinybrowser/upload.php 1 -
+/blog/wp-admin/setup-config.php 1 -
+/vid/watch/upload.php 1 -
+/joomla/robots.txt 2 -
+/how-to-install-flashchat-free/upload.php 1 -
+/radiopoljubac/posts/temp/error.php 1 -
+/music-search/temp/error.php 1 -
+/xmlrpc.php 6 -
+/baixar/temp/error.php 1 -
+/vid/watch/temp/error.php 1 -
+/tinymce_pt/jscripts/tiny_mce/plugins/tinybrowser/upload.php 1 -
+/m/video/temp/error.php 1 -
+/music-search/upload.php 1 -
+/exploits/28709/temp/error.php 1 -
+/wp-content/themes/RightNow/includes/uploadify/upload_settings_image.php 2 -
+/en/upload.php 1 -
+/cms/wp-admin/setup-config.php 1 -
+/tinybrowser/upload.php 1 -
+/blog-chat/chat/temp/error.php 1 -
+/sohbet/upload.php 1 -
+/cms/chat/temp/error.php 1 -
+/temp/error.php 1 -
+/chat55/temp/error.php 1 -
+/foro/chat/upload.php 1 -
+/okolice-ilawa/chat/upload.php 1 -
+/chat/FlashChat_v608/chat/upload.php 1 -
+/administrator/ 1 -
+/forums/chat/temp/error.php 1 -
+/Chat/Chat/upload.php 1 -
+/tutaf/temp/error.php 1 -
+/cms/chat/upload.php 1 -
+/FlashChat_v608/chat/temp/error.php 1 -
+/chat55/upload.php 1 -
+/joomla/administrator/index.php 2 -
+/wp-login.php 12 -
+/downloader 1 -
+/social/temp/error.php 1 -
+/community/chat/upload.php 1 -
+/public/chat/upload.php 1 -
+/upload.php 1 -
+/forums/chat/upload.php 1 -
+/tutaf/upload.php 1 -
+/projects/bilardII/resources/js/tiny_mce/plugins/tinybrowser/upload.php 1 -
+/tag/flashchat-v6-0-8/upload.php 1 -
+/FlashChat_v6.0.8_/chat/temp/error.php 1 -
+/tinybrowser/tree/tinybrowser/upload.php 1 -
+/wp-content/themes/organizer/lib_upload/server/php/ 1 http://coresysph.com/wp-content/themes/organizer/lib_upload/server/php/
+/blog-chat/upload.php 1 -
+/baixar/upload.php 1 -
+/exploit/description/temp/error.php 1 -
+/krd.txt 1 -
+/wp-includes/wlwmanifest.xml 1 -
+/components/com_sexycontactform/fileupload/index.php 1 http://coresysph.com/components/com_sexycontactform/fileupload/index.php
+/jingyan/temp/error.php 1 -
+/live/chat/temp/error.php 1 -
+/wp-admin/admin-ajax.php 4 http://coresysph.com/wp-admin/
+/~duchen/chat/upload.php 1 -
+/how-to-install-flashchat-free/temp/error.php 1 -
+/chat-bebica/temp/error.php 1 -
+/wp-admin 1 http://coresysph.com
+/js/tinymce/plugins/tinybrowser/upload.php 1 -
+/license.txt 1 -
+/smf/chat/upload.php 2 -
+/Chat/Chat/temp/error.php 1 -
+/websci/radio/radiochat/upload.php 1 -
+/license.php 2 http://coresysph.com/wp-admin/
+/chat/FlashChat_v608/chat/temp/error.php 1 -
+/static/js/tiny_mce/plugins/tinybrowser/upload.php 3 -
+/cchat/chat/upload.php 1 -
+/blog/administrator/index.php 2 -
+/smf/chat/temp/error.php 2 -
+/okolice-ilawa/chat/temp/error.php 1 -
+/chatroom/temp/error.php 1 -
+/o/BhGCe/forums.e-mpire.com/chat/upload.php 1 -
+/plugins/editors/tinymce/jscripts/tiny_mce/plugins/tinybrowser/upload.php 1 -
+/social/upload.php 1 -
+/wp/wp-admin/setup-config.php 1 -
+/administrator/index.php 11 -
+/bd/search 1 -
+/FlashChat_v6.0.8_/chat/upload.php 1 -
+/xfchat/upload.php 1 -
+/wordpress/wp-includes/wlwmanifest.xml 3 -
+/chat/chat/upload.php 1 -
+/exploits/28709/upload.php 1 -
+/deface_flashchat/temp/error.php 1 -
+/haces/upload.php 1 -
+/deface_flashchat/upload.php 1 -
+/e107_plugins/onlineinfo_menutemp/error.php 1 -
+/Chat/upload.php 1 -
+/About.html 1 -
+/o/BhGCe/forums.e-mpire.com/chat/temp/error.php 1 -
+/jm-ajax/upload_file/ 1 http://coresysph.com/jm-ajax/upload_file/
+/robots.txt 101 -
+/websci/radio/radiochat/temp/error.php 1 -
+/page/video/temp/error.php 1 -
+/admin/login.php 14 -
+/uploadify/uploadify.php 2 http://coresysph.com/wp-admin/
+/chat/upload.php 1 -
+/public/javascripts/tiny_mce/plugins/tinybrowser/upload.php 1 -
+/topic/page/upload.php 1 -
+/xb9987.php 1 -
+/public/js/tiny_mce/plugins/tinybrowser/upload.php 1 -
+/public/chat/temp/error.php 1 -
+/chat-sem-registo/upload.php 1 -
+/radiopoljubac/posts/upload.php 1 -
+/blog-chat/chat/upload.php 1 -
+/cchat/chat/temp/error.php 1 -
+/mp3/list/upload.php 1 -
+/e-dinar-chat/upload.php 1 -
+/e107_plugins/onlineinfo_menuupload.php 1 -
+/forum/chat/temp/error.php 1 -
+/community/chat/temp/error.php 1 -
+/m/upload.php 1 -
+/shbt/temp/error.php 1 -
+/Chat/temp/error.php 1 -
+/tag/flashchat-v6-0-8/temp/error.php 1 -
+/editors/tinymce/jscripts/tiny_mce/plugins/tinybrowser/upload.php 3 -
+/bitrix/admin/index.php 13 -
+/flashchat-2/temp/error.php 1 -
+/blog/wordpress/wp-admin/setup-config.php 1 -
+/e-dinar-chat/temp/error.php 1 -
+/roommate/flash_chat/upload.php 1 -
+/chat-stjepkovica/upload.php 1 -
+/chatroom/upload.php 1 -
+/board/chat/temp/error.php 1 -
+/wp-includes/js/jquery/suggest.js 1 -
+/forum/chat/upload.php 1 -
+/exploit/description/upload.php 1 -
+/cat-bin/tools/login/lib/tiny_mce/plugins/tinybrowser/upload.php 1 -
+/roommate/flash_chat/temp/error.php 1 -
+/foro/chat/temp/error.php 1 -
+/a 2 -
+/m/temp/error.php 1 -
+/wordpress/wp-admin/setup-config.php 1 -
+/board/chat/upload.php 1 -
+/flashchat/chat/temp/error.php 1 -
+/blog-chat/temp/error.php 1 -
+/haces/temp/error.php 1 -
+/radio/radiochat/temp/error.php 1 -
+/m/video/upload.php 1 -
+/admin/ 14 -
+/php/tinybrowser/upload.php 1 -
+/xfchat/temp/error.php 1 -
+/islamski-chat/upload.php 1 -
+/topic/page/temp/error.php 1 -
+/tiny_mce/plugins/tinybrowser/upload.php 3 -
+/radio/radiochat/upload.php 1 -
+/FlashChat/upload.php 1 -
+/~duchen/chat/temp/error.php 1 -
+/site/wp-admin/setup-config.php 1 -
+/FlashChat/temp/error.php 1 -
+/flashchat-2/upload.php 1 -
+/wp-content/uploads/settingsimages/up89.php 1 -
+/wp-content/uploads/settingsimages/xb9987.php 2 -
+/beta/wp-admin/setup-config.php 1 -
+/page/video/upload.php 1 -
+/chat-sem-registo/temp/error.php 1 -
+/shbt/upload.php 1 -
+/jscripts/tiny_mce/plugins/tinybrowser/upload.php 1 -
+/old/wp-admin/setup-config.php 1 -
+/blog/ 2 -
+/wp-content/plugins/simple-forum/editors/tinymce/plugins/tinybrowser/upload.php 1 -
+/js/tiny_mce/plugins/tinybrowser/upload.php 1 -
+/radiodalmatino/temp/error.php 1 -
+/admin/lib/tiny_mce/plugins/tinybrowser/upload.php 3 -
+/search/temp/error.php 1 -
+/wp/ 2 -
+/cms/wp-includes/wlwmanifest.xml 3 -
+/chat-stjepkovica/temp/error.php 1 -
+/wwwroot/addons/tinymce/plugins/tinybrowser/upload.php 1 -
+/FlashChat_v608/chat/upload.php 1 -
+/chat/chat/temp/error.php 1 -
+/blog/robots.txt 4 -
+/user/ 14 -
+/painel/scripts/tiny_mce/plugins/tinybrowser/upload.php 1 -
+/test/wp-admin/setup-config.php 1 -
+/wp/wp-includes/wlwmanifest.xml 3 -
+/sohbet/temp/error.php 1 -
+/jingyan/upload.php 1 -
+/administrator/components/com_simplephotogallery/lib/uploadFile.php 1 http://coresysph.com/administrator/components/com_simplephotogallery/lib/uploadFile.php
+/assets/modules/evogallery/js/uploadify/uploadify.php 2 -
+/scripts/tiny_mce/plugins/tinybrowser/upload.php 1 -
+/Association/wp-content/plugins/simple-forum/editors/tinymce/plugins/tinybrowser/upload.php 1 -
+/radiodalmatino/upload.php 1 -
+/chat-bebica/upload.php 1 -
+/wp-admin/setup-config.php 1 -
+/live/chat/upload.php 1 -
+/chat/temp/error.php 1 -
+/Tchate/flashchat/upload.php 1 -
+/islamski-chat/temp/error.php 1 -
+/en/temp/error.php 1 -
+/Tchate/flashchat/temp/error.php 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 103
+124.107.125.184 7 94 32739737 20170920024731
+163.172.4.153 5 5 32182 20170928071912
+46.42.128.27 4 14 350035 20170917170356
+104.197.216.8 4 4 77092 20170919025245
+167.114.158.57 3 4 58388 20170922114702
+89.45.226.28 2 2 12880 20170903111157
+69.197.162.106 2 2 38546 20170919091021
+112.201.254.254 2 33 11010506 20170927052848
+183.87.114.130 2 2 38626 20170910213658
+45.77.63.79 2 2 29449 20170905035949
+204.79.180.16 0 2 2175 
+202.46.50.123 0 1 12915 
+204.79.180.11 1 3 23745 20170924205949
+69.58.178.56 1 1 19273 20170914163330
+204.79.180.7 0 2 2175 
+104.193.88.244 1 1 19273 20170928035126
+181.214.174.240 1 1 6434 20170928004755
+100.35.47.77 1 1 6434 20170915080114
+139.227.145.45 1 1 6434 20170923010506
+180.190.91.219 1 20 6573299 20170911001616
+204.79.180.17 1 2 33644 20170904022626
+204.79.180.0 0 2 1894 
+107.178.194.55 1 1 6442 20170909025030
+38.131.138.84 1 1 6440 20170911202013
+204.79.180.8 0 3 35827 
+139.227.144.80 1 1 6440 20170903030202
+204.79.180.10 0 2 5416 
+216.69.191.97 1 1 19292 20170915180426
+188.163.76.62 1 1 344 20170909114153
+204.79.180.2 0 3 18335 
+94.23.83.80 1 1 6434 20170921131758
+202.46.51.157 0 1 7689 
+107.178.194.242 1 1 6440 20170911051936
+88.99.2.222 1 1 19313 20170905203130
+52.43.165.219 1 1 6440 20170913100658
+204.79.180.14 0 2 47511 
+178.33.54.161 1 1 6440 20170910111434
+104.192.74.37 2 2 12887 20170914035233
+121.54.44.180 1 20 6573335 20170919051306
+119.93.33.123 1 20 6573335 20170921163640
+150.164.98.3 1 1 19273 20170921115514
+112.203.21.63 1 20 6573335 20170925052333
+106.120.173.94 1 1 6453 20170930102810
+204.79.180.6 0 4 57926 
+204.79.180.15 1 5 95617 20170917220630
+120.28.191.13 0 2 44083 
+120.28.191.9 0 2 2312382 
+104.34.227.129 1 20 5104663 20170906015421
+204.79.180.18 1 3 18528 20170928114414
+204.79.180.22 0 5 83491 
+112.211.191.55 1 20 6573335 20170924062643
+180.190.54.102 1 20 6573335 20170917002630
+116.196.107.200 1 1 6440 20170912104008
+204.13.201.137 1 1 19313 20170909025031
+204.79.180.20 0 1 7665 
+202.46.49.191 1 1 6453 20170928033447
+112.200.196.177 1 16 6506685 20170924174804
+204.79.180.21 0 3 55181 
+195.22.127.96 2 2 38634 20170923194339
+204.79.180.5 0 3 45264 
+106.120.173.79 2 2 12906 20170920023406
+62.210.105.116 1 1 6440 20170906091309
+120.28.191.3 0 2 5377 
+175.44.33.131 1 1 19332 20170912165117
+54.72.209.70 2 2 38626 20170905222455
+124.106.138.73 1 20 6573335 20170919043122
+69.171.210.86 1 1 6440 20170911132557
+45.63.70.152 1 1 6434 20170918040214
+110.54.201.185 1 20 6573335 20170920211211
+62.109.10.47 1 1 6453 20170915090303
+38.100.21.62 1 4 182912 20170921101853
+176.126.252.11 1 1 19313 20170909030729
+204.13.201.139 1 1 19313 20170911051936
+47.247.10.197 1 20 5819326 20170904065027
+185.188.182.33 1 1 6440 20170902124549
+204.79.180.23 0 2 14116 
+158.69.229.69 1 1 19313 20170908212055
+139.227.144.134 1 1 6434 20170917153942
+204.79.180.12 0 1 9445 
+54.194.218.17 1 1 19273 20170919180957
+181.214.1.194 1 1 6434 20170923124135
+120.28.191.7 1 4 555861 20170917201544
+110.54.218.214 1 2 6434 20170926220942
+49.147.137.188 1 20 6573299 20170904054603
+5.45.235.110 1 20 6573337 20170917225447
+120.28.191.14 0 2 36647 
+18.221.182.40 1 1 6434 20170926005751
+204.79.180.1 0 6 57362 
+178.137.82.201 2 2 38586 20170925091208
+204.79.180.3 0 1 994 
+120.28.191.8 0 1 413557 
+202.46.54.107 0 1 9464 
+120.28.191.2 0 7 3149610 
+211.28.174.219 1 20 6573335 20170917041133
+5.188.211.22 1 1 19332 20170903065719
+180.190.35.17 1 20 6573299 20170910001248
+50.116.7.152 1 1 6453 20170921183708
+181.214.164.15 1 1 6434 20170917175027
+112.200.200.177 1 20 6573335 20170922003710
+49.144.239.150 1 20 6573299 20170904171742
+204.79.180.13 1 1 6436 20170917010141
+204.79.180.9 0 3 14819 
+180.191.142.205 2 36 13079948 20170906054949
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 28
+20170902 1 1 6440 1
+20170903 4 4 38652 3
+20170904 4 71 19081164 4
+20170905 7 22 6600477 5
+20170906 3 41 11684402 3
+20170908 2 2 38650 2
+20170909 4 4 45412 4
+20170910 4 23 6618365 3
+20170911 7 45 13191671 7
+20170912 2 2 25772 2
+20170913 6 44 13178821 3
+20170914 3 3 32160 2
+20170915 4 4 38632 4
+20170916 1 1 6434 1
+20170917 12 121 26870247 9
+20170918 2 17 6513119 2
+20170919 9 47 13281581 5
+20170920 3 37 13086473 3
+20170921 5 27 6788407 5
+20170922 5 25 6638157 3
+20170923 3 3 32165 3
+20170924 3 47 13195296 3
+20170925 2 21 6592608 2
+20170926 3 23 6586203 3
+20170927 1 13 4437171 1
+20170928 5 17 188739 5
+20170929 0 1 9464 0
+20170930 1 2 14142 1
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 2
+0s-30s 88
+15mn-30mn 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 5
+/ 89 904825 75 75
+/index.html 14 141670 14 13
+/font-awesome/fonts/fontawesome-webfont.woff 1 65752 0 0
+/font-awesome/fonts/fontawesome-webfont.ttf 1 112474 0 1
+/font-awesome/fonts/fontawesome-webfont.eot 1 56324 0 0
+END_SIDER

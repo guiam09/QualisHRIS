@@ -1,0 +1,54 @@
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2020-10-19 00:06:27
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2020-10-19 00:06:27 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET /wp-login.php - 80 - 79.137.39.102 HTTP/1.1 Mozilla/5.0+(X11;+Ubuntu;+Linux+x86_64;+rv:62.0)+Gecko/20100101+Firefox/62.0 - - www.qualisph.com 404 0 2 1454 186 843
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2020-10-19 01:13:34
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2020-10-19 01:13:34 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET / - 80 - 112.200.109.78 HTTP/1.1 Mozilla/5.0+(Windows+NT+6.1;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/86.0.4240.75+Safari/537.36 - https://www.google.com/ qualisph.com 200 0 0 9184 500 2546
+2020-10-19 01:14:08 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET /favicon.ico - 80 - 112.200.109.78 HTTP/1.1 Mozilla/5.0+(Windows+NT+6.1;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/86.0.4240.75+Safari/537.36 - http://qualisph.com/ qualisph.com 404 0 2 1435 374 78
+2020-10-19 01:14:30 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET / - 80 - 112.200.109.78 HTTP/1.1 Mozilla/5.0+(Windows+NT+6.1;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/86.0.4240.75+Safari/537.36 _tccl_visitor=23f21e61-8744-499a-804e-0708f1c78d33;+_tccl_visit=23f21e61-8744-499a-804e-0708f1c78d33 http://qualisph.com/ qualisph.com 304 0 0 195 700 218
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2020-10-19 05:11:44
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2020-10-19 05:11:44 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET /wp-login.php - 80 - 149.202.245.120 HTTP/1.1 Mozilla/5.0+(X11;+Ubuntu;+Linux+x86_64;+rv:62.0)+Gecko/20100101+Firefox/62.0 - - qualisph.com 404 0 2 1454 182 1203
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2020-10-19 06:38:04
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2020-10-19 06:38:04 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET /administrator/index.php - 80 - 13.68.244.143 HTTP/1.1 Mozilla/5.0+(Macintosh;+Intel+Mac+OS+X+10_10_1)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/39.0.2171.95+Safari/537.36 - - www.qualisph.com 404 0 2 1435 268 828
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2020-10-19 11:32:00
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2020-10-19 11:32:00 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET /wp-login.php - 80 - 161.97.81.46 HTTP/1.1 Mozilla/5.0+(X11;+Ubuntu;+Linux+x86_64;+rv:62.0)+Gecko/20100101+Firefox/62.0 - - qualisph.com 404 0 2 1454 182 1264
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2020-10-19 12:27:53
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2020-10-19 12:27:53 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET /robots.txt - 80 - 157.55.39.32 HTTP/1.1 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - - qualisph.com 404 0 2 1435 245 875
+2020-10-19 12:30:30 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET / - 80 - 207.46.13.47 HTTP/1.1 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - - qualisph.com 200 0 0 9184 267 1437
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2020-10-19 12:46:19
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2020-10-19 12:46:19 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET /robots.txt - 80 - 66.249.75.166 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - qualisph.com 404 0 2 1435 226 187
+2020-10-19 12:46:19 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET / - 80 - 66.249.75.168 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - qualisph.com 200 0 0 9184 322 249
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2020-10-19 14:18:15
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2020-10-19 14:18:15 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET / - 80 - 175.44.42.225 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+10_2_1+like+Mac+OS+X)+AppleWebKit/602.4.6+(KHTML,+like+Gecko)+Version/10.0+Mobile/14D27+Safari/602.1 - http://fchex.ammgm.org/blog/70773977/view/ qualisph.com 200 0 0 9184 531 2312
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2020-10-19 16:08:24
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2020-10-19 16:08:24 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET /administrator/index.php - 80 - 20.186.32.58 HTTP/1.1 Mozilla/5.0+(Macintosh;+Intel+Mac+OS+X+10_10_1)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/39.0.2171.95+Safari/537.36 - - www.qualisph.com 404 0 2 1435 268 1250
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2020-10-19 17:40:27
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2020-10-19 17:40:26 W3SVC289 SG2NWVPWEB014 182.50.132.51 GET / - 80 - 209.17.96.26 HTTP/1.1 Mozilla/5.0+(compatible;+Nimbostratus-Bot/v1.3.2;+http://cloudsystemnetworks.com) - - qualisph.com 200 0 0 34343 133 2437

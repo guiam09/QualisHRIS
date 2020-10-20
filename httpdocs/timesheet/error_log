@@ -1,0 +1,51 @@
+[11-Jun-2019 08:58:22 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: timesheet::$uri_segments in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php:21
+Stack trace:
+#0 /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php(157): timesheet->__construct()
+#1 {main}
+  thrown in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 21
+[11-Jun-2019 08:59:16 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: timesheet::$uri_segments in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php:21
+Stack trace:
+#0 /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php(157): timesheet->__construct()
+#1 {main}
+  thrown in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 21
+[11-Jun-2019 08:59:34 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: timesheet::$uri_segments in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php:21
+Stack trace:
+#0 /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php(158): timesheet->__construct()
+#1 {main}
+  thrown in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 21
+[11-Jun-2019 08:59:37 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: timesheet::$uri_segments in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php:21
+Stack trace:
+#0 /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php(158): timesheet->__construct()
+#1 {main}
+  thrown in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 21
+[11-Jun-2019 09:01:23 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: timesheet::$uri_segments in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php:21
+Stack trace:
+#0 /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php(159): timesheet->__construct()
+#1 {main}
+  thrown in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 21
+[11-Jun-2019 09:01:57 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: timesheet::$uri_segments in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php:22
+Stack trace:
+#0 /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php(161): timesheet->__construct()
+#1 {main}
+  thrown in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 22
+[11-Jun-2019 09:12:14 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: timesheet::$uri_segments in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php:21
+Stack trace:
+#0 /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php(157): timesheet->__construct()
+#1 {main}
+  thrown in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 21
+[11-Jun-2019 09:14:32 UTC] PHP Notice:  Array to string conversion in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 21
+[11-Jun-2019 09:14:32 UTC] PHP Notice:  Undefined property: timesheet::$Array in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 21
+[11-Jun-2019 09:14:32 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php:21
+Stack trace:
+#0 /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php(157): timesheet->__construct()
+#1 {main}
+  thrown in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 21
+[15-Jun-2019 06:24:33 UTC] PHP Notice:  Undefined index: date in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 66
+[15-Jun-2019 06:24:33 UTC] PHP Notice:  Undefined index: id in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 67
+[15-Jun-2019 06:24:33 UTC] PHP Notice:  Undefined index: regHours in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 68
+[15-Jun-2019 06:24:33 UTC] PHP Notice:  Undefined index: work_type in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 69
+[15-Jun-2019 06:24:33 UTC] PHP Notice:  Undefined index: taskCode in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 70
+[15-Jun-2019 06:24:33 UTC] PHP Notice:  Undefined index: projCode in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 71
+[15-Jun-2019 06:24:33 UTC] PHP Notice:  Undefined index: location in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 72
+[15-Jun-2019 06:24:33 UTC] PHP Notice:  Undefined index: comment in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 73
+[15-Jun-2019 06:24:33 UTC] PHP Notice:  Undefined index: regHours in /home/tshhdnbgqir4/public_html/timesheet/timesheet_model.php on line 74

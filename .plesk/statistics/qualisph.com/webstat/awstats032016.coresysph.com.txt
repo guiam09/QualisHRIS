@@ -1,0 +1,533 @@
+AWSTATS DATA FILE 7.2 (build 1.992)
+# If you remove this file, all statistics for date 201603 will be lost/reset.
+# Last config file used to build this data file was C:\Program Files (x86)\Parallels\Plesk\Additional\AWStats\wwwroot\cgi-bin/awstats.coresysph.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 2054                
+POS_TIME 2734                
+POS_VISITOR 9509                
+POS_DAY 14711               
+POS_DOMAIN 3570                
+POS_LOGIN 3803                
+POS_ROBOT 3958                
+POS_WORMS 4635                
+POS_EMAILSENDER 4766                
+POS_EMAILRECEIVER 4909                
+POS_SESSION 15546               
+POS_SIDER 15753               
+POS_FILETYPES 5044                
+POS_DOWNLOADS 5268                
+POS_OS 5316                
+POS_BROWSER 5543                
+POS_SCREENSIZE 6359                
+POS_UNKNOWNREFERER 6433                
+POS_UNKNOWNREFERERBROWSER 6870                
+POS_ORIGIN 7010                
+POS_SEREFERRALS 7152                
+POS_PAGEREFS 7318                
+POS_SEARCHWORDS 7774                
+POS_KEYWORDS 7958                
+POS_MISC 2397                
+POS_ERRORS 8041                
+POS_CLUSTER 3659                
+POS_SIDER_404 8147                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20160401001709 244 67263 35279994207
+FirstTime 20160301225815
+LastTime 20160331113913
+LastUpdate 20160401052709 244 0 243 0 0
+TotalVisits 147                 
+TotalUnique 120                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 132                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 64 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 10 106 20662826 11 18 59777
+1 18 300 48784572 95 119 271095
+2 20 253 38548151 26 41 4549698
+3 3 7 756126 12 30 165539
+4 8 84 26705959 8 20 6122211
+5 19 221 51409664 21 68 15370517
+6 15 144 32308705 7 43 12985730
+7 34 285 63985016 11 40 112608
+8 7 63 10339151 6 12 99178
+9 24 213 32742011 10 28 2861031
+10 18 94 24107655 15 38 3273167
+11 9 78 10421935 13 37 235677
+12 7 42 4726615 7 16 738102
+13 8 63 3161496 19 36 163019
+14 3 38 6983900 9 16 58119
+15 7 79 8777561 14 24 56461
+16 5 24 6711269 14 28 89688
+17 2 5 201984 14 29 167126
+18 13 98 16503113 8 15 87099
+19 7 80 8531857 4 7 36718
+20 1 1 19223 9 27 175213
+21 9 87 25908070 19 47 9145198
+22 22 217 45290963 17 35 4929287
+23 29 288 63197334 19 34 123341
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 298 2870 550785156
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 15
+googlebot 103 6891893 20160331232906 0
+phantom 42 13278000 20160322054349 0
+baiduspider 40 230322 20160331091925 0
+mj12bot 36 536277 20160331154051 0
+facebook 27 27461093 20160317053218 0
+bingbot 16 206607 20160328111810 0
+favicon 5 30424 20160311013525 0
+no_user_agent 2 6706 20160326050744 0
+surveybot 2 12026 20160320011250 0
+bingpreview 2 647908 20160328121727 0
+core 1 19223 20160320141522 0
+bot[\s_+:,\.\;\/\\-] 1 1477 20160301010800 0
+[\s_+:,\.\;\/\\-]bot 1 0 20160311074654 0
+robot 2 4469 20160301125638 0
+crawl 1 6408 20160321003030 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 8
+eot 3 168915 0 0
+css 446 4782552 0 0
+png 221 42103826 0 0
+ttf 41 2605672 0 0
+html 209 1301828 0 0
+jpg 900 491247706 0 0
+js 1005 6734133 0 0
+woff 45 1840524 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 12
+linuxandroid 302 31
+blackberry 1 1
+winlong 43 5
+winxp 5 5
+linux 52 15
+winvista 45 7
+win7 1974 175
+macosx 341 37
+win2003 8 2
+macosx9 20 1
+win8 20 1
+Unknown 59 18
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 39
+firefox28.0 2 2
+chrome34.0.1847.76 20 2
+msie6.0 1 1
+firefox5.0 1 1
+firefox44.0 223 27
+chrome48.0.2564.116 850 56
+chrome19.0.1062.0 1 1
+chrome39.0.2171.95 1 1
+opera9.80 20 1
+chrome46.0.2490.76 20 1
+iphone 64 7
+chrome33.0.0.0 20 2
+firefox6.0.2 4 4
+firefox43.0 20 1
+chrome47.0.2526.111 146 14
+msie7.0 8 2
+chrome37.0.2062.120 10 10
+Unknown 33 11
+chrome47.0.2526.83 69 7
+chrome30.0.0.0 108 11
+netscape 1 1
+blackberry 1 1
+chrome49.0.2623.87 101 6
+chrome48.0.2564.95 84 9
+chrome45.0.2454.15 41 4
+firefox3.6.4 21 2
+chrome32.0.1700.107 43 5
+firefox45.0 22 3
+safari9.0 254 26
+chrome36.0.1985.143 478 46
+mozilla 75 18
+netscape5.0 1 1
+chrome35.0.1916.153 41 4
+chrome48.0.2564.109 20 1
+firefox14.0.1 1 1
+firefox3.6.3 1 1
+chrome41.0.2228.0 1 1
+chrome51.0.2680.0 20 1
+safari 43 5
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 6
+Mozilla 20160302093045
+visionutils/0.2 20160308213324
+Mozilla/5.0_(compatible;_DomainAppender_/1.0;__http://www.profound.net/domainappender) 20160319041751
+Mozilla/5.0_(compatible;__http://servernfo.com/) 20160309035416
+semanticbot 20160318102239
+Opera/9.80_(Android;_Opera_Mini/7.6.40234/37.7936;_U;_en)_Presto/2.12.423_Version/12.16 20160308040035
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 2
+visionutils/0.2 20160308213324
+semanticbot 20160318102239
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 127 297
+From1 0 0
+From2 14 14
+From3 59 59
+From4 98 2500
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+google 13 13
+bing 1 1
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 10
+http://top1-seo-service.com/try.php 36 36
+http://burger-imperia.com 6 6
+http://buttons-for-website.com 5 5
+http://m.facebook.com 4 4
+https://www.facebook.com 3 3
+http://pizza-imperia.com 1 1
+http://pizza-tycoon.com 1 1
+http://hvd-store.com 1 1
+http://32596084.responsive-test.net 1 1
+http://hundejo.com 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 3
+google 1
+coresys+ph 1
+coresys 1
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 3
+coresys 2
+google 1
+ph 1
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 2
+206 84 11974129
+404 371 484337
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 34
+/robots.txt 137 -
+/wordpress/ 2 -
+/js/agency.js 1 -
+/img/team/john.jpg 1 http://coresysph.com/
+/images/COO.jpg 3 -
+/img/about/vision2.jpg 1 http://coresysph.com/
+/Contact.html 47 -
+/css/agency.css 1 -
+/wp-admin 1 -
+/js/cbpAnimatedHeader.js 1 -
+/services.html 28 -
+/font-awesome/fonts/fontawesome-webfont.woff2 37 http://www.coresysph.com/font-awesome/css/font-awesome.min.css
+/Location.html 22 -
+/js/contact_me.js 1 -
+/js/bootstrap.min.js 1 -
+/images/logo1.png 2 -
+/font-awesome/css/font-awesome.min.css 1 -
+/administrator/index.php 3 -
+/images/Linden.jpg 1 https://www.google.com/
+/css/style.css 3 http://www.coresysph.com/
+/css/bootstrap.min.css 2 -
+/img/location/linden.jpg 1 http://coresysph.com/
+/images/CEO.jpg 1 -
+/js/classie.js 1 -
+/js/jquery.js 1 -
+/img/team/liza.jpg 1 http://coresysph.com/
+/wp-content/plugins/fluid_forms/file-upload/server/gae-go/app.yaml 1 -
+/About.html 37 -
+/js/jqBootstrapValidation.js 1 -
+/a 1 -
+/index.php 5 -
+/joomla/administrator/index.php 1 -
+/Services.html 23 -
+/img/location/buildings.png 1 http://coresysph.com/
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 132
+124.107.125.184 105 1263 226814372 20160330013951
+137.117.53.212 9 9 51589 20160318101623
+49.151.135.170 7 65 712793 20160304223910
+112.198.82.144 4 42 7174350 20160305093854
+182.74.60.138 4 23 6807762 20160318074025
+112.198.83.196 3 41 9825574 20160314022546
+112.198.118.189 3 41 10098716 20160313232057
+31.218.38.243 3 22 6639000 20160308091351
+74.50.56.232 3 22 6658223 20160322054413
+112.198.98.75 3 22 6645408 20160310015034
+86.96.226.8 0 3 851797 
+197.88.165.29 2 19 59221 20160321235320
+179.235.245.140 2 21 6685722 20160314163223
+85.138.66.43 2 21 6685722 20160328013515
+177.18.240.103 1 17 32574 20160331060231
+107.191.49.97 1 1 19223 20160328171746
+185.100.85.138 1 1 6408 20160318213215
+49.150.4.116 1 20 6573267 20160312232956
+179.197.122.206 2 21 2237419 20160317092945
+31.215.231.1 1 1 0 20160331071754
+31.218.13.44 2 21 6638897 20160305094156
+177.11.92.22 2 19 334541 20160317055638
+177.99.102.164 2 21 5841866 20160319062802
+72.66.115.14 1 20 6573267 20160311073823
+201.20.91.162 2 20 318733 20160314132054
+120.28.191.10 1 4 491824 20160301225815
+49.150.193.180 2 21 6638897 20160306080703
+82.55.249.137 2 21 4865059 20160327055226
+191.189.8.92 1 1 0 20160331064856
+120.28.191.12 0 3 1372519 
+112.198.79.245 2 21 6639000 20160319040027
+119.95.148.213 1 18 6165039 20160303064925
+66.220.146.227 0 1 2023786 
+191.249.42.21 1 19 2760109 20160316194344
+180.191.142.95 1 1 0 20160305185847
+72.52.94.234 2 21 6685722 20160322053635
+202.46.51.184 1 1 0 20160320135852
+111.240.153.243 2 21 5727029 20160325024828
+103.54.103.3 1 1 0 20160316192932
+54.161.157.64 1 1 19223 20160322185329
+120.28.191.9 1 6 1255842 20160302151011
+64.79.100.18 2 2 11255 20160302093045
+177.106.112.44 2 20 1500364 20160321150114
+136.243.172.46 1 1 19247 20160312002432
+120.28.191.1 0 2 0 
+49.150.14.34 1 5 3400499 20160308115825
+178.32.53.53 1 1 6408 20160324194138
+2.101.88.133 1 1 0 20160325134704
+2.36.32.47 2 21 4733987 20160328235737
+179.184.46.56 1 1 0 20160326065016
+120.28.191.3 1 1 0 20160302151156
+179.153.239.96 2 21 6104010 20160314105729
+46.226.108.26 1 1 6305 20160307163416
+40.76.64.216 2 21 6685722 20160318102238
+195.245.112.158 1 1 6427 20160325152103
+49.148.199.108 2 21 6638897 20160304102910
+189.83.222.182 1 13 88004 20160331113913
+112.198.90.225 2 21 6639000 20160317043946
+54.233.145.200 1 1 0 20160329232157
+187.54.117.217 2 20 1874668 20160330083213
+117.201.10.88 2 21 1825586 20160318081104
+202.46.50.139 1 1 0 20160321092304
+177.193.77.210 1 1 6408 20160325103618
+112.198.82.139 2 21 0 20160305230520
+69.58.178.59 2 2 38446 20160319212543
+186.222.22.201 2 21 3712667 20160325120421
+171.5.146.167 1 18 3444723 20160323000832
+201.27.41.119 2 20 515902 20160319062510
+120.28.191.8 2 10 1084008 20160301225931
+109.190.140.153 1 1 6408 20160315122738
+54.193.125.238 1 1 19223 20160311184824
+64.202.160.250 1 1 6427 20160313214457
+112.209.16.162 1 20 6573267 20160317073405
+85.214.98.239 1 1 5618 20160302181156
+189.79.206.57 1 2 6408 20160314225213
+38.100.21.172 1 4 182618 20160308002850
+198.54.90.200 1 1 19223 20160309035416
+202.46.50.138 1 1 0 20160321063937
+49.150.60.150 2 21 5408161 20160327111020
+1.4.211.112 2 21 6685722 20160315184346
+107.167.113.168 1 20 6573267 20160308040031
+120.28.191.5 0 1 0 
+122.3.194.148 2 20 6273861 20160302184441
+31.13.105.116 0 1 2023786 
+185.129.62.63 1 1 6408 20160319093644
+200.89.40.78 2 21 6685722 20160329140320
+112.198.102.158 2 21 6638855 20160305093439
+193.90.12.86 1 1 6305 20160307180553
+188.240.88.104 1 1 19242 20160309162240
+52.37.91.30 1 1 19223 20160311111719
+120.28.191.11 0 3 0 
+112.198.75.160 1 20 6573267 20160309060334
+177.13.227.71 2 21 2349874 20160319222250
+120.28.191.13 0 2 301492 
+75.149.221.169 1 1 19223 20160329123223
+151.76.20.133 2 20 712807 20160328133248
+179.158.81.83 1 20 3466231 20160330181312
+82.124.136.142 1 1 0 20160328012533
+112.201.251.115 1 20 6573267 20160308212822
+195.229.241.185 2 18 5983672 20160317043518
+89.31.57.5 1 1 6408 20160309020850
+189.12.155.20 2 20 384833 20160314192327
+112.211.31.180 2 21 6638897 20160306211228
+78.137.248.165 1 17 298178 20160326143938
+209.159.137.59 1 1 6408 20160328115312
+49.148.151.44 1 20 6573267 20160322053607
+177.74.91.2 1 11 20625 20160315180435
+112.208.99.254 1 20 6573267 20160323004206
+60.49.36.43 2 21 1394607 20160331050120
+173.208.213.114 1 1 6408 20160317221102
+27.76.232.206 1 1 6408 20160318075502
+38.100.21.63 1 4 182761 20160324174933
+202.46.58.14 1 1 0 20160320165319
+95.95.34.69 2 21 4621029 20160330105311
+180.252.29.43 2 20 3896919 20160316224853
+120.28.191.7 1 7 527819 20160301225939
+112.206.18.242 2 20 3399709 20160302222657
+52.36.11.246 1 1 19223 20160318200028
+191.8.33.38 2 20 1062641 20160329152617
+66.220.146.225 0 1 2023786 
+120.28.191.14 0 1 0 
+167.249.161.163 1 15 981909 20160318121046
+79.244.78.182 1 20 6573267 20160309014016
+180.190.91.68 1 20 6573267 20160316211257
+65.19.167.130 1 1 6408 20160326124445
+120.28.191.4 0 2 2066875 
+151.73.109.54 2 21 2129956 20160315130529
+112.198.83.93 1 1 6408 20160318225524
+177.125.98.114 1 16 881327 20160314113645
+54.215.132.210 1 1 19223 20160319041751
+120.28.191.2 0 7 790174 
+179.178.62.12 2 21 2700546 20160331093807
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 31
+20160301 4 11 1682424 3
+20160302 46 407 85298786 10
+20160303 14 193 42656620 5
+20160304 18 187 20463228 7
+20160305 11 106 20452102 5
+20160306 4 42 13277794 2
+20160307 15 110 23652428 4
+20160308 21 383 56334574 8
+20160309 7 64 13191407 7
+20160310 12 142 31733621 3
+20160311 3 22 6611713 3
+20160312 2 21 6592514 2
+20160313 4 42 10105143 2
+20160314 13 141 24206607 8
+20160315 7 74 15415978 5
+20160316 6 80 19736912 5
+20160317 10 103 22626104 6
+20160318 22 93 16391015 9
+20160319 12 87 15410719 7
+20160320 2 2 0 2
+20160321 7 61 8132852 5
+20160322 7 64 19936435 4
+20160323 2 38 10017990 2
+20160324 2 5 189169 2
+20160325 7 45 9452531 5
+20160326 3 19 304586 3
+20160327 4 42 10273220 2
+20160328 9 65 12158147 6
+20160329 10 66 14575346 5
+20160330 6 81 15689460 4
+20160331 8 74 4215731 6
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 3
+5mn-15mn 3
+30s-2mn 1
+2mn-5mn 2
+15mn-30mn 2
+0s-30s 132
+30mn-1h 4
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 9
+/ 200 1278405 139 85
+/font-awesome/fonts/fontawesome-webfont.woff 45 1840524 0 26
+/font-awesome/fonts/fontawesome-webfont.ttf 41 2605672 2 31
+/index.html 4 13506 3 2
+/font-awesome/fonts/fontawesome-webfont.eot 3 168915 0 0
+/services.html 2 3492 1 1
+/About.html 1 2939 1 0
+/Location.html 1 2130 0 1
+/Contact.html 1 1356 1 1
+END_SIDER

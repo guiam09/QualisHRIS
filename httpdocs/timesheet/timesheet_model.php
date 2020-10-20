@@ -1,0 +1,174 @@
+<?php
+include 'config.php';
+class timesheet {
+	function __construct() {
+		global $uri_segments;
+		global $conn;
+		global $base_url;
+		$this->uri_segments =& $uri_segments;
+		$this->conn =& $conn;
+		$this->base_url =& $base_url;
+		// echo $uri_segments[3];
+
+		// include 'view.php';
+
+		if (!isset($this->uri_segments[3])) {
+			echo '404, Page Not Found';
+			exit;
+		}
+
+		// if (method_exists($this, $this->uri_segments[3])) {
+		// 	$this->$uri_segments[3]();
+		// } 
+		if ($this->uri_segments[3] == 'saveForm') {
+			$this->saveForm();
+		} else if($this->uri_segments[3] == 'updateForm') {
+			$this->updateForm();
+		} else if($this->uri_segments[3] == 'updateTimesheet') {
+			$this->updateTimesheet();
+		} else if($this->uri_segments[3] == 'addProject') {
+			$this->addProject();
+		} else if($this->uri_segments[3] == 'assignProject') {
+			$this->assignProject();
+		} else if($this->uri_segments[3] == 'removeTimesheet') {
+			$this->removeTimesheet();
+		} else {
+			echo '404, Page Not Found';
+			exit;
+		}
+	}
+
+	public function saveForm()
+	{
+		foreach ($_POST['date'] as $key => $row) {
+			$date = date("Y-m-d", strtotime($row));
+			$regHours = $_POST['regHours'][$key];
+			$work_type = $_POST['work_type'][$key];
+			$taskCode = $_POST['taskCode'][$key];
+			$projCode = $_POST['projCode'][$key];
+			$location = $_POST['location'][$key];
+			$comment = $_POST['comment'][$key];
+			
+			$employeeID = $_SESSION['employeeID']; //added 
+			
+			$query = $this->conn->prepare("
+				INSERT INTO timesheet
+				(user_id, `date`, hours, project_code, task_code, location, work_type, comment)
+				VALUES
+				('$employeeID', '$date', '$regHours', '$projCode', '$taskCode', '$location', '$work_type', '$comment')  
+				");
+//change value from 1 to $employeeID
+
+			$query->execute();
+		}
+
+		echo "<script>alert('Save Success!');window.location.href='".$this->base_url."timesheet_application.php?date=".$date."'</script>";
+	}
+
+	public function updateForm()
+	{
+		$date = $_POST['date'];
+		$id = $_POST['id'];
+		$regHours = $_POST['regHours'];
+		$work_type = $_POST['work_type'];
+		$taskCode = $_POST['taskCode'];
+		$projCode = $_POST['projCode'];
+		$location = $_POST['location'];
+		$comment = $_POST['comment'];
+		$hours = $_POST['regHours'];
+		$query = $this->conn->prepare("
+			UPDATE timesheet
+			SET project_code = '$projCode',
+			task_code = '$taskCode',
+			location = '$location',
+			work_type = '$work_type',
+			comment = '$comment',
+			hours = '$hours'
+			WHERE id = '$id'
+			");
+
+		$query->execute();
+		// exit;
+		echo "<script>alert('Save Success!');window.location.href='".$this->base_url."view_my_timesheet.php?date=".$date."'</script>";
+	}
+
+	public function updateTimesheet()
+	{
+		$status = $_POST['status'];
+		$date = array_unique(json_decode($_POST['date']));
+		$userid = $_POST['userid'];
+		foreach ($date as $row) {
+			if (isset($_POST['timeid'])) {
+				$id = $_POST['timeid'];
+				$query = $this->conn->prepare("
+					UPDATE timesheet
+					SET status = '$status'
+					WHERE id = '$id'
+					");
+
+				$query->execute();
+			} else {
+				
+				$query = $this->conn->prepare("
+					UPDATE timesheet
+					SET status = '$status'
+					WHERE `date` = '$row'
+					AND user_id = '$userid'
+					");
+
+				$query->execute();
+			}
+		}
+
+		echo "<script>alert('Success!');window.location.href='".$this->base_url."view_project.php?date=".$date[0]."&userid=".$userid."'</script>";
+	}
+
+	public function addProject()
+	{
+		$name = $_POST['name'];
+		$userid = $_SESSION['employeeID'];
+		
+		$query = $this->conn->prepare("
+			INSERT INTO
+			projects
+			(project_code, project_owner)
+			VALUES
+			('$name', '$userid');
+			");
+
+		$query->execute();
+		echo "<script>alert('Success!');window.location.href='".$this->base_url."view_project.php?date=".date('Y-m-d')."&userid=".$userid."'</script>";
+	}
+
+	public function assignProject()
+	{
+		$project = $_POST['project'];
+		$userid = $_POST['userid'];
+		$query = $this->conn->prepare("
+			INSERT INTO
+			projects_assigned
+			(project_id, user_id)
+			VALUES
+			('$project', '$userid')
+			");
+
+		$query->execute();
+		echo "<script>alert('Success!');window.location.href='".$this->base_url."view_project.php'</script>";
+	}
+
+	public function removeTimesheet()
+	{
+		$id = $_POST['timeid'];
+		$date = array_unique(json_decode($_POST['date']));
+		$query = $this->conn->prepare("
+			DELETE FROM
+			timesheet
+			WHERE id = '$id'
+			");
+
+		$query->execute();
+		echo "<script>alert('Success!');window.location.href='".$this->base_url."view_my_timesheet.php?date=".$date[0]."'</script>";
+	}
+}
+
+$class = new timesheet();

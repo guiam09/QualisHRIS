@@ -1,0 +1,800 @@
+AWSTATS DATA FILE 7.7 (build 20180105)
+# If you remove this file, all statistics for date 201905 will be lost/reset.
+# Last config file used to build this data file was C:\Program Files (x86)\Parallels\Plesk\Additional\AWStats\wwwroot\cgi-bin/awstats.coresysph.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 30
+POS_GENERAL 2127                
+POS_TIME 2807                
+POS_VISITOR 14909               
+POS_DAY 23347               
+POS_DOMAIN 3648                
+POS_LOGIN 4227                
+POS_ROBOT 4382                
+POS_WORMS 5589                
+POS_EMAILSENDER 5720                
+POS_EMAILRECEIVER 5863                
+POS_SESSION 24207               
+POS_SIDER 24408               
+POS_FILETYPES 5998                
+POS_DOWNLOADS 6236                
+POS_OS 6284                
+POS_BROWSER 6667                
+POS_SCREENSIZE 8609                
+POS_UNKNOWNREFERER 8683                
+POS_UNKNOWNREFERERBROWSER 8854                
+POS_ORIGIN 9020                
+POS_SEREFERRALS 9164                
+POS_PAGEREFS 9398                
+POS_SEARCHWORDS 11889               
+POS_KEYWORDS 12066               
+POS_MISC 2470                
+POS_ERRORS 12152               
+POS_CLUSTER 4083                
+POS_SIDER_400 14600               
+POS_SIDER_404 12269               
+POS_SIDER_403 14518               
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20190601001057 118 31796 54689226110
+FirstTime 20190501003503
+LastTime 20190531233623
+LastUpdate 20190625140633 118 0 116 0 1
+TotalVisits 357                 
+TotalUnique 193                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 224                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+JavascriptDisabled 0 0 0
+DirectorSupport 0 0 0
+TotalMisc 0 0 0
+FlashSupport 0 0 0
+JavaEnabled 0 0 0
+QuickTimeSupport 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 68 0
+RealPlayerSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 33 208 27978660 18 45 420558
+1 30 244 39880422 16 35 119539
+2 29 126 19772737 13 25 69181
+3 53 80 1034633 15 36 236707
+4 95 337 21100928 61 110 714087
+5 36 57 3948373 14 24 111226
+6 37 141 16139660 25 57 225396
+7 17 41 2120872 13 42 1037308
+8 12 91 9656627 18 35 720135
+9 12 71 10103079 9 32 433109
+10 20 31 145888 10 31 854242
+11 11 41 6188556 32 78 755158
+12 8 29 3946277 9 23 1056923
+13 17 63 8035210 10 38 127437
+14 2 3 0 10 37 475265
+15 52 128 8509998 20 32 88666
+16 43 143 15570745 22 40 114617
+17 27 28 300695 19 36 153013
+18 18 75 11408721 9 17 48888
+19 21 61 7940905 46 90 411679
+20 25 25 115118 18 45 1109018
+21 25 77 8347380 13 20 114994
+22 22 157 27414360 17 28 71874
+23 21 179 30649791 10 31 102990
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 25
+ua 323 342 4310141
+us 194 583 39627513
+ph 69 937 165963208
+cn 14 157 10432125
+fr 11 28 250069
+ap 10 162 31811381
+ru 7 20 496905
+ie 6 6 60069
+de 5 19 171257
+unknown 4 4 25770
+pl 1 1 0
+il 0 1 0
+np 1 1 20023
+br 3 22 3796481
+om 1 1 20023
+id 1 21 3801034
+nl 3 3 46460
+gb 4 4 46460
+hu 1 1 325
+nz 1 20 3796481
+mk 0 1 0
+ca 1 1 20023
+in 4 80 14079924
+at 1 1 0
+ke 1 20 1533963
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 29
+Googlebot/ 187 1198999 20190531183554 0
+spider 71 417308 20190531192509 0
+bingbot/ 70 3137936 20190527150837 0
+Uptimebot/ 44 37728 20190531201318 0
+YandexBot/ 23 147959 20190531112557 0
+bingpreview 12 1165268 20190517124519 0
+Baiduspider/ 11 75515 20190531072159 0
+aiHitBot/ 11 358722 20190504090506 0
+360Spider 11 70763 20190531012030 0
+python 8 51464 20190522195634 0
+AhrefsBot/ 5 32168 20190531101930 0
+crawl 1 6433 20190514213018 0
+ia_archiver 3 60069 20190510060627 0
+DomainCrawler/ 1 0 20190517031751 0
+yacybot 1 6452 20190504033227 0
+Googlebot\-Image/ 7 0 20190501131843 0
+dataprovider\.com 3 40558 20190521044034 0
+MJ12bot/ 7 140028 20190527185430 0
+legs 1 6433 20190507063907 0
+MSIECrawler 6 0 20190517153902 0
+(firefox/)([0-9]\.|[0-1][0]\.) 1 20004 20190502140231 0
+BLEXBot/ 3 7627 20190515061802 0
+bot[\s_+:,\.\;\/\\-] 2 40008 20190530124248 0
+no_user_agent 3 692027 20190528104235 0
+panscient 1 6433 20190511174603 0
+facebookexternalhit/ 2 144350 20190513075640 0
+favicon 1 6433 20190516020355 0
+curl 1 20004 20190531064707 0
+SafeDNSBot 1 20023 20190520210714 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 9
+ttf 2 178286 0 0
+png 395 41175892 0 0
+jpg 317 221144033 0 0
+css 257 4454949 0 0
+woff 2 131466 0 0
+eot 12 460595 0 0
+svg 7 1300799 0 0
+html 664 2518223 0 0
+js 780 8945392 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 24
+macosx10 5 5
+macosx12 5 5
+linux 56 17
+win8 2 2
+win7 321 46
+win10 522 92
+win2000 28 28
+ios_iphone 204 17
+winme 3 3
+ios_ipad 31 31
+Unknown 19 18
+winxp 280 203
+winunknown 3 3
+win98 6 6
+macosx6 21 2
+linuxandroid 547 44
+win2003 28 25
+win95 24 24
+macosx11 5 5
+macosx9 2 2
+winlong 8 7
+macosx 42 12
+win8.1 239 34
+winnt 35 35
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 93
+chrome34.0.1847.131 1 1
+chrome57.0.2987.108 40 2
+chrome41.0.2272.89 3 3
+chrome65.0.3325.109 20 1
+Unknown 19 18
+chrome72.0.3626.121 33 4
+edge16 7 7
+chrome71.0.3578.98 1 1
+safari11.0.3 2 2
+opera36.0.2130.32 1 1
+chrome18.0.1003.1 8 1
+chrome72.0.3626.109 4 3
+chrome73.0.3683.103 83 5
+chrome73.0.3683.90 21 2
+safari12.0 82 6
+opera8.00 9 9
+opera9.01 3 3
+opera53.0.2907.68 1 1
+chrome72.0.3626.105 20 1
+chrome74.0.3729.112 20 1
+opera8.01 3 3
+chrome74.0.3694.0 20 1
+chrome66.0.3359.181 28 28
+firefox66.0 61 3
+chrome38.0.1025.166 43 5
+chrome40.0.2214.93 1 1
+chrome68.0.3440.106 20 1
+chrome22.0.1216.0 1 1
+opera9.0 3 3
+chrome65.0.3325.162 4 4
+chrome34.0.1847.116 1 1
+firefox54.0 1 1
+opera54.0.2952.60 2 2
+opera9.00 9 9
+msie2.0 6 6
+chrome42.0.2311.152 1 1
+chrome74.0.3729.131 171 12
+safari3.1.1 20 1
+chrome64.0.3282.186 6 6
+mozilla 39 39
+chrome72.0.3626.96 2 2
+firefox59.0 15 15
+chrome30.0.1599.82 27 0
+chrome74.0.3729.108 1 1
+chrome55.0.2883.87 8 1
+chrome17.0.963.46 1 1
+msie11.0 219 33
+chrome61.0.3163.128 62 5
+chrome49.0.2623.112 22 2
+firefox52.45.92 1 1
+firefox46.0 1 1
+opera41.9.4606.9334 1 1
+chrome69.0.3497.100 22 3
+chrome45.0.2454.94 1 1
+chrome74.0.3729.169 212 13
+msie8.0 1 1
+chrome60.0.3112.50 13 3
+chrome35.0.1916.47 2 2
+msie7.0 117 30
+chrome73.0.3683.86 20 1
+chrome34.0.1847.137 1 1
+chrome46.0.2490.80 1 1
+chrome58.0.3029.110 6 6
+chrome74.0.3729.136 128 14
+msie5.0 5 5
+firefox58.0 4 4
+chrome71.0.3578.99 21 2
+webcapture 3 3
+opera7.54 9 9
+safari11.0 55 35
+safari 58 5
+chrome64.0.3282.137 21 2
+firefox65.0 23 4
+chrome75.0.3738.0 11 1
+chrome71.0.3578.80 1 1
+chrome72.0.3626.119 20 1
+msie10.0 14 2
+chrome65.0.3325.181 10 10
+chrome51.0.2704.106 1 1
+edge18 22 2
+msie4.01 9 9
+chrome50.0.2661.102 4 4
+firefox47.0 1 1
+chrome63.0.3239.132 2 1
+chrome70.0.3538.110 20 1
+safari12.1 20 1
+msie5.5 33 33
+edge15 1 1
+chrome70.0.3538.77 22 3
+msie9.0 4 4
+chrome74.0.3729.157 166 8
+msie6.0 168 168
+opera7.60 6 6
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 3
+Go-http-client/1.1 20190527021402
+Photon/1.0 20190503110701
+PleskBot 20190527005338
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 3
+Go-http-client/1.1 20190527021402
+Photon/1.0 20190503110701
+PleskBot 20190527005338
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 221 263
+From1 0 0
+From2 74 85
+From3 358 544
+From4 13 1544
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 5
+sogou 4 4
+www_google_com_ph 16 16
+www_google_com_ua 1 1
+www_google_com 52 63
+yandexru 1 1
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 70
+https://sucuri.net 31 217
+https://x-mix.info 15 15
+https://oookazanskii.ru 15 15
+https://www.video-camer.com 12 12
+https://javxxx18.com 12 12
+https://popugaychiki.com 9 9
+https://sisi-go.ru 9 9
+https://miss-and-missis.com 9 9
+https://prahago.com 9 9
+http://golden-praga.ru 9 9
+http://greenshop.su 3 3
+https://jyvopys.com 6 6
+https://goldsoch.com 3 3
+https://l.facebook.com 1 1
+http://dantk.kz/goryashie-tury/goryashie-tury-v-ispaniyu/kosta-del-sol/ 3 3
+https://agregatmotors.ru 3 3
+http://gfaq.ru/publ/ 3 3
+http://www.klad-anapa.ru 6 6
+https://javstock.com 3 3
+https://vzheludke.com 3 3
+https://vzheludke.com 3 3
+https://pizdeishn.com 3 3
+http://minet.club 3 3
+https://su1ufa.ru/prodazhi 6 6
+http://dom-prestarelyh.live 3 3
+https://pk-pomosch.ru 3 3
+https://vserdtse.com 6 6
+https://x-lime.com 3 3
+https://moinozhki.com 3 3
+http://doxysexy.com 3 3
+https://banking.vc 6 6
+https://mgn.dantk.ru/goryashie-tury/goryashie-tury-v-turciyu/marmaris/ 3 3
+http://www.tsatu.edu.ua 3 3
+https://ekb.dantk.ru/goryashie-tury/goryashie-tury-po-rossii/goryashie-tury-v-gelendzhik/ 3 3
+https://mobile-appster.ru 6 6
+https://liky.co.ua 3 3
+https://www.souvenirua.com 6 6
+https://englishtopik.ru 3 3
+https://ekb.dantk.ru/goryashie-tury/goryashie-tury-v-kambodzhu/ 3 3
+https://steamoff.net 6 6
+http://burger-imperia.com 1 1
+https://soch.biographiya.com 3 3
+https://foxjuegos.com 3 3
+http://www.josephineblog.top/15-ways-to-immediately-improve-seo-ranking-of-your-website/32594486/ 1 1
+https://school.ege-essay.ru 3 3
+https://dantk.ru/goryashie-tury/goryashie-tury-v-oae/ 3 3
+https://fotoxxxru.com 3 3
+https://ukr.belreferatov.net 3 3
+https://ukrtvir.com.ua 6 6
+https://sexpornotales.com 6 6
+http://pornowarp.info 3 3
+https://sexuria.net 6 6
+https://hereyourbeauty.com 3 3
+https://filmi-v.online 3 3
+http://dantk.kz/goryashie-tury/goryashie-tury-na-kubu/goryashie-tury-v-gavanu/ 3 3
+http://dantk.kz/visa/viza-v-rumyniyu/ 3 3
+http://hundejo.com 1 1
+https://zaim-pod-zalog-krasnodar.ru 9 9
+http://romhacking.ru/news/ 3 3
+https://jav-way.site 6 6
+https://zabota-zp.com.ua 6 6
+https://goldsoch.com 3 3
+https://boeuklad.com 3 3
+https://stazh.com 9 9
+http://en.opisanie-kartin.com 3 3
+http://www.jimto.top/how-to-promote-your-website-for-free/32594486/ 1 1
+https://www.socioforum.su 6 6
+https://galeria-zdjec.com 3 3
+http://pizza-tycoon.com 1 1
+https://jjbabskoe.ru 9 9
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 1
+site+www.coresysph.com 4
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 2
+www.coresysph.com 4
+site 4
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 3
+405 2 2642
+404 401 517632
+206 11 1044952
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 43
+/wp-content/plugins/wp-formgenerator/changelog.txt 1 http://coresysph.com/wp-content/plugins/wp-formgenerator/changelog.txt
+/wp-content/plugins/wp-homepage-slideshow/readme.txt 1 http://coresysph.com/wp-content/plugins/wp-homepage-slideshow/readme.txt
+/wordpress 2 -
+/wp-content/plugins/wp-front-end-repository/js/uploadify/uploadify.css 1 http://coresysph.com/wp-content/plugins/wp-front-end-repository/js/uploadify/uploadify.css
+/server.php 1 http://coresysph.com/server.php
+/.git/HEAD 1 -
+/cms/wp-login.php 1 -
+/ss/index.php 1 -
+/404testpage4525d2fdc 31 https://sucuri.net
+/wp-content/uploads/levoslideshow/1_uploadfolder/big/ 1 http://coresysph.com/wp-content/uploads/levoslideshow/1_uploadfolder/big/
+/wp-admin/setup-config.php 1 -
+/feed 1 -
+/blog/ 3 -
+/index.php 2 http://coresysph.com/index.php
+/404javascript.js 31 https://www.google.com/url/
+/ads.txt 31 -
+/robots.txt 243 -
+/beta/wp-content/themes/AdvanceImage5/functions.php 2 -
+/blog 2 -
+/wp-content/themes/evolve/js/back-end/libraries/fileuploader/upload_handler.php 1 http://coresysph.com/wp-content/themes/evolve/js/back-end/libraries/fileuploader/upload_handler.php
+/jcnqinstall/index.php.bak 1 -
+/blog/robots.txt 1 -
+/xmlrpc.php 2 -
+/wordpress/ 1 -
+/font-awesome/fonts/fontawesome-webfont.woff2 1 http://coresysph.com/
+/post-a-job/ 1 http://coresysph.com/post-a-job/
+/components/com_sexycontactform/fileupload/index.php 1 http://coresysph.com/components/com_sexycontactform/fileupload/index.php
+/About.html 2 -
+/theme/assets/global/plugins/jquery-file-upload/server/php/ 1 http://coresysph.com/theme/assets/global/plugins/jquery-file-upload/server/php/
+/install/index.php.bak 2 -
+/administrator/index.php 3 -
+/mailto:info@coresysph.com 1 -
+/upload/server/php/ 1 http://coresysph.com/upload/server/php/
+/wp-content/plugins/woocommerce-checkout-manager/includes/pickers/jquery.ui.timepicker.css 1 -
+/sunshop/index.php 1 -
+/admin/ 3 -
+/wp-login.php 9 https://google.com
+/wp-content/plugins/reflex-gallery/admin/scripts/FileUploader/php.php 1 http://coresysph.com/wp-content/plugins/reflex-gallery/admin/scripts/FileUploader/php.php
+/wp 2 -
+/shop/index.php 1 -
+/wp-admin 4 -
+/,182.50.132.51 2 -
+/wp/ 1 -
+END_SIDER_404
+
+# URL with 403 errors - Hits - Last URL referrer
+BEGIN_SIDER_403 0
+END_SIDER_403
+
+# URL with 400 errors - Hits - Last URL referrer
+BEGIN_SIDER_400 0
+END_SIDER_400
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 224
+69.164.211.37 62 248 2525167 20190531164633
+178.137.91.20 48 48 117824 20190530205102
+178.137.82.32 45 45 26280 20190521190438
+178.137.94.8 45 45 26280 20190531114344
+178.137.95.147 45 45 95924 20190531093109
+46.118.153.33 39 39 128480 20190521045913
+178.137.162.212 39 39 26280 20190529084605
+178.137.160.9 30 30 72564 20190520055842
+178.137.163.23 24 24 0 20190521052231
+52.173.241.248 23 23 0 20190531200850
+122.52.179.229 2 21 3796481 20190506163900
+116.50.191.50 0 11 244640 
+45.56.117.173 2 21 3802914 20190509021528
+52.165.166.139 1 1 0 20190502061744
+119.94.188.238 1 20 3796481 20190530041346
+110.54.135.5 1 20 3796481 20190507234633
+203.174.15.170 0 1 4553 
+112.208.205.93 2 21 3796481 20190526043807
+180.163.220.60 1 1 6433 20190506043252
+38.111.144.149 1 4 183298 20190515074829
+188.166.114.112 1 1 6452 20190517043737
+38.99.95.252 2 2 40046 20190521125439
+180.191.143.184 1 20 3796481 20190508015528
+175.176.8.37 1 1 0 20190514025648
+34.220.17.164 1 1 6433 20190512034623
+123.126.68.132 1 20 1319592 20190513081635
+66.102.7.198 1 1 6433 20190529183344
+64.233.172.180 1 4 177458 20190515222741
+103.87.84.170 1 20 3796481 20190520002038
+34.211.3.169 1 1 6433 20190522045134
+34.209.0.226 1 1 6433 20190501003503
+35.163.0.39 1 1 6433 20190530041705
+110.54.236.119 1 22 3800840 20190504233903
+119.92.4.21 1 24 3951600 20190507003428
+157.230.248.209 1 20 3796481 20190508061218
+81.171.0.136 1 1 20004 20190502155734
+5.253.204.10 2 2 12904 20190507021740
+34.222.87.147 1 1 0 20190517023550
+82.178.4.35 1 1 20023 20190529203118
+114.108.254.146 0 1 90951 
+110.54.238.78 1 1 6433 20190513132218
+54.212.138.132 1 1 6433 20190509040502
+66.249.82.130 4 31 7312352 20190515222741
+119.94.76.158 2 21 3802914 20190502171658
+54.215.219.107 1 1 6452 20190529184558
+104.148.64.26 1 1 6452 20190504033450
+18.220.101.128 3 13 115222 20190508103930
+111.202.101.148 0 27 1764198 
+54.187.254.44 1 1 6433 20190508035247
+34.220.40.173 0 1 96080 
+54.218.45.148 1 1 6433 20190505015756
+34.215.41.97 1 1 6433 20190515022124
+118.149.236.47 1 20 3796481 20190521041300
+64.233.172.176 2 6 1002663 20190515222741
+158.46.175.202 1 1 6433 20190501234140
+18.236.141.91 1 1 0 20190527021402
+120.28.250.118 0 1 4553 
+52.12.65.208 1 1 6433 20190519023754
+46.242.32.245 2 14 349715 20190512153731
+42.236.10.117 0 5 21786 
+178.62.82.141 1 1 6452 20190524214818
+180.163.220.99 1 1 6433 20190522025303
+66.249.82.175 0 21 575066 
+54.200.144.83 1 1 6433 20190523045503
+54.212.226.101 1 1 0 20190511023335
+174.46.97.43 1 25 5355407 20190530115137
+111.125.205.27 2 40 7592962 20190522045614
+111.202.102.64 1 20 1951366 20190525094704
+202.57.35.82 1 1 6433 20190514230636
+112.201.169.240 1 20 3796481 20190504135330
+132.74.78.58 0 1 0 
+77.222.96.191 1 1 20004 20190515202629
+52.41.146.224 1 20 3796481 20190514195146
+110.54.212.74 0 1 0 
+34.254.151.177 6 6 60069 20190527005338
+98.192.96.37 1 22 3799382 20190516085714
+110.54.221.73 2 21 3802914 20190514212632
+111.202.102.67 1 20 1820294 20190519080208
+185.234.219.246 1 1 0 20190527222228
+124.104.57.255 1 20 3796481 20190525182919
+54.214.98.140 1 1 6433 20190527024106
+52.24.226.116 1 1 0 20190501022227
+35.161.204.234 1 1 6433 20190514031006
+111.125.87.36 1 20 3796481 20190508224802
+195.154.107.16 1 11 115222 20190525215231
+188.164.228.38 1 1 0 20190529160438
+34.214.233.41 1 1 6433 20190513030617
+180.163.220.68 1 5 459464 20190502032125
+66.249.82.132 3 41 11979281 20190531221135
+18.237.127.86 1 1 0 20190523021722
+10.33.135.178 1 1 6433 20190506005353
+181.214.201.141 1 1 6433 20190529171534
+18.237.163.169 1 1 6433 20190528035134
+54.213.123.252 1 1 20004 20190510024630
+149.202.62.72 1 1 20004 20190504053826
+119.93.111.139 1 20 3796481 20190524012808
+210.5.104.82 3 62 11404778 20190524004648
+66.249.82.171 0 20 359742 
+110.54.193.233 4 4 25732 20190509231803
+52.165.150.117 2 2 0 20190509030910
+50.97.77.189 1 1 0 20190525125038
+5.135.183.25 1 1 0 20190507134858
+62.210.202.81 7 14 114843 20190516043236
+66.249.82.134 3 26 10894372 20190516091557
+34.217.81.133 1 1 6433 20190517034404
+120.29.117.15 1 20 3796481 20190521053137
+106.38.241.168 0 1 27225 
+116.50.170.162 1 20 3796481 20190514232041
+65.60.27.157 2 2 40008 20190510113129
+162.209.102.118 1 1 6433 20190505225235
+34.213.226.22 1 1 6433 20190516030009
+34.222.67.20 1 1 6433 20190511045841
+34.221.246.54 1 1 0 20190521015030
+109.234.36.75 1 1 6433 20190510224855
+159.100.16.104 1 8 75979 20190526033628
+34.220.46.82 1 1 6433 20190506012757
+112.211.248.135 2 40 7592962 20190517221338
+144.36.253.158 2 22 3928045 20190528234340
+10.39.128.9 1 1 6433 20190506005354
+34.221.167.2 1 1 0 20190512050522
+66.249.82.173 0 23 690568 
+52.53.211.151 1 1 20023 20190518065626
+189.112.94.120 1 20 3796481 20190513120426
+192.0.99.155 0 1 477252 
+110.54.133.247 1 20 3796481 20190511091620
+139.180.228.78 1 1 6433 20190526192031
+130.105.207.67 1 1 6433 20190511055738
+54.186.128.177 1 1 6433 20190502022231
+103.54.84.146 0 1 90951 
+110.54.146.5 1 20 3796481 20190509014939
+178.159.37.34 1 1 20023 20190509112903
+60.191.38.77 1 1 0 20190512174748
+122.52.19.212 2 21 3796481 20190508002542
+191.101.84.252 1 1 6433 20190516004454
+199.249.230.69 1 1 0 20190509142127
+95.211.206.232 1 1 20004 20190501233919
+42.236.10.114 1 5 67152 20190502032126
+64.246.187.42 1 1 6433 20190516182540
+199.249.230.107 1 1 325 20190504072931
+192.162.101.88 1 1 0 20190507011516
+31.148.51.243 1 20 3796481 20190509012504
+54.200.32.166 1 1 6433 20190504033417
+110.54.215.103 2 21 3802914 20190509161143
+103.1.93.9 1 1 20023 20190504200308
+116.50.246.10 5 83 15223903 20190531013430
+191.101.105.97 1 1 6433 20190522210054
+112.5.248.152 1 1 6433 20190518153646
+54.213.113.59 1 1 6433 20190531044147
+49.144.94.129 2 21 3796481 20190526235433
+109.70.100.25 1 1 0 20190527022512
+64.233.172.175 0 1 43089 
+41.80.215.68 1 20 1533963 20190528010939
+64.233.172.80 0 4 2491293 
+49.147.50.144 1 1 6433 20190505025831
+13.56.158.198 4 4 13500 20190518065643
+64.233.172.173 0 3 11386 
+51.68.152.26 2 2 40008 20190504133105
+62.113.239.250 1 8 75979 20190528131523
+110.54.145.82 1 20 3796481 20190531160511
+5.188.217.78 0 1 94297 
+35.155.227.129 1 1 0 20190510043553
+52.70.146.155 1 1 6433 20190501085935
+52.12.96.55 1 1 6433 20190520035627
+54.245.44.50 1 1 0 20190522022717
+54.188.68.157 1 1 0 20190516014729
+64.233.172.171 0 4 22741 
+199.249.230.87 1 1 0 20190512182239
+202.92.140.6 0 1 548475 
+112.5.248.194 1 1 6433 20190506192450
+193.70.34.209 1 1 0 20190514110425
+173.211.111.238 1 1 6433 20190509033817
+54.191.78.59 1 1 6433 20190521034745
+64.233.172.82 1 3 645859 20190525150010
+119.94.189.168 2 40 7520787 20190508045542
+175.158.218.246 1 1 6433 20190512011648
+34.221.234.154 1 1 6433 20190525032328
+173.193.191.200 1 1 6433 20190531064953
+119.94.28.139 5 39 7465872 20190517234728
+162.209.99.49 1 1 6433 20190502064716
+50.112.191.137 1 1 0 20190520010844
+49.147.70.52 1 20 3796481 20190510024320
+180.163.220.47 1 1 6433 20190517022827
+37.115.113.78 6 6 0 20190530173331
+47.112.123.94 2 21 866992 20190531064705
+142.4.218.236 1 1 20023 20190521044036
+112.199.86.146 1 20 3796462 20190531013701
+119.94.23.85 1 20 3796481 20190515225647
+34.208.54.12 1 1 0 20190524032452
+180.163.220.3 0 2 66855 
+180.163.220.4 0 3 103209 
+54.244.153.25 1 1 0 20190502015323
+122.55.39.34 2 21 3802914 20190523232606
+64.233.172.238 0 2 44083 
+36.110.147.92 1 20 1927460 20190501075411
+18.237.185.125 1 1 0 20190518032728
+92.53.44.24 0 1 0 
+64.233.172.84 0 5 582113 
+194.44.61.241 1 1 20028 20190525205630
+103.240.120.135 1 20 3796481 20190520212450
+111.93.0.114 1 20 2690481 20190501081342
+119.95.245.58 1 20 3796481 20190520194023
+64.233.172.236 0 2 8625 
+3.0.163.208 2 2 0 20190507194409
+50.97.77.188 1 1 0 20190527203253
+111.125.92.178 1 9 156324 20190507004254
+110.5.69.208 1 20 795022 20190508002735
+54.185.14.69 1 1 0 20190518023813
+91.219.238.141 1 1 325 20190503055909
+42.236.10.125 0 2 4367 
+64.233.172.178 0 4 2552010 
+23.129.64.154 1 1 325 20190503072825
+112.211.231.5 1 20 3796481 20190511060910
+179.210.41.212 1 1 0 20190502173316
+130.105.31.2 1 1 6433 20190516091557
+64.233.172.234 0 4 24508 
+18.237.155.89 1 1 6433 20190510031650
+110.54.192.43 1 20 3796481 20190516011948
+27.59.161.36 1 20 3796481 20190519151408
+203.87.133.164 0 1 548475 
+13.52.97.80 1 11 115222 20190518065640
+52.165.148.51 20 20 0 20190531233623
+187.32.23.241 1 1 0 20190508103456
+54.212.95.13 1 1 6433 20190526043549
+157.185.130.195 2 40 7592922 20190515185624
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 31
+20190501 9 53 4738701 8
+20190502 12 58 4644627 10
+20190503 4 11 559359 3
+20190504 13 60 7792046 11
+20190505 6 31 4140737 5
+20190506 11 41 4247214 9
+20190507 10 78 8241507 8
+20190508 17 185 27751259 13
+20190509 17 99 15352439 13
+20190510 8 34 4026892 7
+20190511 8 56 7874356 7
+20190512 11 49 4791871 9
+20190513 8 72 9326705 7
+20190514 26 127 19353098 13
+20190515 34 142 19644905 15
+20190516 39 131 15718597 16
+20190517 28 90 11569248 13
+20190518 29 45 236635 12
+20190519 21 66 5897380 9
+20190520 26 89 11497356 11
+20190521 30 94 11551329 13
+20190522 20 67 7837936 11
+20190523 43 89 7738396 12
+20190524 17 61 7689631 10
+20190525 41 114 9841928 23
+20190526 49 123 12490338 28
+20190527 20 27 197218 12
+20190528 38 92 5950413 12
+20190529 20 47 3921638 11
+20190530 23 74 9267969 8
+20190531 28 131 16417907 18
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 6
+2mn-5mn 1
+30mn-1h 1
+0s-30s 346
+5mn-15mn 5
+15mn-30mn 2
+30s-2mn 2
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 2
+/ 664 2518223 357 355
+/font-awesome/fonts/fontawesome-webfont.ttf 2 178286 0 2
+END_SIDER

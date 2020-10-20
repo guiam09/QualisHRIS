@@ -1,0 +1,48 @@
+ALTER TABLE `tbl_leaveGroup` 
+CHANGE COLUMN `leaveGroup_notes` `leaveGroup_notes` VARCHAR(255) NULL ;
+
+ALTER TABLE `docker`.`tbl_weeklyutilization` 
+CHANGE COLUMN `activityOthers_ID` `activityOthers_ID` INT(11) NULL ,
+CHANGE COLUMN `activityAdmin_ID` `activityAdmin_ID` INT(11) NULL ,
+CHANGE COLUMN `weekly_description` `weekly_description` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_approval` `weekly_approval` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_saturdayComment` `weekly_saturdayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_sundayComment` `weekly_sundayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_mondayComment` `weekly_mondayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_tuesdayComment` `weekly_tuesdayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_wednesdayComment` `weekly_wednesdayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_thursdayComment` `weekly_thursdayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_fridayComment` `weekly_fridayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_total` `weekly_fridayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_overallTotal` `weekly_fridayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_timeSubmitted` `weekly_fridayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_dateProcessed` `weekly_fridayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_dateSubmitted` `weekly_fridayComment` VARCHAR(255) NULL ,
+CHANGE COLUMN `weekly_timesheetCode` `weekly_timesheetCode` VARCHAR(255) NULL ;
+
+CREATE TABLE tbl_weeklyutilization_history LIKE tbl_weeklyutilization; 
+
+ALTER TABLE `tbl_weeklyutilization_history` 
+ADD COLUMN `is_shown` TINYINT(1) NULL AFTER `is_latest`;
+
+ALTER TABLE `tbl_weeklyutilization` 
+ADD COLUMN `is_shown` TINYINT(1) NULL AFTER `is_latest`;
+
+ALTER TABLE `docker`.`tbl_attendance` 
+CHANGE COLUMN `attendance_timeOutDate` `attendance_timeOutDate` DATE NULL ;
+
+ALTER TABLE `docker`.`tbl_attendance` 
+CHANGE COLUMN `hourWorked` `hourWorked` DOUBLE NULL ;
+
+ALTER TABLE `docker`.`tbl_attendance` 
+CHANGE COLUMN `remarks` `remarks` DOUBLE NULL ;
+
+
+ALTER TABLE `docker`.`tbl_attendance` 
+CHANGE COLUMN `attendance_timesModified` `attendance_timesModified` VARCHAR(255) NULL ;
+
+ALTER TABLE `docker`.`tbl_attendance` 
+CHANGE COLUMN `attendance_voided` `attendance_voided` VARCHAR(255) NULL ;
+
+ALTER TABLE `docker`.`tbl_attendance` 
+CHANGE COLUMN `attendance_timesModified` `attendance_timesModified` INT(11) NULL ;

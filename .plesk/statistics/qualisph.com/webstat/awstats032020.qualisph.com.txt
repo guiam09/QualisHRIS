@@ -1,0 +1,546 @@
+AWSTATS DATA FILE 7.7 (build 20180105)
+# If you remove this file, all statistics for date 202003 will be lost/reset.
+# Last config file used to build this data file was C:\Program Files (x86)\Parallels\Plesk\Additional\AWStats\wwwroot\cgi-bin/awstats.qualisph.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 30
+POS_GENERAL 2126                
+POS_TIME 2801                
+POS_VISITOR 10473               
+POS_DAY 14239               
+POS_DOMAIN 3529                
+POS_LOGIN 3994                
+POS_ROBOT 4149                
+POS_WORMS 4797                
+POS_EMAILSENDER 4928                
+POS_EMAILRECEIVER 5071                
+POS_SESSION 14734               
+POS_SIDER 14931               
+POS_FILETYPES 5206                
+POS_DOWNLOADS 5420                
+POS_OS 5468                
+POS_BROWSER 5757                
+POS_SCREENSIZE 6971                
+POS_UNKNOWNREFERER 7045                
+POS_UNKNOWNREFERERBROWSER 7386                
+POS_ORIGIN 7630                
+POS_SEREFERRALS 7771                
+POS_PAGEREFS 7958                
+POS_SEARCHWORDS 8227                
+POS_KEYWORDS 8379                
+POS_MISC 2465                
+POS_ERRORS 8438                
+POS_CLUSTER 3850                
+POS_SIDER_404 8833                
+POS_SIDER_403 8614                
+POS_SIDER_400 8751                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20200401000230 12 2544 47926647027
+FirstTime 20200312084425
+LastTime 20200331170514
+LastUpdate 20200401162530 12 0 11 0 0
+TotalVisits 114                 
+TotalUnique 96                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 96                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+DirectorSupport 0 0 0
+JavaEnabled 0 0 0
+AddToFavourites 0 0 0
+PDFSupport 0 0 0
+TotalMisc 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+RealPlayerSupport 0 0 0
+FlashSupport 0 0 0
+JavascriptDisabled 0 0 0
+QuickTimeSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 10 10 183373 5 15 39108
+1 8 8 174108 6 12 70039
+2 6 6 105422 10 16 81602
+3 9 9 149025 38 44 1036869
+4 6 6 80282 5 11 103432
+5 5 5 87054 0 3 2908
+6 1 1 9184 5 6 80759
+7 5 5 27609 5 6 21171
+8 21 248 5462687 9 30 492003
+9 36 326 10093066 6 30 54352
+10 22 247 5055218 41 90 516861
+11 2 2 9184 28 36 73489
+12 3 3 77546 18 20 44369
+13 2 2 68724 46 53 111949
+14 6 6 71141 6 10 57456
+15 10 10 124443 21 29 112214
+16 1 1 34343 3 8 24127
+17 8 8 105460 8 17 72955
+18 2 2 43527 3 4 28987
+19 4 4 18387 5 11 20759
+20 3 48 511410 5 13 46781
+21 2 2 43527 4 7 47851
+22 11 145 1027913 35 68 148872
+23 4 4 18368 0 1 0
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 18
+us 76 76 1291624
+ph 67 851 19692531
+unknown 7 143 1778554
+gb 7 7 45939
+de 6 6 155740
+cn 4 4 43546
+ru 4 4 112232
+fr 3 3 103101
+ie 3 3 103086
+ca 2 2 34687
+sg 1 1 34343
+sc 1 1 34362
+jp 1 1 9184
+hk 1 2 80482
+it 1 1 34000
+es 1 1 9184
+nl 1 1 9203
+se 1 1 9203
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 13
+Googlebot/ 26 238784 20200329205413 0
+bingbot/ 20 137760 20200331172738 0
+AhrefsBot/ 15 137760 20200331102018 0
+facebookexternalhit/ 14 552969 20200312104602 0
+no_user_agent 11 199640 20200327035708 0
+^Mozilla$ 8 137372 20200329225142 0
+MJ12bot/ 3 27552 20200328211847 0
+(firefox/)([0-9]\.|[0-1][0]\.) 3 52749 20200318170758 0
+SemrushBot/ 2 18406 20200327032332 0
+YandexBot/ 2 18368 20200323115914 0
+bot[\s_+:,\.\;\/\\-] 1 9184 20200324100604 0
+ips\-agent 1 9184 20200318141908 0
+Applebot/ 2 18368 20200319110628 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 8
+woff2 4 185740 0 0
+png 20 945113 0 0
+css 306 10369056 0 0
+html 154 2527702 0 0
+map 8 1218000 0 0
+php 25 408595 0 0
+js 590 7923463 0 0
+woff 1 3332 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 18
+winvista 1 1
+winlong 1 1
+linux 15 15
+macosx10 6 6
+win2003 1 1
+macosx 3 3
+macosx8 1 1
+win7 8 7
+macosx7 1 1
+win8 6 6
+winxp 5 5
+win8.1 7 7
+ios_iphone 248 24
+Unknown 27 27
+macosx11 4 4
+win10 766 70
+macosx9 2 2
+linuxandroid 6 6
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 57
+chrome72.0.3626.119 3 3
+Unknown 23 23
+chrome75.0.3770.143 2 2
+firefox65.0 2 2
+chrome80.0.3987.132 190 12
+msie11.0 49 3
+chrome50.0.2661.102 4 4
+edge18 501 29
+chrome79.0.3945.130 3 3
+chrome68.0.3423.2 1 1
+chrome77.0.3835.0 1 1
+firefox57.0 3 3
+chrome45.0.2454.101 4 4
+firefox68.0 1 1
+safari13.0.5 2 2
+safari7.0 1 1
+chrome35.0.1916.153 1 1
+chrome68.0.3440.84 1 1
+chrome35.0.1916.47 2 2
+chrome41.0.2225.0 1 1
+chrome34.0.1847.116 2 2
+chrome55.0.2883.87 1 1
+chrome58.0.3029.110 1 1
+chrome80.0.3987.116 1 1
+chrome35.0.1916.114 1 1
+safari11.0 1 1
+opera55.0.2994.44 1 1
+chrome10.0.648.134 1 1
+chrome38.0.2125.104 1 1
+chrome80.0.3987.149 12 12
+firefox61.0 1 1
+chrome34.0.1847.131 1 1
+chrome26.0.1410.65 1 1
+chrome69.0.3497.100 1 1
+firefox53.0 2 2
+chrome60.0.3112.113 1 1
+iphone 48 3
+msie7.0 1 1
+chrome41.0.2227.0 1 1
+safari 195 16
+mozilla 5 5
+firefox29.0 1 1
+safari6.1.5 1 1
+chrome64.0.3282.167 1 1
+chrome72.0.3626.121 1 1
+chrome67.0.3396.87 3 3
+chrome79.0.3945.88 5 5
+chrome70.0.3538.77 4 4
+chrome73.0.3683.90 1 1
+safari12.1.2 1 1
+chrome63.0.3239.132 6 6
+netscape5.0 5 4
+safari10.1.2 1 1
+chrome40.0.2214.93 1 1
+chrome71.0.3578.98 1 1
+chrome60.0.3112.50 1 1
+firefox73.0 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 5
+PleskBot 20200328003327
+CATExplorador/1.0beta_(sistemes_at_domini_dot_cat;_http://domini.cat/catexplorador.html) 20200326215419
+Mozilla/5.0_zgrab/0.x 20200316062525
+Go-http-client/1.1 20200331040850
+Mozilla/5.0_(compatible;_evc-batch/2.0) 20200320184649
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 3
+Go-http-client/1.1 20200331040850
+PleskBot 20200328003327
+CATExplorador/1.0beta_(sistemes_at_domini_dot_cat;_http://domini.cat/catexplorador.html) 20200326215419
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 150 220
+From1 0 0
+From2 17 17
+From3 1 136
+From4 19 735
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+www_google_com 16 16
+www_google_com_ph 1 1
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 2
+http://localhost/foo"><script+src=//xss.mx></script><x=" 1 1
+http://182.50.132.51/plesk-site-preview/qualisph.com/ 0 135
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 8
+403 12 17076
+302 65 943502
+206 6 282128
+400 8 30152
+416 3 1059
+404 293 450690
+406 2 3120
+405 2 3090
+END_ERRORS
+
+# URL with 403 errors - Hits - Last URL referrer
+BEGIN_SIDER_403 1
+/images/ 12 http://qualisph.com/admin/add_employee.php
+END_SIDER_403
+
+# URL with 400 errors - Hits - Last URL referrer
+BEGIN_SIDER_400 0
+END_SIDER_400
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 52
+/rest/.env 1 -
+/system/.env 1 -
+/old/license.txt 1 -
+/apple-touch-icon.png 4 -
+/development/.env 1 -
+/config/.env 1 -
+/master/.env 1 -
+/project/.env 1 -
+/backend/.env 1 -
+/global/vendor/waves/waves.css 23 http://qualisph.com/index.php
+/cp/.env 1 -
+/new/license.txt 1 -
+/app/.env 1 -
+/assets/data/countries.json 9 http://qualisph.com/admin/add_employee.php
+/dev/.env 1 -
+/admin/.env 1 -
+/frontend/.env 1 -
+/includes/index.php 2 http://qualisph.com/admin/add_employee.php
+/shared/.env 1 -
+/application/.env 1 -
+/laravel-artisan/.env 1 -
+/.assets/images/apple-touch-icon.png 5 -
+/search/.env 1 -
+/login/.env 1 -
+/vue/.env 1 -
+/framework/.env 1 -
+/engine/.env 1 -
+/back/.env 1 -
+/local/.env 1 -
+/protected/.env 1 -
+/cli/.env 1 -
+/document/.env 1 -
+/global/js/Plugin/dropify.min.js 13 http://qualisph.com/admin/add_employee.php
+/laravel/.env 1 -
+/docker/.env 1 -
+/private/.env 1 -
+/web/.env 1 -
+/vod_installer/.env 1 -
+/site/.env 1 -
+/admin/sweetalert2.all.min.js 13 http://qualisph.com/admin/add_employee.php
+/apple-touch-icon-precomposed.png 4 -
+/server/.env 1 -
+/auth/.env 1 -
+/src/.env 1 -
+/personal/.env 1 -
+/assets/data/cities.json 13 http://qualisph.com/admin/add_employee.php
+/core/.env 1 -
+/global/vendor/waves/waves.js 33 http://qualisph.com/index.php
+/apps/.env 1 -
+/dependencies/.env 1 -
+/api/.env 1 -
+/deployment/.env 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 96
+112.205.177.248 26 428 7420166 20200319054729
+112.201.77.145 24 406 12125421 20200312104409
+209.58.129.99 17 17 398838 20200315122330
+127.0.0.1 7 143 1778554 20200312094704
+40.76.79.103 4 4 137372 20200317015142
+13.52.238.46 4 4 19002 20200317155152
+51.77.249.202 3 3 9184 20200329025359
+154.51.131.142 3 3 27552 20200329183815
+199.244.88.131 2 2 0 20200321173130
+110.54.194.92 2 2 9184 20200320193628
+202.79.203.99 1 1 34343 20200326163718
+93.189.89.148 1 1 9184 20200326215419
+52.53.240.234 1 1 34362 20200317155149
+209.208.65.122 1 1 0 20200324193751
+38.99.62.94 1 1 34343 20200320184649
+84.17.51.123 1 1 34000 20200315123150
+168.81.92.58 1 1 34362 20200319035135
+35.164.218.47 1 1 9184 20200331040850
+100.20.122.211 1 1 0 20200318085234
+157.245.171.105 1 1 34343 20200315083640
+138.229.96.37 1 1 34362 20200319035137
+54.191.251.139 1 1 9184 20200330035947
+109.169.211.165 1 1 34362 20200323042947
+8.9.90.9 1 1 9184 20200317224954
+198.108.66.176 1 1 9184 20200316062525
+69.171.251.33 1 1 9184 20200320171820
+52.209.151.242 1 1 34362 20200314002741
+95.216.15.49 1 1 34343 20200315092346
+195.154.207.112 1 1 34367 20200321101248
+35.230.58.15 1 1 9184 20200317151252
+138.197.170.220 1 1 325 20200321225050
+73.110.153.212 1 1 9184 20200331091347
+178.62.82.141 1 1 9203 20200318101325
+180.190.55.169 1 1 9184 20200324004410
+112.206.201.178 1 1 9184 20200321015457
+167.99.102.248 1 1 34343 20200316020002
+130.105.205.155 1 1 9184 20200325221555
+168.91.42.34 1 1 34362 20200316132412
+34.244.106.69 1 1 34362 20200328003327
+69.171.251.40 1 1 9184 20200326053456
+120.29.77.144 1 1 9184 20200324093647
+35.160.203.123 1 1 9203 20200325141512
+85.10.207.246 2 2 68686 20200327052843
+89.163.242.103 1 1 9184 20200327011532
+165.227.39.250 1 1 325 20200321225049
+112.201.73.160 1 1 9184 20200317022839
+175.176.1.89 1 1 9184 20200325044831
+34.254.66.86 1 1 34362 20200321001606
+175.176.0.29 1 1 9184 20200325023925
+185.183.96.122 1 1 9203 20200316035706
+104.168.182.234 1 1 9184 20200325151808
+173.252.95.32 1 1 9184 20200312125820
+104.199.46.6 1 1 34362 20200315091149
+52.114.6.38 1 2 80482 20200312220201
+173.252.127.37 1 1 9184 20200330005748
+173.214.194.3 1 1 34362 20200317175529
+62.210.80.93 2 2 68734 20200323003150
+98.247.30.21 1 1 9184 20200319094037
+120.29.75.151 1 1 9184 20200320012907
+152.32.105.216 2 2 9184 20200317001330
+192.71.126.175 1 1 9203 20200330191919
+184.94.240.93 2 2 68724 20200316031456
+34.209.91.158 1 1 0 20200313084747
+68.183.75.23 1 1 9184 20200327054258
+207.241.230.164 1 1 298 20200315084915
+111.7.100.20 1 1 0 20200330234936
+95.216.0.185 1 1 9184 20200316170321
+103.196.139.71 2 2 18368 20200317001334
+110.54.236.145 1 1 9184 20200327033910
+174.232.131.215 1 1 9184 20200331170514
+44.234.39.65 1 1 0 20200323081055
+13.56.229.92 1 1 9184 20200317155150
+69.164.206.42 1 1 9184 20200318095913
+34.222.238.160 1 1 0 20200324074313
+173.252.95.26 1 1 9184 20200330035858
+198.108.66.112 1 1 9184 20200316033805
+111.7.100.22 2 2 9184 20200330235010
+130.105.143.204 2 2 18368 20200330143231
+161.69.99.11 1 1 9203 20200316140620
+54.88.41.70 1 1 9184 20200314020559
+162.213.37.160 1 1 0 20200326201432
+112.198.75.52 1 1 9184 20200325005211
+150.249.214.253 1 1 9184 20200315042629
+173.214.194.8 1 1 34362 20200317175526
+23.254.36.13 1 1 34362 20200319104325
+5.188.84.125 1 1 9184 20200322011320
+161.35.42.226 1 1 0 20200331032142
+184.94.240.92 2 2 68724 20200315102217
+38.111.144.149 1 1 34343 20200315022829
+104.238.217.123 1 1 34343 20200315211741
+193.30.121.226 1 1 34343 20200315221528
+188.143.169.29 2 2 68686 20200330010147
+66.220.149.22 1 1 9184 20200316113656
+180.190.47.73 1 1 9184 20200327045751
+198.108.66.240 1 1 9184 20200315173014
+173.214.194.46 1 1 34362 20200316132414
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 20
+20200312 58 979 21413807 9
+20200313 1 1 0 1
+20200314 3 3 43546 3
+20200315 31 31 795010 15
+20200316 15 15 313968 15
+20200317 15 15 211535 11
+20200318 3 3 18387 3
+20200319 5 5 112270 5
+20200320 5 5 61895 4
+20200321 6 6 78563 6
+20200322 3 3 43551 3
+20200323 4 4 77913 4
+20200324 4 4 18368 4
+20200325 6 6 55123 6
+20200326 4 4 52711 4
+20200327 5 5 71079 5
+20200328 2 2 34362 2
+20200329 2 2 18368 2
+20200330 11 11 132993 8
+20200331 4 4 27552 4
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 6
+15mn-30mn 3
+30s-2mn 2
+0s-30s 105
+30mn-1h 1
+1h+ 2
+5mn-15mn 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 10
+/ 153 2493359 111 109
+/index.php 16 91789 2 5
+/global/vendor/bootstrap/bootstrap.js.map 4 765932 0 0
+/global/vendor/popper-js/umd/popper.min.js.map 4 452068 0 0
+/admin/timesheet_application.php 3 123953 0 0
+/admin/attendance.php 2 73185 0 0
+/admin/index.php 2 43299 1 0
+/admin/profile.php 1 64539 0 0
+/admin/add_employee.php 1 11830 0 0
+/default.html 1 34343 0 0
+END_SIDER

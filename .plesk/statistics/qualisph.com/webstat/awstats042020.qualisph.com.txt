@@ -1,0 +1,613 @@
+AWSTATS DATA FILE 7.7 (build 20180105)
+# If you remove this file, all statistics for date 202004 will be lost/reset.
+# Last config file used to build this data file was C:\Program Files (x86)\Parallels\Plesk\Additional\AWStats\wwwroot\cgi-bin/awstats.qualisph.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 30
+POS_GENERAL 2126                
+POS_TIME 2788                
+POS_VISITOR 12424               
+POS_DAY 16668               
+POS_DOMAIN 3528                
+POS_LOGIN 3985                
+POS_ROBOT 4140                
+POS_WORMS 4870                
+POS_EMAILSENDER 5001                
+POS_EMAILRECEIVER 5144                
+POS_SESSION 17352               
+POS_SIDER 17537               
+POS_FILETYPES 5279                
+POS_DOWNLOADS 5470                
+POS_OS 5518                
+POS_BROWSER 5772                
+POS_SCREENSIZE 6989                
+POS_UNKNOWNREFERER 7063                
+POS_UNKNOWNREFERERBROWSER 7241                
+POS_ORIGIN 7414                
+POS_SEREFERRALS 7553                
+POS_PAGEREFS 7733                
+POS_SEARCHWORDS 7947                
+POS_KEYWORDS 8099                
+POS_MISC 2452                
+POS_ERRORS 8158                
+POS_CLUSTER 3841                
+POS_SIDER_403 12033               
+POS_SIDER_400 12115               
+POS_SIDER_404 8310                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20200501000342 29 6224 57677594521
+FirstTime 0
+LastTime 20200430114654
+LastUpdate 20200502175004 29 0 28 0 0
+TotalVisits 118                 
+TotalUnique 109                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 109                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavascriptDisabled 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+TotalMisc 0 0 0
+PDFSupport 0 0 0
+JavaEnabled 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+AddToFavourites 0 0 0
+RealPlayerSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 6 6 171810 3 9 61397
+1 7 7 96238 16 28 134255
+2 21 21 213321 7 11 44407
+3 16 16 286666 10 22 91800
+4 5 5 71117 5 12 104905
+5 6 6 146556 26 41 277894
+6 2 2 18368 0 3 2870
+7 30 209 2082366 68 184 310711
+8 12 12 254730 24 47 256506
+9 13 13 185742 6 17 71997
+10 5 5 9853 367 374 9762954
+11 3 3 18368 108 116 2984277
+12 7 7 130600 14 30 90047
+13 5 5 96257 8 17 29293
+14 4 4 61933 19 30 299476
+15 4 4 36736 5 9 24108
+16 8 8 105460 4 11 43968
+17 3 3 27571 2 8 25638
+18 2 2 18387 7 15 66679
+19 3 3 43546 4 9 34803
+20 5 5 121454 14 21 67540
+21 7 7 139803 8 18 57495
+22 5 5 171715 21 36 115670
+23 9 9 164943 14 27 131309
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 18
+us 56 56 747692
+ph 43 222 2229669
+in 22 22 341500
+fr 17 17 583850
+gb 12 12 107815
+unknown 7 7 96266
+ru 5 5 121416
+ca 5 5 78539
+se 5 5 46015
+au 4 4 87054
+sc 2 2 68724
+kr 1 1 0
+de 2 2 18368
+cn 1 1 34362
+jp 1 1 9184
+ch 1 1 0
+ie 3 3 103086
+gr 1 1 0
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 15
+AhrefsBot/ 22 202048 20200430224757 0
+python 18 181287 20200424214038 0
+Googlebot/ 18 165312 20200430222955 0
+bingbot/ 11 27552 20200428075224 0
+bot[\s_+:,\.\;\/\\-] 8 274744 20200429033803 0
+SemrushBot/ 6 55218 20200428105555 0
+no_user_agent 5 137651 20200430014516 0
+MJ12bot/ 5 45920 20200425201507 0
+DuckDuckGo\-Favicons\-Bot/ 2 18368 20200415213233 0
+YandexBot/ 2 18368 20200423002356 0
+(firefox/)([0-9]\.|[0-1][0]\.) 1 9184 20200407012550 0
+panscient 1 9184 20200416114303 0
+aiHitBot/ 1 34343 20200410021643 0
+Applebot/ 2 18368 20200426163707 0
+facebookexternalhit/ 2 144348 20200401082934 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 7
+woff2 2 92870 0 0
+css 55 216408 0 0
+png 2 144348 0 0
+php 40 565448 0 0
+jpg 1 135193 0 0
+html 148 2560834 0 0
+js 119 958439 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 15
+macosx8 1 1
+win7 33 33
+macosx11 2 2
+macosx10 21 21
+Unknown 11 11
+win10 253 74
+linux 6 6
+linuxandroid 9 9
+macosx12 1 1
+win8 10 10
+winlong 1 1
+winxp 6 6
+macosx 9 9
+win8.1 2 2
+ios_iphone 2 2
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 56
+chrome26.0.1410.65 1 1
+firefox45.62.15 1 1
+chrome41.0.2228.0 1 1
+opera55.0.2955.0 1 1
+chrome58.0.3029.110 1 1
+chrome40.0.2214.93 1 1
+msie10.0 1 1
+chrome67.0.3396.79 1 1
+chrome81.0.4044.122 210 31
+chrome72.0.3626.121 1 1
+chrome80.0.3987.132 2 2
+chrome80.0.3987.99 1 1
+msie6.0 1 1
+chrome79.0 2 2
+safari 1 1
+firefox75.0 3 3
+chrome77.0.3835.0 1 1
+chrome74.0.3729.131 1 1
+opera52.0.2871.40 1 1
+opera67.0.3575.105 1 1
+firefox40.0 1 1
+chrome63.0.3239.132 9 9
+chrome67.0.3396.87 7 7
+chrome72.0.3626.105 1 1
+chrome60.0.3112.107 1 1
+chrome34.0.1847.131 1 1
+chrome36.0.1985.67 2 2
+firefox54.0 2 2
+opera36.0.2130.32 16 16
+chrome50.0.2661.102 1 1
+chrome75.0.3770.142 3 3
+mozilla 2 2
+firefox71.0 1 1
+firefox72.0 1 1
+chrome55.0.2883.87 4 4
+chrome41.0.2226.0 1 1
+safari13.0.5 1 1
+chrome80.0.3987.163 5 5
+chrome79.0.3945.130 4 4
+chrome52.0.2743.116 6 6
+chrome80.0.3987.162 1 1
+bonecho 1 1
+chrome66.0.3359.170 12 12
+chrome45.0.2454.101 17 17
+chrome80.0.3987.87 1 1
+chrome66.0.3359.117 1 1
+chrome80.0.3987.149 9 9
+Unknown 11 11
+chrome80.0.3987.122 2 2
+safari11.0 1 1
+safari11.1 1 1
+chrome40.0.2214.115 1 1
+chrome39.0.2171.95 2 2
+firefox50.0 1 1
+chrome81.0.4044.111 2 2
+firefox59.0 2 2
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 3
+PleskBot 20200424203848
+myseosnapshot/1.0 20200420095608
+Go-http-client/1.1 20200426210935
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 3
+Go-http-client/1.1 20200426210935
+myseosnapshot/1.0 20200420095608
+PleskBot 20200424203848
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 103 103
+From1 0 0
+From2 26 26
+From3 1 1
+From4 58 237
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+duckduckgo 1 1
+www_google_com 25 25
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 1
+https://avxdl.site/deadmau5-random-album-title-967194-torrent 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 6
+206 2 68803
+302 449 12967180
+404 498 708749
+301 4 1596
+403 1 1423
+416 1 353
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 108
+/apple-touch-icon.png 4 -
+/wp-admin/admin-ajax.php 1 -
+/tech/ 1 -
+/sito/wp-includes/wlwmanifest.xml 1 -
+/wp/ 9 -
+/wp/license.txt 1 -
+/panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/landing/ 1 -
+/dev/license.txt 1 -
+/wp-login.php 13 -
+/blogs/ 1 -
+/global/vendor/waves/waves.css 3 http://qualisph.com/index.php
+/manifest.webmanifest 1 -
+/cms/wp-includes/wlwmanifest.xml 1 -
+/tmp/license.txt 1 -
+/xmlrpc.php 10 -
+/wp2/wp-includes/wlwmanifest.xml 1 -
+/test/wp-includes/wlwmanifest.xml 1 -
+/1/license.txt 1 -
+/temp/ 1 -
+/2015/license.txt 1 -
+/old/ 1 -
+/wp1/wp-includes/wlwmanifest.xml 1 -
+/apple-touch-icon-precomposed.png 4 -
+/wp-config.php~ 1 -
+/blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/blog/administrator/index.php 8 -
+/lib/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/ads.txt 6 -
+/inf/license.txt 1 -
+/system/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/12/license.txt 1 -
+/bl/license.txt 1 -
+/robots.txt 92 -
+/ht.access 1 -
+/assets/data/countries.json 20 http://qualisph.com/admin/timesheet_application.php
+/lib/phpunit/phpunit/Util/PHP/eval-stdin.php 1 -
+/app-ads.txt 1 -
+/new/ 1 -
+/wp-admin/ 4 http://qualisph.com/wp-login.php
+/2019/license.txt 1 -
+/wordpress/ 9 -
+/admin/admin.php 2 -
+/blog/robots.txt 16 -
+/admin.php 6 -
+/modules/autoupgrade/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/site/wp-includes/wlwmanifest.xml 1 -
+/blogs/license.txt 1 -
+/phpMyAdmin/ 1 -
+/blog/wp-includes/wlwmanifest.xml 1 -
+/wp/wp-includes/wlwmanifest.xml 1 -
+/phpmyadmin/ 1 -
+/laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/new1/license.txt 1 -
+/2017/license.txt 1 -
+/website/wp-includes/wlwmanifest.xml 1 -
+/sites/all/libraries/mailchimp/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/administrator/index.php 12 http://qualisph.com/administrator/
+/blog/ 10 http://qualisph.com/
+/vendor/phpunit/phpunit/phpunit.xsd 3 -
+/modules/gamification/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/sitemap.xml 1 -
+/blog/license.txt 1 -
+/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 3 -
+/2020/license.txt 1 -
+/sw.js 1 -
+/license.txt 1 -
+/web/wp-includes/wlwmanifest.xml 1 -
+/desktopmodules/Admin/RadEditorProvider/DialogHandler.aspx 1 -
+/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/.env 2 -
+/backup/license.txt 1 -
+/modules/ps_facetedsearch/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/www/license.txt 1 -
+/news/wp-includes/wlwmanifest.xml 1 -
+/blog/xmlrpc.php 1 -
+/old/license.txt 1 -
+/info/license.txt 1 -
+/2/license.txt 1 -
+/global/js/Plugin/dropify.min.js 37 http://qualisph.com/admin/timesheet_application.php
+/wordpress/license.txt 1 -
+/wp-includes/wlwmanifest.xml 1 -
+/administrator/ 6 -
+/global/vendor/waves/waves.js 40 http://qualisph.com/admin/timesheet_application.php
+/test1/license.txt 1 -
+/joomla/administrator/index.php 8 -
+/2018/license.txt 1 -
+/2016/license.txt 1 -
+/adm/ 2 -
+/back/license.txt 1 -
+/b/license.txt 1 -
+/theblog/license.txt 1 -
+/site/license.txt 1 -
+/mailto:info@qualisph.com 1 -
+/w/license.txt 1 -
+/pma/ 1 -
+/2014/license.txt 1 -
+/shop/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/wp-content/plugins/jekyll-exporter/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 1 -
+/humans.txt 4 -
+/joomla/robots.txt 8 -
+/admin/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 2 -
+/wordpress/wp-includes/wlwmanifest.xml 1 -
+/assets/data/cities.json 40 http://qualisph.com/admin/timesheet_application.php
+/new/license.txt 1 -
+/admin/sweetalert2.all.min.js 36 http://qualisph.com/admin/timesheet_application.php
+/test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 2 -
+END_SIDER_404
+
+# URL with 403 errors - Hits - Last URL referrer
+BEGIN_SIDER_403 0
+END_SIDER_403
+
+# URL with 400 errors - Hits - Last URL referrer
+BEGIN_SIDER_400 0
+END_SIDER_400
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 109
+180.190.50.216 29 208 2085118 20200429091851
+5.39.15.168 16 16 549488 20200416133705
+103.221.234.193 12 12 149024 20200418030338
+45.94.235.36 6 6 61923 20200428021447
+209.99.135.147 6 6 61923 20200408023946
+154.51.131.142 4 4 36736 20200425030100
+3.133.141.233 3 3 9184 20200405234241
+112.205.221.229 2 2 18368 20200415231828
+23.108.254.204 2 2 68724 20200408090824
+206.41.184.142 2 2 68724 20200410005339
+34.239.207.178 1 1 9203 20200401181409
+64.246.165.160 1 1 9184 20200402113052
+192.99.246.34 1 1 9184 20200428025930
+165.22.119.165 1 1 34343 20200415030301
+91.132.138.35 1 1 34343 20200406080629
+24.255.65.11 1 1 9184 20200415153733
+54.183.4.118 1 1 298 20200424035554
+106.198.33.123 1 1 9184 20200402014136
+167.172.32.146 1 1 0 20200404001727
+178.128.33.162 1 1 0 20200403104624
+3.81.72.78 1 1 34343 20200405033028
+52.64.156.81 1 1 34343 20200402033739
+185.13.96.91 1 1 9203 20200403171705
+98.115.219.29 1 1 9184 20200419065711
+178.62.105.102 1 1 0 20200404081132
+37.230.128.130 1 1 9184 20200420164201
+178.22.71.246 1 1 0 20200404122857
+49.146.222.206 1 1 34343 20200408084659
+163.172.182.111 1 1 9184 20200409180326
+162.213.37.43 1 1 0 20200404015631
+188.68.0.225 1 1 34343 20200416223517
+23.254.36.10 1 1 34362 20200422145553
+73.190.130.212 1 1 9184 20200401094826
+3.249.18.246 1 1 34362 20200418002808
+114.108.219.23 1 1 9184 20200421090135
+192.71.38.71 1 1 9203 20200426210935
+112.201.160.32 1 1 9184 20200423041542
+168.81.93.121 1 1 34362 20200415162632
+134.209.178.106 1 1 0 20200403050954
+125.16.17.151 1 1 9184 20200402033739
+223.252.24.17 1 1 34343 20200402233215
+72.205.24.118 1 1 9184 20200428090411
+168.91.36.13 1 1 34362 20200417202154
+18.144.26.4 1 1 9184 20200424035554
+42.111.164.70 1 1 9184 20200407082208
+192.71.44.44 1 1 9203 20200418140033
+71.127.54.151 1 1 9184 20200428082712
+38.18.36.165 1 1 9184 20200415072029
+112.6.132.95 1 1 34362 20200424192954
+13.52.101.43 1 1 34362 20200424002128
+209.59.181.92 1 1 9203 20200420095608
+167.71.11.172 1 1 9184 20200404153601
+13.73.21.215 1 1 9184 20200428202919
+130.105.65.95 1 1 9184 20200408023313
+52.25.113.75 1 1 0 20200408073526
+73.8.19.194 1 1 9184 20200406094312
+141.164.88.159 1 1 34362 20200415162629
+157.44.160.238 1 1 9184 20200427203550
+54.213.108.111 1 1 9184 20200409092916
+151.209.112.137 1 1 9184 20200414130000
+130.105.248.132 1 1 9184 20200401095305
+209.208.111.214 1 1 0 20200407012548
+5.188.62.25 1 1 9184 20200416053446
+211.176.125.70 1 1 0 20200426031517
+183.83.224.130 2 2 68686 20200415030204
+167.99.60.44 1 1 0 20200430114654
+138.197.128.76 1 1 325 20200430104239
+104.36.18.88 1 1 0 20200402163216
+62.210.79.40 1 1 34362 20200405041229
+110.54.210.133 2 2 18368 20200416044250
+178.62.35.189 1 1 0 20200404190743
+138.91.139.90 2 2 68686 20200407123339
+168.81.92.199 1 1 34362 20200414125231
+157.245.39.193 1 1 0 20200421101707
+104.227.246.106 1 1 34343 20200409094457
+178.62.90.34 1 1 9184 20200409171806
+110.54.243.240 1 1 9184 20200429095442
+138.128.13.245 1 1 9184 20200404013007
+14.98.115.86 2 2 68686 20200413082617
+35.167.195.32 1 1 9203 20200425133204
+5.188.62.147 1 1 9184 20200410142205
+95.217.152.52 1 1 9184 20200424142131
+209.208.97.152 1 1 0 20200428073805
+216.158.194.144 1 1 9184 20200419164950
+138.197.173.88 1 1 325 20200430104239
+134.122.54.200 1 1 9184 20200424151525
+83.166.224.74 1 1 34362 20200421215912
+180.190.115.125 1 1 9184 20200408170210
+168.91.42.38 1 1 34362 20200417202145
+185.59.221.66 1 1 9184 20200408060211
+64.246.187.42 1 1 9184 20200427161949
+213.136.71.25 1 1 9184 20200409091746
+107.5.167.167 1 1 9184 20200414120345
+34.212.236.31 1 1 9184 20200427154807
+192.36.53.165 1 1 9203 20200415044544
+34.243.239.205 1 1 34362 20200424203848
+106.220.115.126 1 1 9184 20200407082033
+73.221.166.65 1 1 9184 20200401121938
+54.171.231.218 1 1 34362 20200411000204
+138.128.110.94 1 1 9184 20200404012450
+34.254.162.9 1 1 34362 20200403234322
+46.246.65.133 1 1 9203 20200409104646
+73.106.75.125 1 1 9184 20200426132652
+123.209.71.154 2 2 18368 20200415213239
+188.143.169.29 2 2 68686 20200402213222
+64.227.120.66 1 1 9184 20200423123614
+42.106.255.103 1 1 9184 20200402020547
+112.201.132.206 1 1 9184 20200411195852
+49.150.46.132 2 2 9184 20200423162359
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 29
+20200401 4 4 36755 4
+20200402 9 9 174108 8
+20200403 4 4 43565 4
+20200404 8 8 27552 8
+20200405 6 6 87073 4
+20200406 2 2 43527 2
+20200407 5 5 87054 4
+20200408 19 19 254465 8
+20200409 6 6 80282 6
+20200410 3 3 77908 2
+20200411 3 3 52730 3
+20200413 2 2 68686 1
+20200414 3 3 52730 3
+20200415 18 18 442118 11
+20200416 14 14 405325 7
+20200417 2 2 68724 2
+20200418 9 9 139850 4
+20200419 2 2 18368 2
+20200420 2 2 18387 2
+20200421 3 3 43546 3
+20200422 1 1 34362 1
+20200423 4 4 27552 3
+20200424 7 7 130936 7
+20200425 2 2 18387 2
+20200426 3 3 18387 3
+20200427 3 3 27552 3
+20200428 11 11 98659 6
+20200429 30 209 2094302 2
+20200430 3 3 650 3
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 5
+5mn-15mn 1
+0s-30s 113
+1h+ 1
+2mn-5mn 2
+30s-2mn 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 9
+/ 148 2560834 117 113
+/index.php 15 45935 1 4
+/admin/timesheet_application.php 7 84383 0 0
+/admin/attendance.php 6 80600 0 0
+/admin/leave_application.php 6 327360 0 0
+/admin/index.php 3 15044 0 1
+/admin/leave_applyLeaveProcess.php 1 528 0 0
+/admin/leave_updateLeaveRequestProcess.php 1 530 0 0
+/admin/profile.php 1 11068 0 0
+END_SIDER
