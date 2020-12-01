@@ -19,6 +19,8 @@ include ('../includes/fetchData.php');
 include ('../includes/user_validation.php');
 $getData = getEmployeeData($con, $_SESSION['user_id']);
 $user = $_SESSION['user_id'];
+$editEmail = false;
+$userEmail = $getData['emailAddress'];
 
 ?>
 <!-- For password field -->
@@ -88,9 +90,10 @@ $user = $_SESSION['user_id'];
                     <!-- End July 12, 2019 UPDATE: Remove Access Level -->
                     <div class="form-group row">
                       <label for="staticEmail" class="col-sm-2 col-form-label">Email Address</label>
-                      <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" size="150" id="staticEmail"  style="outline:none" value="<?php echo $getData['emailAddress'] ?>">
-                      </div>
+                      <input readonly type='text' id='editEmailText' class='col-sm-4 form-control border border-dark' value=' <?php echo $userEmail ?>'>"
+                      <button type="button" id='editEmailBtn' onclick="change_email()" style="visibility: visible;" class="btn btn-info">Edit Email</button>
+                      <button type="button" id='saveEmailBtn' onclick="save_email()" style="visibility: hidden;" style="margin-left: -100" class="btn btn-info">Save</button>
+                      <button type="button" id='cancelEmailBtn' onclick="cancel_email()" style="visibility: hidden;" class="btn btn-info">Cancel</button>
                     </div>
                     <div class="form-group row">
                       <label for="staticEmail" class="col-sm-2 col-form-label">Current Password</label>
@@ -394,6 +397,29 @@ error:function (){}
             }
         });
     }
+
+    function change_email() {
+      document.getElementById("editEmailText").removeAttribute("readonly");
+      document.getElementById("editEmailBtn").style.visibility = "hidden";
+      document.getElementById("cancelEmailBtn").style.visibility = "visible";
+      document.getElementById("saveEmailBtn").style.visibility = "visible";
+    }
+
+    function save_email() {
+      document.getElementById("editEmailText").setAttribute("readonly", "_self");
+      document.getElementById("editEmailBtn").style.visibility = "visible";
+      document.getElementById("cancelEmailBtn").style.visibility = "hidden";
+      document.getElementById("saveEmailBtn").style.visibility = "hidden";
+    }
+
+    function cancel_email() {
+      document.getElementById("editEmailText").setAttribute("readonly", "_self");
+      document.getElementById("editEmailBtn").style.visibility = "visible";
+      document.getElementById("cancelEmailBtn").style.visibility = "hidden";
+      document.getElementById("saveEmailBtn").style.visibility = "hidden";
+    }
+
+
    </script>
 
 
