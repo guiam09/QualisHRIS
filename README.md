@@ -12,5 +12,5 @@
 3. Create a db name 'db-coresyshris'
 4. Import the db_coresyshris.sql file in the created db
 5. Navigate this - http://localhost/QualisHRIS in your browser & and try the ff. test account:
-* Super Admin: 200065 Qadmin072019 
+* Super Admin: admin coresys 
 * Employee level: 190059 drake18

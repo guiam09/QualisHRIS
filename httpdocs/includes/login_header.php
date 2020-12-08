@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="global/css/bootstrap.min.css">
     <link rel="stylesheet" href="global/css/bootstrap-extend.min.css">
     <link rel="stylesheet" href="assets/css/site.min.css">
+    <link rel="stylesheet" href="assets/css/CustomStyles.css">
 
     <!-- Plugins -->
     <link rel="stylesheet" href="global/vendor/animsition/animsition.css">
@@ -26,7 +27,7 @@
     <link rel="stylesheet" href="global/vendor/slidepanel/slidePanel.css">
     <link rel="stylesheet" href="global/vendor/flag-icon-css/flag-icon.css">
     <link rel="stylesheet" href="global/vendor/waves/waves.css">
-        <link rel="stylesheet" href="assets/examples/css/pages/login-v3.css">
+    <link rel="stylesheet" href="assets/examples/css/pages/login-v3.css">
 
 
     <!-- Fonts -->
