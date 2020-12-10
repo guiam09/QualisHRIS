@@ -17,8 +17,10 @@ include ('../includes/navbar.php');
 include ('../includes/sidebar.php');
 include ('../includes/fetchData.php');
 include ('../includes/user_validation.php');
-$getData = getEmployeeData($con, $_SESSION['user_id']);
+$getData = getUserInfo($con, $_SESSION['user_id']);
 $user = $_SESSION['user_id'];
+$fullname = $getData['firstName'] .' '. $getData['lastName'];
+$userEmail = $getData['emailAddress'];
 
 ?>
 <!-- For password field -->
@@ -34,18 +36,28 @@ $user = $_SESSION['user_id'];
       </div>
       <div class="page-content container-fluid">
         <?php
-                    $message = isset($_GET['update_password']) ? $_GET['update_password'] : "";
+                    $password_message = isset($_GET['update_password']) ? $_GET['update_password'] : "";
 
-                    if($message=='success'){
+                    if($password_message=='success'){
                         echo "<div class='alert alert-success'>Password Changed Successfully!</div>";
                     }
 
-                    else if($message=='failed'){
+                    else if($password_message=='failed'){
                       echo "<div class='alert alert-danger'>Error in changing your password!</div>";
-                    }  else if($message=='usernameChanged'){
+                    }  else if($password_message=='usernameChanged'){
                          echo "<div class='alert alert-success'>Username Changed Successfully!</div>";
-                    }  else if($message=='failedToUpdateUsername'){
+                    }  else if($password_message=='failedToUpdateUsername'){
                       echo "<div class='alert alert-danger'>Error in changing your username!</div>";
+                    }
+
+                    $email_message = isset($_GET['update_email']) ? $_GET['update_email'] : "";
+                    
+                    if($email_message=='success'){
+                      echo "<div class='alert alert-success'>Email changed successfully!</div>";
+                    }else if($email_message=='failed'){
+                      echo "<div class='alert alert-danger'>Done unsuccessfully! Same email being inputted!</div>";
+                    }else if($email_message=='notValidEmail'){
+                      echo "<div class='alert alert-danger'>Done unsuccessfully! Not a valid email being inputted!</div>";
                     }
         ?>
         <div class="row">
@@ -58,6 +70,15 @@ $user = $_SESSION['user_id'];
             <div class="panel-body container-fluid">
               <div class="row row-lg">
                 <div class="col-md-12">
+                    <form method="post" action="process_email_update.php">
+                      <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Email Address</label>
+                        <input readonly type='text' name="enteredEmail" id='enteredEmail' class='col-sm-4 form-control border border-dark' value='<?php echo trim($userEmail, ' ') ?>'>"
+                        <button type="button" id='editEmailBtn' onclick="change_email()" style="visibility: visible;" class="btn btn-info">Edit Email</button>
+                        <button type="submit" id='saveEmailBtn' onclick="save_email()" style="visibility: hidden;" class="btn btn-info">Save</button>
+                        <button type="button" id='cancelEmailBtn' onclick="cancel_email()" style="visibility: hidden;" class="btn btn-info">Cancel</button>
+                      </div>
+                    </form>
                    <form name="frmChange" method="post" action="process_edit_details.php" onSubmit="return validatePassword()">
                     <div class="form-group row">
                       <label for="staticEmail" class="col-sm-2 col-form-label">Employee Number</label>
@@ -68,7 +89,7 @@ $user = $_SESSION['user_id'];
                     <div class="form-group row">
                       <label for="staticEmail" class="col-sm-2 col-form-label">Full Name</label>
                       <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext"   style="outline:none" value="<?php echo $getData['firstName'].' '.$getData['lastName']; ?>">
+                        <input type="text" readonly class="form-control-plaintext" style="outline:none" value="<?php echo $fullname ?>">
                       </div>
                     </div>
                     <!-- July 12, 2019 UPDATE: Remove Access Level -->
@@ -86,12 +107,7 @@ $user = $_SESSION['user_id'];
            <!--           </div>-->
            <!--         </div>-->
                     <!-- End July 12, 2019 UPDATE: Remove Access Level -->
-                    <div class="form-group row">
-                      <label for="staticEmail" class="col-sm-2 col-form-label">Email Address</label>
-                      <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" size="150" id="staticEmail"  style="outline:none" value="<?php echo $getData['emailAddress'] ?>">
-                      </div>
-                    </div>
+
                     <div class="form-group row">
                       <label for="staticEmail" class="col-sm-2 col-form-label">Current Password</label>
                       
@@ -184,9 +200,8 @@ $user = $_SESSION['user_id'];
                     <button type="submit" id="real_submit_button" style="display:none" name="updatePassword" class="btn btn-info">Change Password</button>
                     <button type="button" onclick="change_password_confirm()" class="btn btn-info">Change Password</button>
                   </form>
-
-                    </div>
-                          </div>
+                  </div>
+                        </div>
 
                         </div>
                       </div>
@@ -394,6 +409,48 @@ error:function (){}
             }
         });
     }
+
+    function change_email() {
+      // // if (event.target == modal) {
+      //   modal.style.display = "none";
+      // //}
+        document.getElementById("enteredEmail").removeAttribute("readonly");
+        document.getElementById("editEmailBtn").style.visibility = "hidden";
+        document.getElementById("cancelEmailBtn").style.visibility = "visible";
+        document.getElementById("saveEmailBtn").style.visibility = "visible";
+    }
+
+    function save_email() {
+        document.getElementById("enteredEmail").setAttribute("readonly", "_self");
+        document.getElementById("editEmailBtn").style.visibility = "visible";
+        document.getElementById("cancelEmailBtn").style.visibility = "hidden";
+        document.getElementById("saveEmailBtn").style.visibility = "hidden";
+    }
+
+    function cancel_email() {
+        document.getElementById("enteredEmail").setAttribute("readonly", "_self");
+        document.getElementById("editEmailBtn").style.visibility = "visible";
+        document.getElementById("cancelEmailBtn").style.visibility = "hidden";
+        document.getElementById("saveEmailBtn").style.visibility = "hidden";
+    }
+
+    // var modal = document.getElementById("myModal");
+
+    // var btn = document.getElementById("editEmailBtn");
+
+    // var span = document.getElementsByClassName("close")[0];
+
+    // // When the user clicks the button, open the modal 
+    // btn.onclick = function() {
+    //   modal.style.display = "block";
+    // }
+
+    // // When the user clicks on <span> (x), close the modal
+    // span.onclick = function() {
+    //   modal.style.display = "none";
+    // }
+
+    // When the user clicks anywhere outside of the modal, close it
    </script>
 
 

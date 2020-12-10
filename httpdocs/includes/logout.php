@@ -6,7 +6,7 @@ include_once "configuration.php";
 session_destroy();
 
 //redirect to login page
-//header("Location: {$home_url}index.php");
-header("Location: http://qualisph.com/index.php");
+header("Location: ../index.php");
+// header("Location: http://qualisph.com/index.php");
 exit();
 ?>

@@ -19,10 +19,46 @@ include ('../includes/sidebar.php');
 
   $getData = getEmployeeData($con, $_SESSION['user_id']);
 ?>
+  
+<script>
+    function change_email() {
+      // // if (event.target == modal) {
+      //   modal.style.display = "none";
+      // //}
+        document.getElementById("enteredEmail").removeAttribute("readonly");
+        document.getElementById("editEmailBtn").style.visibility = "hidden";
+        document.getElementById("cancelEmailBtn").style.visibility = "visible";
+        document.getElementById("saveEmailBtn").style.visibility = "visible";
+    }
 
+    function save_email() {
+        document.getElementById("enteredEmail").setAttribute("readonly", "_self");
+        document.getElementById("editEmailBtn").style.visibility = "visible";
+        document.getElementById("cancelEmailBtn").style.visibility = "hidden";
+        document.getElementById("saveEmailBtn").style.visibility = "hidden";
+    }
+
+    function cancel_email() {
+        document.getElementById("enteredEmail").setAttribute("readonly", "_self");
+        document.getElementById("editEmailBtn").style.visibility = "visible";
+        document.getElementById("cancelEmailBtn").style.visibility = "hidden";
+        document.getElementById("saveEmailBtn").style.visibility = "hidden";
+    }
+</script>
     <!-- Page -->
     <div class="page">
       <div class="page-content container-fluid">
+          <?php
+                $email_message = isset($_GET['update_email']) ? $_GET['update_email'] : "";
+                
+                if($email_message=='success'){
+                  echo "<div class='alert alert-success'>Email changed successfully!</div>";
+                }else if($email_message=='failed'){
+                  echo "<div class='alert alert-danger'>Done unsuccessfully! Same email being inputted!</div>";
+                }else if($email_message=='notValidEmail'){
+                  echo "<div class='alert alert-danger'>Done unsuccessfully! Not a valid email being inputted!</div>";
+                }
+          ?>
         <div class="row">
           <div class="col-md-12">
               <div class="float-left mr-40">
@@ -39,7 +75,17 @@ include ('../includes/sidebar.php');
                   <!--<a class="blue-grey-400 font-size-20"><?php echo $getData['positionName'] ?></a>
 
                   <br> -->
-                    <a class="blue-grey-400 font-size-16"><i><?php echo $getData['emailAddress'] ?></i></a> 
+                    <!-- <a class="blue-grey-400 font-size-16"><i><?php echo $getData['emailAddress'] ?></i></a>  -->
+                    <div class="col-lg-12">
+                      <form method="post" action="process_email_update.php">
+                        <div class="form-group row">
+                          <input readonly type='text' name="enteredEmail" id='enteredEmail' class='col-sm-4 form-control border border-dark' value='<?php echo trim($getData['emailAddress'], ' ') ?>'>"
+                          <button type="button" id='editEmailBtn' onclick="change_email()" style="visibility: visible;" class="btn btn-info">Edit Email</button>
+                          <button type="submit" id='saveEmailBtn' onclick="save_email()" style="visibility: hidden;" class="btn btn-info">Save</button>
+                          <button type="button" id='cancelEmailBtn' onclick="cancel_email()" style="visibility: hidden;" class="btn btn-info">Cancel</button>
+                        </div>
+                      </form>
+                    </div>
 
                   
                   <!-- July 12, 2019 UPDATED: Remove Address -->

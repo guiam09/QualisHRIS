@@ -16,6 +16,15 @@ function getEmployeeData($con, $searchQuery){
 }
 }
 
+function getUserInfo($con, $searchQuery){
+  $searchq = $searchQuery;
+  $query = "SELECT * FROM tbl_employees WHERE employeeCode = '$searchq'";
+  $stmt = $con->prepare($query);
+  $stmt->execute();
+  $row = $stmt->fetch(PDO::FETCH_ASSOC);
+  return $row;
+}
+
 function getReportingTo($con, $reportingToID){
   $reportingToID = $reportingToID;
   $query2 = "SELECT * FROM tbl_employees WHERE employeeID = '$reportingTo'";
