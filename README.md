@@ -1,5 +1,5 @@
 # QualisHRIS
-![alt text](httpdocs/images/qualisQgray_scrn.png)
+![alt text](/httpdocs/images/qualisQgray_scrn.png)
 
 ### Requirements
 * vscode - https://aka.ms/win32-x64-user-stable 
@@ -8,13 +8,11 @@
 
 ### Procedure in running local
 1. Install the xammp installer and place your repo in this location - C:\xampp\htdocs\QualisHRIS
-2. Then, navigate this link - http://localhost/phpmyadmin 
-3. Create a db name 'db-coresyshris'
-4. Import the db_coresyshris.sql file in the created db
-5. Navigate this - http://localhost/QualisHRIS in your browser & and try the ff. test account:
-* Super Admin level: \
-EmployeeID: admin \
-Password: coresys 
-* Employee level: \
-EmployeeID: 190059 \
-Password: drake18 
+2. Start the "Apache" & "MySQL" programs in Xampp Control Panel \
+![alt text](/httpdocs/images/xammp.PNG)
+3. Navigate this link - http://localhost/phpmyadmin 
+4. Then, create a db name 'db-coresyshris'
+5. Import the db_coresyshris.sql file in the created db
+6. Navigate this - http://localhost/QualisHRIS in your browser & and try the ff. test account:
+* Super Admin: 200065 Qadmin072019 
+* Employee level: 190059 drake18
