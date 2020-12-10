@@ -53,9 +53,11 @@ $userEmail = $getData['emailAddress'];
                     $email_message = isset($_GET['update_email']) ? $_GET['update_email'] : "";
                     
                     if($email_message=='success'){
-                      echo "<div class='alert alert-success'>Email Changed Successfully!</div>";
+                      echo "<div class='alert alert-success'>Email changed successfully!</div>";
                     }else if($email_message=='failed'){
-                      echo "<div class='alert alert-success'>Error in Changing your email!</div>";
+                      echo "<div class='alert alert-danger'>Done unsuccessfully! Same email being inputted!</div>";
+                    }else if($email_message=='notValidEmail'){
+                      echo "<div class='alert alert-danger'>Done unsuccessfully! Not a valid email being inputted!</div>";
                     }
         ?>
         <div class="row">
@@ -72,8 +74,8 @@ $userEmail = $getData['emailAddress'];
                       <div class="form-group row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">Email Address</label>
                         <input readonly type='text' name="enteredEmail" id='enteredEmail' class='col-sm-4 form-control border border-dark' value='<?php echo trim($userEmail, ' ') ?>'>"
-                        <button type="button" id='editEmailBtn' onclick="change_email()" style="visibility: visible;" class="btn btn-info" data-toggle="modal" data-target="#myModal">Edit Email</button>
-                        <button type="submit" id='saveEmailBtn' onclick="save_email()" style="visibility: hidden;" style="margin-left: -100" class="btn btn-info">Save</button>
+                        <button type="button" id='editEmailBtn' onclick="change_email()" style="visibility: visible;" class="btn btn-info">Edit Email</button>
+                        <button type="submit" id='saveEmailBtn' onclick="save_email()" style="visibility: hidden;" class="btn btn-info">Save</button>
                         <button type="button" id='cancelEmailBtn' onclick="cancel_email()" style="visibility: hidden;" class="btn btn-info">Cancel</button>
                       </div>
                     </form>
@@ -198,49 +200,6 @@ $userEmail = $getData['emailAddress'];
                     <button type="submit" id="real_submit_button" style="display:none" name="updatePassword" class="btn btn-info">Change Password</button>
                     <button type="button" onclick="change_password_confirm()" class="btn btn-info">Change Password</button>
                   </form>
-
-                  <!-- The Modal -->
-                    <!-- <div id="myModal" class="modal">
-
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <span class="close">&times;</span>
-                          <h2>Modal Header</h2>
-                        </div>
-                        <div class="modal-body">
-                          <p>Some text in the Modal Body</p>
-                          <p>Some other text...</p>
-                        </div>
-                        <div class="modal-footer">
-                          <h3>Modal Footer</h3>
-                        </div>
-                      </div>
-
-                    </div> -->
-                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                      Launch demo modal
-                    </button>
-                   
-                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          ...
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
-                    <!-- --- -->
                   </div>
                         </div>
 
@@ -455,17 +414,17 @@ error:function (){}
       // // if (event.target == modal) {
       //   modal.style.display = "none";
       // //}
-      document.getElementById("enteredEmail").removeAttribute("readonly");
-      document.getElementById("editEmailBtn").style.visibility = "hidden";
-      document.getElementById("cancelEmailBtn").style.visibility = "visible";
-      document.getElementById("saveEmailBtn").style.visibility = "visible";
+        document.getElementById("enteredEmail").removeAttribute("readonly");
+        document.getElementById("editEmailBtn").style.visibility = "hidden";
+        document.getElementById("cancelEmailBtn").style.visibility = "visible";
+        document.getElementById("saveEmailBtn").style.visibility = "visible";
     }
 
     function save_email() {
-      document.getElementById("enteredEmail").setAttribute("readonly", "_self");
-      document.getElementById("editEmailBtn").style.visibility = "visible";
-      document.getElementById("cancelEmailBtn").style.visibility = "hidden";
-      document.getElementById("saveEmailBtn").style.visibility = "hidden";
+        document.getElementById("enteredEmail").setAttribute("readonly", "_self");
+        document.getElementById("editEmailBtn").style.visibility = "visible";
+        document.getElementById("cancelEmailBtn").style.visibility = "hidden";
+        document.getElementById("saveEmailBtn").style.visibility = "hidden";
     }
 
     function cancel_email() {

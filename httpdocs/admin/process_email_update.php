@@ -15,34 +15,46 @@ include_once ('../includes/configuration.php');
 if (isset($_POST['enteredEmail'])) {
  
   try{
-        $queryUpdate = "UPDATE tbl_employees SET emailAddress=:enteredEmail WHERE employeeCode='$userId'";
-        $stmt = $con->prepare($queryUpdate);
+        if($currentEmail !== $_POST['enteredEmail'] && filter_var($_POST['enteredEmail'], FILTER_VALIDATE_EMAIL)){
+            $queryUpdate = "UPDATE tbl_employees SET emailAddress=:enteredEmail WHERE employeeCode='$userId'";
+            $stmt = $con->prepare($queryUpdate);
 
-        // enter value parameters
-        $enteredEmail = htmlspecialchars(strip_tags($_POST['enteredEmail']));
-        // bind the parameters
-        $stmt->bindParam(':enteredEmail', $enteredEmail);
+            // enter value parameters
+            $enteredEmail = htmlspecialchars(strip_tags($_POST['enteredEmail']));
+            // bind the parameters
+            $stmt->bindParam(':enteredEmail', $enteredEmail);
 
-        // Execute the query
-        if($stmt->execute()){
-          echo "
-              <script>
-                  window.open('account_settings.php?update_email=success','_self');
-              </script>
-          ";
-        }else {
-          echo "
-              <script>
-                  window.open('account_settings.php?update_email=failed','_self');
-              </script>
-          ";
-        }
+            // Execute the query
+            if($stmt->execute()){
+              echo "
+                  <script>
+                      window.open('?update_email=success','_self');
+                  </script>
+              ";
+            }else {
+              echo "
+                  <script>
+                      window.open('?update_email=failed','_self');
+                  </script>
+              ";
+            }
+          }else if($currentEmail == $_POST['enteredEmail']){
+            echo "
+                  <script>
+                      window.open('account_settings.php?update_email=failed','_self');
+                  </script>
+              ";
+          }else if(!filter_var($_POST['enteredEmail'], FILTER_VALIDATE_EMAIL)){
+            echo "
+                  <script>
+                      window.open('account_settings.php?update_email=notValidEmail','_self');
+                  </script>
+              ";
+          }
+        
+      }catch(PDOException $exception){
+          die('ERROR: ' . $exception->getMessage());
 
-    
-    }
-    // show error
-    catch(PDOException $exception){
-        die('ERROR: ' . $exception->getMessage());
 }
 
 }
