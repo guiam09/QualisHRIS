@@ -43,6 +43,9 @@ include ('../includes/fetchData.php');
     .swal2-container {
         z-index: 999999;
     }
+    .dropdown-menu {
+        z-index: 1500 !important;
+    }
 </style>
 <!-- Page -->
 <div class="page">
