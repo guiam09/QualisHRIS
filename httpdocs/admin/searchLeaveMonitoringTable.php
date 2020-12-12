@@ -12,10 +12,11 @@
     //$employeeIDEntry = " AND tbl_leaveGroup.employeeID=".$employeeID;
     $userID = $_SESSION['user_id'];
 ?>
-<table id="showLeaveTable" class="table table-hover dataTable table-striped w-full" data-plugin="dataTable">
+<table id="showMonitoringTable" class="table table-hover table-striped">
     <thead>
         <tr>
             <th>Date Filed</th>
+            <th>Name</th>
             <th>Leave Type</th>
             <th>Leave Date</th>
             <th>Duration</th>
@@ -490,6 +491,7 @@
         echo "
         <script type='text/javascript'>
         $(document).ready(function() {
+            $('#showMonitoringTable').DataTable();
         $('#approveLeaveButton". $row_leaveList['leavedetails_ID'] ."').on('click', function() {
 
         Swal.fire({
