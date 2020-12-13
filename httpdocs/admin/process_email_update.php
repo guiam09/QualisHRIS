@@ -28,13 +28,13 @@ if (isset($_POST['enteredEmail'])) {
             if($stmt->execute()){
               echo "
                   <script>
-                      window.open('?update_email=success','_self');
+                      window.open('account_settings.php?update_email=success','_self');
                   </script>
               ";
             }else {
               echo "
                   <script>
-                      window.open('?update_email=failed','_self');
+                      window.open('account_settings.php?update_email=failed','_self');
                   </script>
               ";
             }
