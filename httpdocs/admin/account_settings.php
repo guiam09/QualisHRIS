@@ -27,6 +27,23 @@ $userEmail = $getData['emailAddress'];
 <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<style>
+  /* Edit email buttons css */
+.edit-button{
+  visibility: visible;
+}
+
+.save-button{
+  visibility: hidden; 
+  margin-right: 5px !important; 
+  margin-left: -90px !important;
+}
+
+.cancel-button{
+  visibility: hidden;
+}
+</style>
 <!-- end plugin for password field -->
 
     <!-- Page -->
@@ -39,25 +56,41 @@ $userEmail = $getData['emailAddress'];
                     $password_message = isset($_GET['update_password']) ? $_GET['update_password'] : "";
 
                     if($password_message=='success'){
-                        echo "<div class='alert alert-success'>Password Changed Successfully!</div>";
-                    }
-
-                    else if($password_message=='failed'){
-                      echo "<div class='alert alert-danger'>Error in changing your password!</div>";
-                    }  else if($password_message=='usernameChanged'){
-                         echo "<div class='alert alert-success'>Username Changed Successfully!</div>";
-                    }  else if($password_message=='failedToUpdateUsername'){
-                      echo "<div class='alert alert-danger'>Error in changing your username!</div>";
+                      echo "<div class='alert alert-success'>Password Changed Successfully!
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span></button></div>";
+                    }else if($password_message=='failed'){
+                      echo "<div class='alert alert-danger'>Error in changing your password!
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span></button></div>";
+                    }else if($password_message=='usernameChanged'){
+                      echo "<div class='alert alert-success'>Username Changed Successfully!
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span></button></div>";
+                    }else if($password_message=='failedToUpdateUsername'){
+                      echo "<div class='alert alert-danger'>Error in changing your username!
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span></button></div>";
                     }
 
                     $email_message = isset($_GET['update_email']) ? $_GET['update_email'] : "";
                     
                     if($email_message=='success'){
-                      echo "<div class='alert alert-success'>Email changed successfully!</div>";
+                      echo "<div class='alert alert-success'>Email changed successfully!
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span></button></div>";
+                    }else if($email_message=='error'){
+                      echo "<div class='alert alert-danger'>Done unsuccessfully! Something wrong happen!
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span></button></div>";
                     }else if($email_message=='failed'){
-                      echo "<div class='alert alert-danger'>Done unsuccessfully! Same email being inputted!</div>";
+                      echo "<div class='alert alert-danger'>Done unsuccessfully! Same email being inputted!
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span></button></div>";
                     }else if($email_message=='notValidEmail'){
-                      echo "<div class='alert alert-danger'>Done unsuccessfully! Not a valid email being inputted!</div>";
+                      echo "<div class='alert alert-danger'>Done unsuccessfully! Not a valid email being inputted!
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span></button></div>";
                     }
         ?>
         <div class="row">
@@ -70,13 +103,13 @@ $userEmail = $getData['emailAddress'];
             <div class="panel-body container-fluid">
               <div class="row row-lg">
                 <div class="col-md-12">
-                    <form method="post" action="process_email_update.php">
+                    <form method="POST" action="process_email_update.php">
                       <div class="form-group row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">Email Address</label>
                         <input readonly type='text' name="enteredEmail" id='enteredEmail' class='col-sm-4 form-control border border-dark' value='<?php echo trim($userEmail, ' ') ?>'>"
-                        <button type="button" id='editEmailBtn' onclick="change_email()" style="visibility: visible;" class="btn btn-info">Edit Email</button>
-                        <button type="submit" id='saveEmailBtn' onclick="save_email()" style="visibility: hidden;" class="btn btn-info">Save</button>
-                        <button type="button" id='cancelEmailBtn' onclick="cancel_email()" style="visibility: hidden;" class="btn btn-info">Cancel</button>
+                        <button type="button" id='editEmailBtn' onclick="change_email()" class="btn btn-info edit-button">Edit Email</button>
+                        <button type="submit" id='saveEmailBtn' onclick="save_email()" class="btn btn-info save-button">Save</button>
+                        <button type="button" id='cancelEmailBtn' onclick="cancel_email()" class="btn btn-info cancel-button">Cancel</button>
                       </div>
                     </form>
                    <form name="frmChange" method="post" action="process_edit_details.php" onSubmit="return validatePassword()">
