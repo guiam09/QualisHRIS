@@ -44,7 +44,7 @@ include ('../includes/fetchData.php');
         z-index: 999999;
     }
     .dropdown-menu {
-        z-index: 1500 !important;
+        z-index: 2000 !important;
     }
 </style>
 <!-- Page -->
