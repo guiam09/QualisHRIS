@@ -467,8 +467,8 @@ include ('../includes/fetchData.php');
                                                                         </div>
                                                                         <div class="col-md-3">
                                                                             <div class="form-group">
-                                                                                <div class="col-md-12 input-group input-daterange preferredleaveDate currentDate" data-plugin="datepicker">
-                                                                                    <input type="text" id="leaveDateUpdate<?php echo $z['leavedetails_ID'] ?>" name="leaveDate[]" class="form-control datepicker" autocomplete="off" value="<?php echo $newDateFormat; ?>" />
+                                                                                <div class="col-md-12 input-group input-daterange preferredleaveDate apply-leave-date" data-plugin="datepicker" id="leaveDate">
+                                                                                    <input type="text" id="leaveDateUpdate<?php echo $z['leavedetails_ID'] ?>" name="leaveDate[]" class="form-control datepicker" autocomplete="off" value="<?php echo $newDateFormat; ?>" readonly />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -770,7 +770,7 @@ include ('../includes/fetchData.php');
                                 </td>
                                 <td class="hasInputData">
                                     <div class="col-md-12 input-group input-daterange preferredleaveDate apply-leave-date" data-plugin="datepicker" id="currentDate">
-                                        <input onchange="row_check($(this))" type="text" id="applyLeaveDate" name="leave_date[]" class="form-control datepicker" autocomplete="off" />
+                                        <input onchange="row_check($(this))" type="text" id="applyLeaveDate" name="leave_date[]" class="form-control datepicker" autocomplete="off" readonly/>
                                     </div>
                                 </td>
                                 <td class="hasInputData">
@@ -824,7 +824,9 @@ include ('../includes/scripts.php');
     $('#currentDate').datepicker({
         startDate: date
     });
-
+    $('#leaveDate').datepicker({
+        startDate: date
+    });
     $(document).ready(function() {
         $('#showLeaveTable').DataTable();
         
@@ -939,6 +941,9 @@ include ('../includes/scripts.php');
 
         // bug fix for closing calendar after selection
         $('#currentDate').datepicker({
+            autoclose: true
+        });
+        $('#leaveDate').datepicker({
             autoclose: true
         });
     });
