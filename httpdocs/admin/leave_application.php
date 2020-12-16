@@ -468,7 +468,7 @@ include ('../includes/fetchData.php');
                                                                         <div class="col-md-3">
                                                                             <div class="form-group">
                                                                                 <div class="col-md-12 input-group input-daterange preferredleaveDate apply-leave-date" data-plugin="datepicker" id="leaveDate">
-                                                                                    <input type="text" id="leaveDateUpdate<?php echo $z['leavedetails_ID'] ?>" name="leaveDate[]" class="form-control datepicker" autocomplete="off" value="<?php echo $newDateFormat; ?>" />
+                                                                                    <input type="text" id="leaveDateUpdate<?php echo $z['leavedetails_ID'] ?>" name="leaveDate[]" class="form-control datepicker" autocomplete="off" value="<?php echo $newDateFormat; ?>" readonly />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
