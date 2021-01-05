@@ -25,6 +25,78 @@ include ('../includes/sidebar.php');
         $getData = getEmployeeData($con, $_SESSION['user_id']);
   }
 ?>
+<style>
+  /* Edit email buttons css */
+.edit-button{
+  margin-left: 5px !important; 
+  visibility: visible;
+}
+
+.save-button{
+  visibility: hidden; 
+  margin-right: 5px !important; 
+  margin-left: -90px !important;
+}
+
+.cancel-button{
+  visibility: hidden;
+}
+</style>
+<?php
+    $userId = $_SESSION['user_id'];
+    $query = "SELECT emailAddress FROM tbl_employees WHERE employeeCode = '$userId'";
+    $stmt = $con->prepare($query);
+    $stmt->execute();
+    $num = $stmt->rowCount();
+    // check if more than 0 record found
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $currentEmail = $row['emailAddress'];
+      
+    if (isset($_POST['enteredEmail'])) {
+    
+      try{
+            if($currentEmail !== $_POST['enteredEmail'] && filter_var($_POST['enteredEmail'], FILTER_VALIDATE_EMAIL)){
+                $queryUpdate = "UPDATE tbl_employees SET emailAddress=:enteredEmail WHERE employeeCode='$userId'";
+                $stmt = $con->prepare($queryUpdate);
+
+                // enter value parameters
+                $enteredEmail = htmlspecialchars(strip_tags($_POST['enteredEmail']));
+                // bind the parameters
+                $stmt->bindParam(':enteredEmail', $enteredEmail);
+
+                // Execute the query
+                if($stmt->execute()){
+                  echo "
+                      <script>
+                          window.open(window.location.href+'?update_email=success','_self');
+                      </script>
+                  ";
+                }else {
+                  echo "
+                      <script>
+                          window.open(window.location.href+'?update_email=failed','_self');
+                      </script>
+                  ";
+                }
+              }else if($currentEmail == $_POST['enteredEmail']){
+                echo "
+                      <script>
+                          window.open(window.location.href+'?update_email=failed','_self');
+                      </script>
+                  ";
+              }else if(!filter_var($_POST['enteredEmail'], FILTER_VALIDATE_EMAIL)){
+                echo "
+                      <script>
+                          window.open(window.location.href+'?update_email=notValidEmail','_self');
+                      </script>
+                  ";
+              }
+            
+          }catch(PDOException $exception){
+              die('ERROR: ' . $exception->getMessage());
+      }
+    }
+ ?>
 
     <!-- Page -->
     <div class="page">
@@ -83,7 +155,26 @@ include ('../includes/sidebar.php');
                                 else if($message=='failed'){
                                   echo "<div class='alert alert-danger'>Unable to Update Employee Details.</div>";
                                 }
-
+                                
+                                $email_message = isset($_GET['update_email']) ? $_GET['update_email'] : "";
+                    
+                                if($email_message=='success'){
+                                  echo "<div class='alert alert-success'>Email changed successfully!
+                                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                        <span aria-hidden='true'>&times;</span></button></div>";
+                                }else if($email_message=='error'){
+                                  echo "<div class='alert alert-danger'>Done unsuccessfully! Something wrong happen!
+                                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                        <span aria-hidden='true'>&times;</span></button></div>";
+                                }else if($email_message=='failed'){
+                                  echo "<div class='alert alert-danger'>Done unsuccessfully! Same email being inputted!
+                                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                        <span aria-hidden='true'>&times;</span></button></div>";
+                                }else if($email_message=='notValidEmail'){
+                                  echo "<div class='alert alert-danger'>Done unsuccessfully! Not a valid email being inputted!
+                                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                        <span aria-hidden='true'>&times;</span></button></div>";
+                                }
                              
 
                                 ?>
@@ -100,13 +191,18 @@ include ('../includes/sidebar.php');
                 <h2 class="person-name">
                   <a><?php echo $getData['firstName'].' '.$getData['lastName']; ?></a>
                 </h2>
-                <p class="card-text">
                   <!--<a class="blue-grey-400 font-size-20"><?php echo $getData['positionName'] ?></a>
                   <br> -->
-                    <a class="blue-grey-400 font-size-16"><i><?php echo $getData['emailAddress'] ?></i></a>
-                </p>
-                <p class="card-text">
-                </p>
+                <div class="col-md-12">
+                  <form method="POST" action="update_employee_details.php">
+                    <div class="form-group row">
+                      <input readonly type='text' name="enteredEmail" id='enteredEmail' class='col-sm-6 form-control border border-dark' value='<?php echo trim($getData['emailAddress'], ' ') ?>'>
+                      <button type="button" id='editEmailBtn' onclick="change_email()" class="btn btn-info edit-button">Edit Email</button>
+                      <button type="submit" id='saveEmailBtn' onclick="save_email()" class="btn btn-info save-button">Save</button>
+                      <button type="button" id='cancelEmailBtn' onclick="cancel_email()" class="btn btn-info cancel-button">Cancel</button>
+                    </div>
+                  </form>
+                </div>
               </div>
               <div class="float-right">
                   <button type="button" data-target="#updateImage" data-toggle="modal" class="btn btn-block btn-info waves-effect waves-classic">Upload Picture</button>
@@ -546,6 +642,26 @@ include ('../includes/footer.php');
 include ('../includes/scripts.php');
  ?>
 <script>
+    function change_email() {
+        document.getElementById("enteredEmail").removeAttribute("readonly");
+        document.getElementById("editEmailBtn").style.visibility = "hidden";
+        document.getElementById("cancelEmailBtn").style.visibility = "visible";
+        document.getElementById("saveEmailBtn").style.visibility = "visible";
+    }
+
+    function save_email() {
+        document.getElementById("enteredEmail").setAttribute("readonly", "_self");
+        document.getElementById("editEmailBtn").style.visibility = "visible";
+        document.getElementById("cancelEmailBtn").style.visibility = "hidden";
+        document.getElementById("saveEmailBtn").style.visibility = "hidden";
+    }
+
+    function cancel_email() {
+        document.getElementById("enteredEmail").setAttribute("readonly", "_self");
+        document.getElementById("editEmailBtn").style.visibility = "visible";
+        document.getElementById("cancelEmailBtn").style.visibility = "hidden";
+        document.getElementById("saveEmailBtn").style.visibility = "hidden";
+    }
     function resetpass(){
          var form = document.getElementById("resetPassword");
         Swal.fire({
@@ -571,12 +687,7 @@ include ('../includes/scripts.php');
     }
 </script>
 <?php
-if($_GET['reset'] == 'success'){
-    
-    
-    
-    
-    
+if($_GET['reset'] === 'success'){
     ?>
     <script>
         Swal.fire(

@@ -27,7 +27,8 @@ $num = $stmt->rowCount();
 // check if more than 0 record found
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 $currentEmail = $row['emailAddress'];
-  
+$adminAccess = [];
+
 if (isset($_POST['enteredEmail'])) {
   try{
         if($currentEmail !== $_POST['enteredEmail'] && filter_var($_POST['enteredEmail'], FILTER_VALIDATE_EMAIL)){
@@ -117,6 +118,20 @@ if (isset($_POST['enteredEmail'])) {
   visibility: hidden;
 }
 </style>
+                
+<?php
+    $searchq = $_SESSION['employeeID'];
+    $query = "SELECT DISTINCT accessedModules FROM tbl_accesslevels JOIN tbl_accessLevelEmp 
+            ON tbl_accesslevels.accessLevelID = tbl_accessLevelEmp.accessLevelID JOIN tbl_accessLevelModules 
+            ON tbl_accessLevelModules.accessLevelID = tbl_accesslevels.accessLevelID WHERE tbl_accessLevelEmp.employeeID = '$searchq'";
+    $stmt = $con->prepare($query);
+    $stmt->execute();
+    $num = $stmt->rowCount();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+      array_push($adminAccess, $row['accessedModules']);
+    }
+
+?>
     <!-- Page -->
     <div class="page">
       <div class="page-content container-fluid">
@@ -146,22 +161,44 @@ if (isset($_POST['enteredEmail'])) {
             <div class="float-left mr-40">
               <div class="example">
                 <img class="img-rounded img-bordered-primary" width="150" height="140"
-                  src="../images/<?php echo $getData['photo'] ?>" alt="...">
+                  src="../images/<?php
+                    // echo 'female_avatar.jpg'
+                    if(file_exists("../images/".$getData['photo'])){ 
+                      echo $getData['photo'];
+                    }else {
+                        if($getData['gender']== "Female"){
+                          echo "female_avatar.jpg";
+                        }else{
+                          echo "male_avatar.jpg";
+                        }
+                    }  
+
+                  ?>" alt="...">
               </div>
             </div>
             <h2 class="person-name">
               <a><?php echo $getData['firstName'].' '.$getData['lastName']; ?></a>
             </h2>
             <p class="card-text">
-              <form method="post" action="">
-                <div class="form-group row">
-                  <input readonly type='text' name="enteredEmail" id='enteredEmail' class='col-sm-3 form-control border border-dark' value='<?php echo trim($getData['emailAddress'], ' ') ?>'>
-                  <button type="button" id='editEmailBtn' onclick="change_email()" class="btn btn-info edit-button">Edit Email</button>
-                  <button type="submit" id='saveEmailBtn' onclick="save_email()" class="btn btn-info save-button">Save</button>
-                  <button type="button" id='cancelEmailBtn' onclick="cancel_email()" class="btn btn-info cancel-button">Cancel</button>
-                </div>
-              </form>
+              <div <?php if(in_array("aedEmployeeModule", $adminAccess)){ echo "style='display: block;'"; }
+                    else echo "style='display: none;'"; ?>>
+                  <form method="post" action="">
+                    <div class="form-group row">
+                      <input readonly type='text' name="enteredEmail" id='enteredEmail' class='col-sm-3 form-control border border-dark' value='<?php echo trim($getData['emailAddress'], ' ') ?>'>
+                      <button type="button" id='editEmailBtn' onclick="change_email()" class="btn btn-info edit-button">Edit Email</button>
+                      <button type="submit" id='saveEmailBtn' onclick="save_email()" class="btn btn-info save-button">Save</button>
+                      <button type="button" id='cancelEmailBtn' onclick="cancel_email()" class="btn btn-info cancel-button">Cancel</button>
+                    </div>
+                  </form>
+              </div>
             </p>
+            <div class="card-text" <?php 
+              if(in_array("aedEmployeeModule", $adminAccess)){ echo "style='display: none;'"; }
+              else echo "style='display: block;'"; ?>>
+                <div class="form-group row">
+                  <a class="blue-grey-400 font-size-16"><i><?php echo $getData['emailAddress'] ?></i></a>
+                </div>
+            </div>
           </div>
         </div>
         <div class="row">

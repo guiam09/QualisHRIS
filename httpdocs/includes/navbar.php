@@ -3,6 +3,13 @@ include_once ('../includes/configuration.php');
 include ('../db/connection.php');
 include ('../includes/fetchImage.php');
 $getData = getImage($con, $_SESSION['user_id']);
+$userID = $_SESSION['user_id'];
+                    
+$query_employeeName = "SELECT * from tbl_employees WHERE employeeCode = '$userID'";
+$stmt_employeeName = $con->prepare($query_employeeName);
+$stmt_employeeName->execute();
+
+while ($row_employeeName = $stmt_employeeName->fetch(PDO::FETCH_ASSOC)){
 ?>
 
 <nav class="site-navbar navbar navbar-default navbar-fixed-top" role="navigation">
@@ -74,21 +81,22 @@ $getData = getImage($con, $_SESSION['user_id']);
           <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
             data-animation="scale-up" role="button">
             <span class="avatar ">
-              <img  src="../images/<?php echo $getData['photo'] ?>" height="900" width="900" alt="Current User">
-             <!--  -->
-              <!--<i></i>--> <!-- July 10, 2019 UPDATE: Remove online indicators -->
+              <img height="900" width="900" src="../images/<?php
+                    if(file_exists("../images/".$getData['photo'])){ 
+                      echo $getData['photo'];
+                    }else {
+                        if($getData['gender']== "Female"){
+                          echo "female_avatar.jpg";
+                        }else{
+                          echo "male_avatar.jpg";
+                        }
+                    }
+                ?>" alt="Current User">
             </span>
           </a>
           <div class="dropdown-menu" role="menu">
               <a class="dropdown-item" style="text-align:center">
                   <?php
-                    $userID = $_SESSION['user_id'];
-                    
-                    $query_employeeName = "SELECT * from tbl_employees WHERE employeeCode = '$userID'";
-                    $stmt_employeeName = $con->prepare($query_employeeName);
-                    $stmt_employeeName->execute();
-                    
-                    while ($row_employeeName = $stmt_employeeName->fetch(PDO::FETCH_ASSOC)){
                         echo $row_employeeName ['firstName'].' '.$row_employeeName ['lastName'];
                     }
                   ?>

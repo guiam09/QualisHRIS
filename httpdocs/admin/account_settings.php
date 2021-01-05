@@ -21,7 +21,7 @@ $getData = getUserInfo($con, $_SESSION['user_id']);
 $user = $_SESSION['user_id'];
 $fullname = $getData['firstName'] .' '. $getData['lastName'];
 $userEmail = $getData['emailAddress'];
-
+$adminAccess = []; 
 ?>
 <!-- For password field -->
 <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
@@ -102,16 +102,43 @@ $userEmail = $getData['emailAddress'];
             </div>
             <div class="panel-body container-fluid">
               <div class="row row-lg">
+                
+                <?php
+                    $searchq = $_SESSION['employeeID'];
+                    $query = "SELECT DISTINCT accessedModules FROM tbl_accesslevels JOIN tbl_accessLevelEmp 
+                            ON tbl_accesslevels.accessLevelID = tbl_accessLevelEmp.accessLevelID JOIN tbl_accessLevelModules 
+                            ON tbl_accessLevelModules.accessLevelID = tbl_accesslevels.accessLevelID WHERE tbl_accessLevelEmp.employeeID = '$searchq'";
+                    $stmt = $con->prepare($query);
+                    $stmt->execute();
+                    $num = $stmt->rowCount();
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                      array_push($adminAccess, $row['accessedModules']);
+                    }
+
+                ?>
                 <div class="col-md-12">
-                    <form method="POST" action="process_email_update.php">
+                    <div <?php 
+                    if(in_array("aedEmployeeModule", $adminAccess)){ echo "style='display: block;'"; }
+                    else echo "style='display: none;'"; ?>>
+                      <form method="POST" action="process_email_update.php" >
+                        <div class="form-group row">
+                          <label for="staticEmail" class="col-sm-2 col-form-label">Email Address</label>
+                          <input readonly type='text' name="enteredEmail" id='enteredEmail' class='col-sm-4 form-control border border-dark' value='<?php echo trim($userEmail, ' ') ?>'>"
+                          <button type="button" id='editEmailBtn' onclick="change_email()" class="btn btn-info edit-button">Edit Email</button>
+                          <button type="submit" id='saveEmailBtn' onclick="save_email()" class="btn btn-info save-button">Save</button>
+                          <button type="button" id='cancelEmailBtn' onclick="cancel_email()" class="btn btn-info cancel-button">Cancel</button>
+                        </div>
+                      </form>
+                      </div>
+                    <div class="card-text" <?php 
+                    if(in_array("aedEmployeeModule", $adminAccess)){ echo "style='display: none;'"; }
+                    else echo "style='display: block;'"; ?>>
                       <div class="form-group row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">Email Address</label>
-                        <input readonly type='text' name="enteredEmail" id='enteredEmail' class='col-sm-4 form-control border border-dark' value='<?php echo trim($userEmail, ' ') ?>'>"
-                        <button type="button" id='editEmailBtn' onclick="change_email()" class="btn btn-info edit-button">Edit Email</button>
-                        <button type="submit" id='saveEmailBtn' onclick="save_email()" class="btn btn-info save-button">Save</button>
-                        <button type="button" id='cancelEmailBtn' onclick="cancel_email()" class="btn btn-info cancel-button">Cancel</button>
+                        <a class="blue-grey-400 font-size-16"><i><?php echo $getData['emailAddress'] ?></i></a>
                       </div>
-                    </form>
+                    </div>
+             
                    <form name="frmChange" method="post" action="process_edit_details.php" onSubmit="return validatePassword()">
                     <div class="form-group row">
                       <label for="staticEmail" class="col-sm-2 col-form-label">Employee Number</label>

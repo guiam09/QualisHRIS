@@ -30,45 +30,6 @@ include ('../includes/fetchData.php');
     <!-- Page -->
     <div class="page">
       <div class="page-header">
-        <?php
-            $x = isset($_GET['empID']) ? $_GET['empID'] : "";
-                $empID = $x;
-                $empQuery = "SELECT * FROM tbl_employees WHERE employeeCode = '$empID'";
-                $empstmt =$con->prepare($empQuery);
-                $empstmt->execute();
-                $empRow = $empstmt->fetch(PDO::FETCH_ASSOC);
-
-                $empCode = $empRow['employeeCode'];
-                $firstName = $empRow['firstName'];
-                $middleName = $empRow['lastName'];
-                $lastName = $empRow['middleName'];
-
-                $password = $empRow['password'];
-                
-                
-        $message = isset($_GET['add_employee']) ? $_GET['add_employee'] : "";
-
-        if($message=='success'){
-               echo '<div class="alert dark alert-icon alert-success alert-dismissible" role="alert">
-             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-             </button>
-             <i class="icon fa-check" aria-hidden="true"></i> Employee Successfully Added! <br>
-                 An email including his log-in credentials have been sent.
-             </div>';
-        }
-
-        else if($message=='failed'){
-          echo '<div class="alert dark alert-icon alert-danger alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                <i class="icon fa-close" aria-hidden="true"></i> Unable to add Employee
-                </div>';
-        }
-
-         ?>
-
           <h1 class="page-title">Add Employee</h1>
       </div>
       <div class="page-content container-fluid">
