@@ -123,5 +123,8 @@
   "engines": {
     "node": ">= 8",
     "npm": ">= 5"
+  },
+  "dependencies": {
+    "angularjs-datatables": "^0.5.9"
   }
 }
