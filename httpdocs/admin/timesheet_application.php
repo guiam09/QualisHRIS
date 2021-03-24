@@ -89,7 +89,7 @@ function fill_location_select_box($con, $rowData = [])
 </style>
 
 
-<div class="page">
+<div class="page" ng-app="hris" ng-controller="TimeSheetController">
       <div class="page-header">
           <h1 class="page-title"><i>Timesheets Application</i></h1>
       </div>
