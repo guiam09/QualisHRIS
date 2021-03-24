@@ -75,6 +75,7 @@ function fill_location_select_box($con, $rowData = [])
 ?>
 <!-- Main Page Content -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!---->
 
@@ -536,8 +537,14 @@ function fill_location_select_box($con, $rowData = [])
                                                     </td>
 
                                                     <td>
-                                                        <button type="button" class="btn btn-danger btn-sm" onclick="show_remarks_modal($(this))"><i class="fas fa-file"></i></button><br/><br/>
-                                                        <button <?php echo $disabled ?> type="button" name="remove" class="btn btn-danger btn-sm remove saved"><i class="fas fa-minus"></i></button>
+                                                        <button type="button" data-toggle="tooltip" title="Remarks" data-placement="top" class="btn btn-info btn-sm" onclick="show_remarks_modal($(this))">
+                                                            <i class="fas fa-file"></i>
+                                                        </button>
+                                                        <br/>
+                                                        <br/>
+                                                        <button <?php echo $disabled ?> type="button" name="remove" class="btn btn-danger btn-sm remove saved">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>
                                                     </td>
 
                                                 </tr>
@@ -624,6 +631,10 @@ function fill_location_select_box($con, $rowData = [])
     </div>
 </div>
 
+
+<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="../node_modules/angularjs-datatables/src/angular-datatables.js"></script>
+<script type="text/javascript" src="TimeSheet/timeSheetCtrl.js"></script>
 <script>
     var remarks_elem;
 
@@ -660,7 +671,7 @@ function fill_location_select_box($con, $rowData = [])
            html += '<td><input size="4" maxlength="4" type="number" style="width:5em" value = "0" step="0.5" min="0" max="24" name="new_saturday[]" id="' + now + '" class="form-control dailyWorkedHours saturday ' + now + '" /></td>';
            html += '<td><input size="4" maxlength="4" type="number" style="width:5em" value = "0" step="0.5" min="0" max="24" name="new_sunday[]" id="' + now + '" class="form-control dailyWorkedHours sunday ' + now + '" /></td>';
            html += '<td><input size="4" maxlength="4" type="number" style="width:5em" value = "0" border="0" readonly min="0" id="' + now + '" class="form-control totalWeeklyWorkedHours' + now + '" /></td>';
-           html += '<td><button type="button" class="btn btn-danger btn-sm" onclick="show_remarks_modal($(this))"><i class="fas fa-file"></i></button><button type="button" name="remove" class="btn btn-danger btn-sm remove"><i class="fas fa-minus"></i></button></td>'
+           html += '<td><button type="button" data-toggle="tooltip" title="Remarks" data-placement="top" class="btn btn-info btn-sm" onclick="show_remarks_modal($(this))"><i class="fas fa-file"></i></button><button type="button" name="remove" class="btn btn-danger btn-sm remove"><i class="fas fa-minus"></i></button></td>'
            
            
            html += '<td></td>'
