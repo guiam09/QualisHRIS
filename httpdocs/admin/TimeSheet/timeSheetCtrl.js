@@ -25,9 +25,16 @@ angular
     $(document).on('click', '.remove', RemoveRow);
 
     // Functions
-    function CalculateTotals(event) {
-        console.log("Calculate Totals");
+    function CalculateTotals(event) {        
         var day = event.data;
+        
+        // Input value should be divisible by 0.5
+        var isInvalid = parseFloat($(this).val()) % 0.5 != 0;
+        if (isInvalid || $(this).val().toLowerCase().includes('e')) {
+            $(this).addClass("invalid");
+        } else {
+            $(this).removeClass("invalid");
+        }
         
         // Compute Daily Total
         var dailyTotal = 0;

@@ -81,6 +81,9 @@ function fill_location_select_box($con, $rowData = [])
 
 <style>
 
+.invalid {
+    border: 1px solid red !important;
+}
 #week-picker-wrapper .datepicker .datepicker-days tr:hover td, #week-picker-wrapper .datepicker table tr td.day:hover, #week-picker-wrapper .datepicker table tr td.focused {
     color: #000!important;
     background: #e5e2e3!important;
