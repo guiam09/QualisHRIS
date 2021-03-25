@@ -420,7 +420,7 @@ function fill_location_select_box($con, $rowData = [])
                         </div>
                         <div align="right" class="col-md-3">
                             <button <?php echo $disabled ?> class="btn btn-default btn-sm submit" id="submit-btn">Submit <span class="glyphicon glyphicon-send"></span></button>
-                            <button type="button" <?php echo $disabled ?> onclick="saveConfirm()" class="btn btn-default btn-sm save">Save <span class="glyphicon glyphicon-floppy-disk"></span></button>
+                            <button type="button" <?php echo $disabled ?> ng-click="saveConfirm()" class="btn btn-default btn-sm save">Save <span class="glyphicon glyphicon-floppy-disk"></span></button>
                         </div>
                     </div>
                     <!-- Timesheet Table code Start -->
@@ -592,7 +592,36 @@ function fill_location_select_box($con, $rowData = [])
         </div>
     </div>
 </section>
-</div>
+
+    </div>
+
+    <!-- Warning Modal -->
+    <div class="modal fade" id="warningModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h3 class="card-title">Warning</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body ">
+                    <div class='row' ng-repeat="message in warningMessages">
+                        <div class='col-md-12'>
+                            {{ message }}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-outline" data-dismiss="modal">
+                        <i class="fa fa-close"></i> 
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Warning Modal -->
 </div>
 <?php
     include ('../includes/footer.php');
@@ -666,9 +695,9 @@ function fill_location_select_box($con, $rowData = [])
            var now = $.now();
            html += '<tr>';
            html += '<td><select name="new_project_name[]" class="form-control project_name" ><option value="">Select Project</option><?php echo fill_projectCode_select_box($con); ?></select></td>';
-        //    html += '<td style="display: none;"><select name="new_work_type[]" class="form-control work_type"><option value="">Select work type</option><?php echo fill_workType_select_box($con); ?></select></td>';
+           html += '<td style="display: none;"><select name="new_work_type[]" class="form-control work_type"><option value="">Select work type</option><?php echo fill_workType_select_box($con); ?></select></td>';
            html += '<td><input type="text" name="new_task_code[]" class="form-control task_code" /></td>';
-        //    html += '<td style="display: none;"><input type="text" name="new_work_location[]" class="form-control task_code remarks" /></td>';
+           html += '<td style="display: none;"><input type="text" name="new_work_location[]" class="form-control task_code remarks" /></td>';
            html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_monday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours monday ' + now + '" /></td>';
            html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_tuesday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours tuesday ' + now + '" /></td>';
            html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_wednesday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours wednesday ' + now + '" /></td>';
@@ -938,28 +967,33 @@ function fill_location_select_box($con, $rowData = [])
         });
     });
 
-    function saveConfirm()
-    {
-        Swal.fire({
-            title:'Are you sure you want to save the timesheet?',
-            type:'question',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, I\'m sure'
-        }).then((result) => {
-            if(result.value){
-                swal(
-                    "Saving. . .",{
-                        closeOnClickOutside: false,
-                        closeOnEsc: false,
-                        buttons: false
-                    }
-                )
-                $('#insert_form').submit();
-            }
-        });
-    }
+    // function saveConfirm()
+    // {
+    //     CheckProjectCodes();
+
+    //     // new_project_name[]
+    //     $('#warningModal').modal('show');
+    
+    //     // Swal.fire({
+    //     //     title:'Are you sure you want to save the timesheet?',
+    //     //     type:'question',
+    //     //     showCancelButton: true,
+    //     //     confirmButtonColor: '#3085d6',
+    //     //     cancelButtonColor: '#d33',
+    //     //     confirmButtonText: 'Yes, I\'m sure'
+    //     // }).then((result) => {
+    //     //     if(result.value){
+    //     //         swal(
+    //     //             "Saving. . .",{
+    //     //                 closeOnClickOutside: false,
+    //     //                 closeOnEsc: false,
+    //     //                 buttons: false
+    //     //             }
+    //     //         )
+    //     //         $('#insert_form').submit();
+    //     //     }
+    //     // });
+    // }
 
     function submitConfirm()
     {
