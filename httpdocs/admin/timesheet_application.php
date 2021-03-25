@@ -764,7 +764,7 @@ function fill_location_select_box($con, $rowData = [])
         });
         $('.week-prev').on('click', function() {
             var prev = new Date(start_date.getTime());
-            prev.setDate(prev.getDate() - 1);
+            prev.setDate(prev.getDate() - 7);
             set_week_picker(prev);
             window.location.href = window.location.href.replace( /[\?#].*|$/, "?date="+start_date.getFullYear() + '-' +("0" + (start_date.getMonth() + 1)).slice(-2)  + '-' + ("0" + (start_date.getDate())).slice(-2));
         });
