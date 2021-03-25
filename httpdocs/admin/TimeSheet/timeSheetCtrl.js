@@ -15,19 +15,9 @@ angular
     });
 
     // Functions
-    function CheckProjectCodes() {
-        $scope.warningMessages = [];
-        var projectCodesElements = document.getElementsByName("new_project_name[]");
-        for (var i = 0; i < projectCodesElements.length; i++){
-            if (projectCodesElements[i].value == ""){
-                $scope.warningMessages.push("Please enter Project Code on row " + (i+1));
-            }
-        }
-    }
-
     function SaveConfirm()
     {
-        CheckProjectCodes();
+        ValidateTimeSheet();
 
         if ($scope.warningMessages.length > 0) {
             $('#warningModal').modal('show');
@@ -52,7 +42,23 @@ angular
                 }
             });
         }
-    
-        
+    }
+
+    function ValidateTimeSheet() {
+        $scope.warningMessages = [];
+        var projectCodesElements = document.getElementsByName("new_project_name[]");
+        var taskCodes = document.getElementsByName("new_task_code[]");
+
+        for (var i = 0; i < projectCodesElements.length; i++){
+            if (projectCodesElements[i].value == ""){
+                $scope.warningMessages.push("Please select Project Code on row " + (i+1));
+            }
+            
+        }
+        for (var i = 0; i < taskCodes.length; i++){
+            if (taskCodes[i].value == "") {
+                $scope.warningMessages.push("Please enter Task Code on row " + (i+1));
+            }
+        }
     }
 });
