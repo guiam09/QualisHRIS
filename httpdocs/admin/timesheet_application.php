@@ -628,8 +628,10 @@ function fill_location_select_box($con, $rowData = [])
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-outline" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-                <button type="button" class="btn btn-primary" onclick="set_remarks()" data-dismiss="modal"> <i class="fa fa-check-square-o"></i> Save</button>
+                <button type="button" onclick="set_remarks()" class="btn btn-default btn-outline" data-dismiss="modal">
+                    <i class="fa fa-close"></i> 
+                    Close
+                </button>
             </div>
         </div>
     </div>
