@@ -501,7 +501,7 @@ function fill_location_select_box($con, $rowData = [])
                                                     </td>
                                                     
                                                     <td class="col-sm-3">
-                                                        <input <?php echo $disabled ?> type="text" name="new_task_code[]" value="<?php echo $row['weekly_taskCode']; ?>" class="form-control saved"></input>
+                                                        <input <?php echo $disabled ?> type="text" name="new_task_code[]" value="<?php echo $row['weekly_taskCode']; ?>" class="form-control saved" style="width: 90px;"></input>
                                                     </td>
                                                     
                                                     <td class="col-sm-3" style="display:none">
@@ -696,7 +696,7 @@ function fill_location_select_box($con, $rowData = [])
            html += '<tr>';
            html += '<td><select name="new_project_name[]" class="form-control project_name" ><option value="">Select Project</option><?php echo fill_projectCode_select_box($con); ?></select></td>';
            html += '<td style="display: none;"><select name="new_work_type[]" class="form-control work_type"><option value="">Select work type</option><?php echo fill_workType_select_box($con); ?></select></td>';
-           html += '<td><input type="text" name="new_task_code[]" class="form-control task_code" /></td>';
+           html += '<td><input type="text" name="new_task_code[]" class="form-control task_code" style="width: 90px;"/></td>';
            html += '<td style="display: none;"><input type="text" name="new_work_location[]" class="form-control task_code remarks" /></td>';
            html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_monday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours monday ' + now + '" /></td>';
            html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_tuesday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours tuesday ' + now + '" /></td>';
