@@ -137,18 +137,50 @@ angular
 
     function ValidateTimeSheet() {
         $scope.warningMessages = [];
+        
         var projectCodesElements = document.getElementsByName("new_project_name[]");
-        var taskCodes = document.getElementsByName("new_task_code[]");
+        var recordCount = projectCodesElements.length;
 
-        for (var i = 0; i < projectCodesElements.length; i++){
+        for (var i = 0; i < recordCount; i++){
             if (projectCodesElements[i].value == ""){
                 $scope.warningMessages.push("Please select Project Code on row " + (i+1));
             }
             
         }
-        for (var i = 0; i < taskCodes.length; i++){
+
+        var taskCodes = document.getElementsByName("new_task_code[]");
+        for (var i = 0; i < recordCount; i++){
             if (taskCodes[i].value == "") {
                 $scope.warningMessages.push("Please enter Task Code on row " + (i+1));
+            }
+        }
+
+        var names = [
+            "new_monday[]",
+            "new_tuesday[]",
+            "new_wednesday[]",
+            "new_thursday[]",
+            "new_friday[]",
+            "new_saturday[]",
+            "new_sunday[]"
+        ];
+        var days = [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ];
+
+        for (var i = 0; i < recordCount; i++) {
+            for (var j = 0; j < names.length; j++) {
+                var input = document.getElementsByName(names[j])[i];
+                var isInvalid = parseFloat(input.value) % 0.5 != 0;
+                if (isInvalid || input.value.toLowerCase().includes('e')) {
+                    $scope.warningMessages.push("Invalid work hours on row " + (i+1) + ", " + days[j]);
+                }
             }
         }
     }
