@@ -262,7 +262,7 @@ function fill_location_select_box($con, $rowData = [])
                 //posted values
                 $employeeID             = htmlspecialchars(strip_tags($_SESSION['user_id']));
                 $newPostedProjectName   = $newProjectName[$newArrayCtr];
-                $newPostedWork          = $newWork[$newArrayCtr];
+                $newPostedWork          = "1"; // Work Type is removed, set default value of work type to 1 for Regular Hour
                 $newPostedTask          = $newTask[$newArrayCtr];
                 $newPostedLocation      = $newLocation[$newArrayCtr];
                 $newPostedSaturday      = $newSaturday[$newArrayCtr];
