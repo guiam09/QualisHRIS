@@ -6,6 +6,7 @@ angular
 
     // Method Binding
     $scope.saveConfirm = SaveConfirm;
+    $scope.submitConfirm = SubmitConfirm;
 
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip({
@@ -13,8 +14,66 @@ angular
             template: '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
         });   
     });
+    
+    $(document).on('keyup click', '.monday', 'monday', CalculateTotals);
+    $(document).on('keyup click', '.tuesday', 'tuesday', CalculateTotals);
+    $(document).on('keyup click', '.wednesday', 'wednesday', CalculateTotals);
+    $(document).on('keyup click', '.thursday', 'thursday', CalculateTotals);
+    $(document).on('keyup click', '.friday', 'friday', CalculateTotals);
+    $(document).on('keyup click', '.saturday', 'saturday', CalculateTotals);
+    $(document).on('keyup click', '.sunday', 'sunday', CalculateTotals);
+    $(document).on('click', '.remove', RemoveRow);
 
     // Functions
+    function CalculateTotals(event) {
+        console.log("Calculate Totals");
+        var day = event.data;
+        
+        // Compute Daily Total
+        var dailyTotal = 0;
+        $('.' + day).each(function(){
+            dailyTotal += parseFloat($(this).val()); 
+        });
+        $('.' + day + 'Total').val(dailyTotal);
+        
+        // Compute Weekly Total
+        var weeklyTotal = 0;
+        var id = $(this).closest('input').attr('id');
+        $('.'+id).each(function(){
+            weeklyTotal += parseFloat($(this).val()); 
+        });
+        $('.totalWeeklyWorkedHours'+id).val(weeklyTotal);
+    }
+
+    function RemoveRow () {
+        $(this).closest('tr').remove();
+        
+        var childSelectors = [
+            ".monday",
+            ".tuesday",
+            ".wednesday",
+            ".thursday",
+            ".friday",
+            ".saturday",
+            ".sunday"
+        ];
+
+        for (var i = 0; i < childSelectors.length; i++) {
+            var dailySum = 0;
+            $(childSelectors[i]).each(function(){
+                dailySum += parseFloat($(this).val());  
+            });
+            
+            $(childSelectors[i] + 'Total').val(dailySum);
+        }
+        
+        var overallTotal = 0;
+        $('.dailyWorkedHours').each(function(){
+            overallTotal += parseFloat($(this).val()); 
+        });
+        $('.overallTotal').val(overallTotal);
+    }
+
     function SaveConfirm()
     {
         ValidateTimeSheet();
@@ -42,6 +101,31 @@ angular
                 }
             });
         }
+    }
+
+    function SubmitConfirm()
+    {
+        Swal.fire({
+            title:'Are you sure you want to submit the timesheet?',
+            type:'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, I\'m sure'
+        }).then((result) => {
+            if(result.value){
+                swal(
+                    "Saving. . .",{
+                        closeOnClickOutside: false,
+                        closeOnEsc: false,
+                        buttons: false
+                    }
+                )
+                // $('#submit-timesheet-form').submit();
+                $('#save_and_submit').val('yes');
+                $('#insert_form').submit();
+            }
+        });
     }
 
     function ValidateTimeSheet() {

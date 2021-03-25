@@ -419,7 +419,7 @@ function fill_location_select_box($con, $rowData = [])
                             <span>Status: <?php echo $timesheetStatus ?></span>
                         </div>
                         <div align="right" class="col-md-3">
-                            <button <?php echo $disabled ?> class="btn btn-default btn-sm submit" id="submit-btn">Submit <span class="glyphicon glyphicon-send"></span></button>
+                            <button ng-click="submitConfirm()" <?php echo $disabled ?> class="btn btn-default btn-sm submit" id="submit-btn">Submit <span class="glyphicon glyphicon-send"></span></button>
                             <button type="button" <?php echo $disabled ?> ng-click="saveConfirm()" class="btn btn-default btn-sm save">Save <span class="glyphicon glyphicon-floppy-disk"></span></button>
                         </div>
                     </div>
@@ -717,198 +717,15 @@ function fill_location_select_box($con, $rowData = [])
             
         });
         
-        $(document).on('click', '.remove', function(){
-             $(this).closest('tr').remove();
-             
-            var saturdaySum = 0;
-            $('.saturday').each(function(){
-            saturdaySum += parseFloat($(this).val());  
-            });
-            
-            $('.saturdayTotal').val(saturdaySum);
-            
-            var sundaySum = 0;
-            $('.sunday').each(function(){
-            sundaySum += parseFloat($(this).val()); 
-            });
-            
-            $('.sundayTotal').val(sundaySum);
-            
-            var mondaySum = 0;
-            $('.monday').each(function(){
-            mondaySum += parseFloat($(this).val()); 
-            });
-            
-            $('.mondayTotal').val(mondaySum);
-
-            var tuesdaySum = 0;
-            $('.tuesday').each(function(){
-            tuesdaySum += parseFloat($(this).val());  
-            });
-            
-            $('.tuesdayTotal').val(tuesdaySum);
-
-            var wednesdaySum = 0;
-            $('.wednesday').each(function(){
-            wednesdaySum += parseFloat($(this).val());
-            });
-            
-            $('.wednesdayTotal').val(wednesdaySum);
-            
-            var thursdaySum = 0;
-            $('.thursday').each(function(){
-            thursdaySum += parseFloat($(this).val());  
-            });
-            
-            $('.thursdayTotal').val(thursdaySum);
-            
-            var fridaySum = 0;
-            $('.friday').each(function(){
-            fridaySum += parseFloat($(this).val()); 
-            });
-            
-            $('.fridayTotal').val(fridaySum);
-            
-            var overallTotal = 0;
-            $('.dailyWorkedHours').each(function(){
-            overallTotal += parseFloat($(this).val()); 
-            });
-            
-            $('.overallTotal').val(overallTotal);
-        });
-        
-    //getting weekly and daily totals script
-        $(document).on('keyup click', '.saturday', function(){
-            var saturdaySum = 0;
-            $('.saturday').each(function(){
-            saturdaySum += parseFloat($(this).val());  
-            });
-            
-            $('.saturdayTotal').val(saturdaySum);
-            
-            var weeklySum = 0;
-            var id = $(this).closest('input').attr('id');
-            $('.'+id).each(function(){
-               weeklySum += parseFloat($(this).val()); 
-            });
-            
-            $('.totalWeeklyWorkedHours'+id).val(weeklySum);
-        });
-        
-        $(document).on('keyup click', '.sunday', function(){
-            var sundaySum = 0;
-            $('.sunday').each(function(){
-            sundaySum += parseFloat($(this).val()); 
-            });
-            
-            $('.sundayTotal').val(sundaySum);
-            
-            var weeklySum = 0;
-            var id = $(this).closest('input').attr('id');
-            $('.'+id).each(function(){
-               weeklySum += parseFloat($(this).val()); 
-            });
-     
-            $('.totalWeeklyWorkedHours'+id).val(weeklySum);
-        });
-        
-        $(document).on('keyup click', '.monday', function(){
-            var mondaySum = 0;
-            $('.monday').each(function(){
-            mondaySum += parseFloat($(this).val()); 
-            });
-           
-            $('.mondayTotal').val(mondaySum);
-            
-            var weeklySum = 0;
-            var id = $(this).closest('input').attr('id');
-            $('.'+id).each(function(){
-               weeklySum += parseFloat($(this).val()); 
-            });
-  
-            $('.totalWeeklyWorkedHours'+id).val(weeklySum);
-        });
-        
-        $(document).on('keyup click', '.tuesday', function(){
-            var tuesdaySum = 0;
-            $('.tuesday').each(function(){
-            tuesdaySum += parseFloat($(this).val());  
-            });
-            
-            $('.tuesdayTotal').val(tuesdaySum);
-            
-            var weeklySum = 0;
-            var id = $(this).closest('input').attr('id');
-            $('.'+id).each(function(){
-               weeklySum += parseFloat($(this).val()); 
-            });
-       
-            $('.totalWeeklyWorkedHours'+id).val(weeklySum);
-        });
-        
-        $(document).on('keyup click', '.wednesday', function(){
-            var wednesdaySum = 0;
-            $('.wednesday').each(function(){
-            wednesdaySum += parseFloat($(this).val());
-            });
-          
-            $('.wednesdayTotal').val(wednesdaySum);
-            
-            var weeklySum = 0;
-            var id = $(this).closest('input').attr('id');
-            $('.'+id).each(function(){
-               weeklySum += parseFloat($(this).val()); 
-            });
-   
-            $('.totalWeeklyWorkedHours'+id).val(weeklySum);
-        });
-        
-        $(document).on('keyup click', '.thursday', function(){
-            var thursdaySum = 0;
-            $('.thursday').each(function(){
-            thursdaySum += parseFloat($(this).val());  
-            });
-            
-            $('.thursdayTotal').val(thursdaySum);
-            
-            var weeklySum = 0;
-            var id = $(this).closest('input').attr('id');
-            $('.'+id).each(function(){
-               weeklySum += parseFloat($(this).val()); 
-            });
-   
-            $('.totalWeeklyWorkedHours'+id).val(weeklySum);
-        });
-        
-        $(document).on('keyup click', '.friday', function(){
-            var fridaySum = 0;
-            $('.friday').each(function(){
-            fridaySum += parseFloat($(this).val()); 
-            });
-            
-            $('.fridayTotal').val(fridaySum);
-            
-            var weeklySum = 0;
-            var id = $(this).closest('input').attr('id');
-            $('.'+id).each(function(){
-               weeklySum += parseFloat($(this).val()); 
-            });
-     
-            $('.totalWeeklyWorkedHours'+id).val(weeklySum);
-        });    
-        
+        //getting weekly and daily totals script
         $(document).on('keyup click', '.dailyWorkedHours', function(){
             var overallTotal = 0;
             $('.dailyWorkedHours').each(function(){
             overallTotal += parseFloat($(this).val()); 
             });
-            $('.overallTotal').val(overallTotal);
-            
-            
-                                
+            $('.overallTotal').val(overallTotal);              
         });    
-        
-    //end getting totals script
+        //end getting totals script
     
 
         var date = new Date();
@@ -962,64 +779,8 @@ function fill_location_select_box($con, $rowData = [])
         <?php } else { ?>
         set_week_picker(new Date);
         <?php } ?>
-
-        $('#submit-btn').on('click', function() {
-            submitConfirm();
-        });
     });
 
-    // function saveConfirm()
-    // {
-    //     CheckProjectCodes();
-
-    //     // new_project_name[]
-    //     $('#warningModal').modal('show');
-    
-    //     // Swal.fire({
-    //     //     title:'Are you sure you want to save the timesheet?',
-    //     //     type:'question',
-    //     //     showCancelButton: true,
-    //     //     confirmButtonColor: '#3085d6',
-    //     //     cancelButtonColor: '#d33',
-    //     //     confirmButtonText: 'Yes, I\'m sure'
-    //     // }).then((result) => {
-    //     //     if(result.value){
-    //     //         swal(
-    //     //             "Saving. . .",{
-    //     //                 closeOnClickOutside: false,
-    //     //                 closeOnEsc: false,
-    //     //                 buttons: false
-    //     //             }
-    //     //         )
-    //     //         $('#insert_form').submit();
-    //     //     }
-    //     // });
-    // }
-
-    function submitConfirm()
-    {
-        Swal.fire({
-            title:'Are you sure you want to submit the timesheet?',
-            type:'question',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, I\'m sure'
-        }).then((result) => {
-            if(result.value){
-                swal(
-                    "Saving. . .",{
-                        closeOnClickOutside: false,
-                        closeOnEsc: false,
-                        buttons: false
-                    }
-                )
-                // $('#submit-timesheet-form').submit();
-                $('#save_and_submit').val('yes');
-                $('#insert_form').submit();
-            }
-        });
-    }
 </script>
 
 
