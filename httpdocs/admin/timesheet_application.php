@@ -86,6 +86,10 @@ function fill_location_select_box($con, $rowData = [])
     background: #e5e2e3!important;
     border-radius: 0!important;
 }
+.work-hours {
+    width:4.5em; 
+    padding-right: 3px;"
+}
 </style>
 
 
@@ -505,35 +509,35 @@ function fill_location_select_box($con, $rowData = [])
                                                     </td>
 
                                                     <td>
-                                                        <input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" <?php echo $disabled ?> type="number" name="new_monday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours monday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_monday']; ?>"></input>
+                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_monday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours monday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_monday']; ?>"></input>
                                                     </td>
 
                                                     <td>
-                                                        <input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" <?php echo $disabled ?> type="number" name="new_tuesday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours tuesday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_tuesday']; ?>"></input>
+                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_tuesday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours tuesday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_tuesday']; ?>"></input>
                                                     </td>
 
                                                     <td>
-                                                        <input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" <?php echo $disabled ?> type="number" name="new_wednesday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours wednesday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_wednesday']; ?>"></input>
+                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_wednesday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours wednesday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_wednesday']; ?>"></input>
                                                     </td>
 
                                                     <td>
-                                                        <input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" <?php echo $disabled ?> type="number" name="new_thursday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours thursday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_thursday']; ?>"></input>
+                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_thursday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours thursday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_thursday']; ?>"></input>
                                                     </td>
 
                                                     <td>
-                                                        <input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" <?php echo $disabled ?> type="number" name="new_friday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours friday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_friday']; ?>"></input>
+                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_friday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours friday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_friday']; ?>"></input>
                                                     </td>
 
                                                     <td>
-                                                        <input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" <?php echo $disabled ?> type="number" name="new_saturday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours saturday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_saturday']; ?>"></input>
+                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_saturday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours saturday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_saturday']; ?>"></input>
                                                     </td>
 
                                                     <td>
-                                                        <input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" <?php echo $disabled ?> type="number" name="new_sunday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours sunday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_sunday']; ?>"></input>
+                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_sunday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours sunday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_sunday']; ?>"></input>
                                                     </td>
 
                                                     <td>
-                                                        <input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" type="text" value="<?php echo $subtotal ?>" id="<?php echo $row['weekly_ID']; ?>" class="form-control totalWeeklyWorkedHours<?php echo $row['weekly_ID'] ?>" step="0.5" min="0" max="24" readonly value="<?php echo $row['weekly_total']; ?>"></input>
+                                                        <input size="4" maxlength="4" type="text" value="<?php echo $subtotal ?>" id="<?php echo $row['weekly_ID']; ?>" class="form-control work-hours  totalWeeklyWorkedHours<?php echo $row['weekly_ID'] ?>" step="0.5" min="0" max="24" readonly value="<?php echo $row['weekly_total']; ?>"></input>
                                                     </td>
 
                                                     <td>
@@ -560,14 +564,14 @@ function fill_location_select_box($con, $rowData = [])
                                     <th style="display: none;"></th>
                                     <th style="display: none;"></th>
                                     <th>Total</th>
-                                    <td><input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" type="text" value = "<?php echo $mondayTotal ?>" border="0" readonly min="0" name="monday_total[]" class="form-control mondayTotal" /></td>
-                                    <td><input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" type="text" value = "<?php echo $tuesdayTotal ?>" border="0" readonly min="0" name="tuesday_total[]" class="form-control tuesdayTotal" /></td>
-                                    <td><input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" type="text" value = "<?php echo $wednesdayTotal ?>" border="0" readonly min="0" name="wednesday_total[]" class="form-control wednesdayTotal" /></td>
-                                    <td><input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" type="text" value = "<?php echo $thursdayTotal ?>" border="0" readonly min="0" name="thursday_total[]" class="form-control thursdayTotal" /></td>
-                                    <td><input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" type="text" value = "<?php echo $fridayTotal ?>" border="0" readonly min="0" name="friday_total[]" class="form-control fridayTotal" /></td>
-                                    <td><input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" type="text" value = "<?php echo $saturdayTotal ?>" border="0" readonly min="0" max="24" name="saturday_total[]" class="form-control saturdayTotal" /></td>
-                                    <td><input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" type="text" value = "<?php echo $sundayTotal ?>" border="0" readonly min="0" name="sunday_total[]" class="form-control sundayTotal" /></td>
-                                    <td><input size="4" maxlength="4" style="width:4.5em; padding-right: 3px;" type="text" value = "<?php echo $subtotal ?>" border="0" readonly min="0" name="overall_total[]" class="form-control overallTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $mondayTotal ?>" border="0" readonly min="0" name="monday_total[]" class="form-control work-hours mondayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $tuesdayTotal ?>" border="0" readonly min="0" name="tuesday_total[]" class="form-control work-hours tuesdayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $wednesdayTotal ?>" border="0" readonly min="0" name="wednesday_total[]" class="form-control work-hours wednesdayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $thursdayTotal ?>" border="0" readonly min="0" name="thursday_total[]" class="form-control work-hours thursdayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $fridayTotal ?>" border="0" readonly min="0" name="friday_total[]" class="form-control work-hours fridayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $saturdayTotal ?>" border="0" readonly min="0" max="24" name="saturday_total[]" class="form-control work-hours saturdayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $sundayTotal ?>" border="0" readonly min="0" name="sunday_total[]" class="form-control work-hours sundayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $subtotal ?>" border="0" readonly min="0" name="overall_total[]" class="form-control work-hours overallTotal" /></td>
                                 </tfoot>
                             </table>
                         </div>
@@ -663,14 +667,14 @@ function fill_location_select_box($con, $rowData = [])
         //    html += '<td style="display: none;"><select name="new_work_type[]" class="form-control work_type"><option value="">Select work type</option><?php echo fill_workType_select_box($con); ?></select></td>';
            html += '<td><input type="text" name="new_task_code[]" class="form-control task_code" /></td>';
         //    html += '<td style="display: none;"><input type="text" name="new_work_location[]" class="form-control task_code remarks" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" style="width:4.5em; padding-right: 3px;" value = "0" step="0.5" min="0" max="24" name="new_monday[]" id="' + now + '" class="form-control dailyWorkedHours monday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" style="width:4.5em; padding-right: 3px;" value = "0" step="0.5" min="0" max="24" name="new_tuesday[]" id="' + now + '" class="form-control dailyWorkedHours tuesday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" style="width:4.5em; padding-right: 3px;" value = "0" step="0.5" min="0" max="24" name="new_wednesday[]" id="' + now + '" class="form-control dailyWorkedHours wednesday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" style="width:4.5em; padding-right: 3px;" value = "0" step="0.5" min="0" max="24" name="new_thursday[]" id="' + now + '" class="form-control dailyWorkedHours thursday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" style="width:4.5em; padding-right: 3px;" value = "0" step="0.5" min="0" max="24" name="new_friday[]" id="' + now + '" class="form-control dailyWorkedHours friday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" style="width:4.5em; padding-right: 3px;" value = "0" step="0.5" min="0" max="24" name="new_saturday[]" id="' + now + '" class="form-control dailyWorkedHours saturday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" style="width:4.5em; padding-right: 3px;" value = "0" step="0.5" min="0" max="24" name="new_sunday[]" id="' + now + '" class="form-control dailyWorkedHours sunday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" style="width:4.5em; padding-right: 3px;" value = "0" border="0" readonly min="0" id="' + now + '" class="form-control totalWeeklyWorkedHours' + now + '" /></td>';
+           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_monday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours monday ' + now + '" /></td>';
+           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_tuesday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours tuesday ' + now + '" /></td>';
+           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_wednesday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours wednesday ' + now + '" /></td>';
+           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_thursday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours thursday ' + now + '" /></td>';
+           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_friday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours friday ' + now + '" /></td>';
+           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_saturday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours saturday ' + now + '" /></td>';
+           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_sunday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours sunday ' + now + '" /></td>';
+           html += '<td><input size="4" maxlength="4" type="number" value = "0" border="0" readonly min="0" id="' + now + '" class="form-control work-hours totalWeeklyWorkedHours' + now + '" /></td>';
            html += '<td><button type="button" data-toggle="tooltip" title="Remarks" data-placement="top" class="btn btn-info btn-sm" onclick="show_remarks_modal($(this))"><i class="fas fa-file"></i></button><button type="button" name="remove" class="btn btn-danger btn-sm remove"><i class="fas fa-minus"></i></button></td>'
            
            
