@@ -639,7 +639,9 @@ include ('../includes/scripts.php');
         startDate: date
     });
     $(document).ready(function() {
-        $('#showLeaveTable').DataTable();
+        $('#showLeaveTable').DataTable({
+            "searching": false
+        });
         
         // showing custom date range
         $('#showDateRange').on('change', function() {

@@ -175,6 +175,7 @@
 
                 $(document).ready(function() {
                     var table = $('#example3').DataTable({
+                        "searching": false,
                         orderCellsTop: true,
                         fixedHeader: true
                     });        
@@ -258,7 +259,9 @@
 
     function InitializeLeaveRequestTable() {
         $(document).ready(function(){
-            leaveRequestTable = $('#datatable1').DataTable();
+            leaveRequestTable = $('#datatable1').DataTable({
+                "searching": false
+            });
         });
     }
     function ApplyLeaveRequestData(leaveRequests) {
