@@ -173,7 +173,8 @@ include ('../includes/fetchData.php');
         </div>
         <!-- End Leave Approval Tab -->
 
-        <!-- Leave View Tab -->
+        <!-- Leave Application: Balance Tab -->
+    
         <div class="tab-pane fade" id="custom-content-below-leaveCount" role="tabpanel" aria-labelledby="custom-content-below-leaveCount-tab">
             <div class="page-content container-fluid">
                 <div class="row">
@@ -381,7 +382,7 @@ include ('../includes/fetchData.php');
                                                         <div class="col-md-3">
                                                             <div class="form-group">
                                                                 <div class="col-md-12 input-group input-daterange preferredleaveDate apply-leave-date" data-plugin="datepicker" >
-                                                                    <input type="text" id="leaveDateUpdate{{leaveDetail.leavedetails_ID}}" name="leaveDate[]" class="form-control datepicker" autocomplete="off" ng-value="leaveDetail.leavedetails_leaveFrom | date:'MM-dd-yyyy'" />
+                                                                    <input type="date" id="leaveDateUpdate{{leaveDetail.leavedetails_ID}}" name="leaveDate[]" class="form-control datepicker" autocomplete="off" ng-value="leaveDetail.leavedetails_leaveFrom" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -565,7 +566,7 @@ include ('../includes/fetchData.php');
                                         </td>
                                         <td class="hasInputData">
                                             <div class="col-md-12 input-group input-daterange preferredleaveDate apply-leave-date" data-plugin="datepicker" id="currentDate">
-                                                <input onchange="row_check($(this))" type="text" id="applyLeaveDate" name="leave_date[]" class="form-control datepicker" autocomplete="off" readonly/>
+                                                <input onchange="row_check($(this))" type="date" id="applyLeaveDate" name="leave_date[]" class="form-control datepicker" autocomplete="off" readonly/>
                                             </div>
                                         </td>
                                         <td class="hasInputData">
