@@ -397,7 +397,7 @@ include ('get_week_range.php');
                                         <th style="width:20%"> <button <?php echo $disabled ?> type="button" name="add" class="btn btn-default btn-sm add" ng-click="addTask()"><i class="fas fa-plus"></i></button></th>
                                     </tr>
                                     <!-- Display data from database -->
-                                    <tr ng-repeat="task in weeklyUtilization">
+                                    <tr ng-if="weeklyUtilization.length > 0" ng-repeat="task in weeklyUtilization">
                                         <td class="col-sm-3">
                                             <select name="new_project_name[]" class="form-control project_name saved" style="min-width: 180px;">
                                                 <option value="" ng-if="task.project_ID == ''">Select work type</option>

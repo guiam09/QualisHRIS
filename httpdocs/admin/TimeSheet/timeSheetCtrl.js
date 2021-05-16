@@ -72,7 +72,7 @@ angular
         });
 
         var date = urlParams.get('date');
-        if (date !== '') {
+        if (date) {
             var year = parseInt(date.substring(0,4));
             var month = parseInt(date.substring(5,7) - 1);
             var day = parseInt(date.substring(8));
@@ -98,6 +98,7 @@ angular
     $(document).on('keyup click', '.sunday', 'sunday', CalculateTotals);
     $(document).on('click', '.remove', RemoveRow);
 
+    GetUserInfo();
     GetProjects();
     GetWorkTypes();
     GetWeeklyUtilization();
@@ -105,7 +106,7 @@ angular
     // Functions
     function AddTask () {
         console.log($scope.weeklyUtilization);
-        var employeeCode = $scope.weeklyUtilization[0].employeeCode;
+        var employeeCode = $scope.user;
 
         $scope.weeklyUtilization.push({
             "weekly_ID": $.now(),
@@ -180,6 +181,14 @@ angular
             console.log($scope.projects);
         });
         
+    }
+
+    function GetUserInfo() {
+        $http.get("Employee/getUserInfo.php")
+        .then(function (response) {
+            $scope.user = response.data;
+            console.log($scope.user);
+        });
     }
 
     function ComputeTaskHoursUtilized(task) {

@@ -34,6 +34,8 @@
 
     if($num>0){
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        $result = [];
     }
     echo json_encode($result);
 ?>
