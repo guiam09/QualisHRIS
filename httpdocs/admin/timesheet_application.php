@@ -20,58 +20,6 @@ include ('../includes/sidebar.php');
 include ('../includes/fetchData.php');
 
 include ('get_week_range.php');
-
-//functions
-function fill_projectCode_select_box($con, $rowData = [])
-{
-    $output = '';    
-    $query = "SELECT * FROM tbl_project ORDER BY project_name ASC";
-    $statement = $con->prepare($query);
-    $statement->execute();
-    $result = $statement->fetchAll();
-    
-    foreach ($result as $row) {
-        $selectedProject = $row["project_ID"];
-        $selected = (!empty($rowData['project_ID']) && $rowData['project_ID'] == $row['project_ID']) ? 'selected' : '';
-        $output .= '<option value="' . $row["project_ID"] .'" '.$selected.'>'.$row["project_name"].'</option>';
-    }
-    return $output;
-}
-
-function fill_workType_select_box($con, $rowData = [])
-{
-    $output = '';    
-    $query = "SELECT * FROM tbl_worktype ORDER BY work_name ASC";
-    $statement = $con->prepare($query);
-    $statement->execute();
-    $result = $statement->fetchAll();
-
-    foreach($result as $row)
-    {
-        $selected = (!empty($rowData['work_ID']) && $rowData['work_ID'] == $row['work_ID']) ? 'selected' : '';
-        $output .= '<option value="' . $row["work_ID"] .'" '.$selected.'>'. $row["work_name"].'</option>';
-    }
-    return $output;
-}
-
-function fill_location_select_box($con, $rowData = [])
-{
-    $output = '';    
-    $query = "SELECT * FROM tbl_location ORDER BY location_name ASC";
-    $statement = $con->prepare($query);
-    $statement->execute();
-    $result = $statement->fetchAll();
-    
-    foreach($result as $row)
-    {
-        $selected = (!empty($rowData['location_ID']) && $rowData['location_ID'] == $row['location_ID']) ? 'selected' : '';
-        $output .= '<option value="' . $row["location_ID"] .'" '.$selected.'>'.$row["location_name"].'</option>';
-    }
-    return $output;
-}
-
-//end functions
-
 ?>
 <!-- Main Page Content -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -446,135 +394,92 @@ function fill_location_select_box($con, $rowData = [])
                                         <th style="width:5%">Sa</th>
                                         <th style="width:5%">Su</th>
                                         <th style="width:5%">Total</th>
-                                        <th style="width:20%"> <button <?php echo $disabled ?> type="button" name="add" class="btn btn-default btn-sm add"><i class="fas fa-plus"></i></button></th>
+                                        <th style="width:20%"> <button <?php echo $disabled ?> type="button" name="add" class="btn btn-default btn-sm add" ng-click="addTask()"><i class="fas fa-plus"></i></button></th>
                                     </tr>
-                                    
                                     <!-- Display data from database -->
-                                    <?php
-                                        $userID = $_SESSION['user_id'];
-                                        $query = "SELECT * FROM tbl_weeklyutilization
-                             
-                                        INNER JOIN tbl_project ON tbl_weeklyutilization.project_ID = tbl_project.project_ID
-                            
-                                        INNER JOIN tbl_worktype ON tbl_weeklyutilization.work_ID = tbl_worktype.work_ID
-                            
-                                        WHERE employeeCode = '$userID' AND weekly_startDate = '$weekStart' AND weekly_endDate = '$weekEnd';
-                                         ";
-                            
-                                        $stmt = $con->prepare($query);
-                                        $stmt->execute();
-                                        $num = $stmt->rowCount();
-                                        $weekly_status = '';
-                                        $weekly_approval = '';
-
-                                        $saturdayTotal = $sundayTotal = $mondayTotal = $tuesdayTotal = $wednesdayTotal = $thursdayTotal = $fridayTotal = $subtotal = $total = 0;
-                                        
-                                        if($num>0){
-            
-                                            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                                                $weekly_status = $row['weekly_status'];
-                                                $weekly_approval = $row['weekly_approval'];
-
-                                                $saturdayTotal += $row['weekly_saturday'];
-                                                $sundayTotal += $row['weekly_sunday'];
-                                                $mondayTotal += $row['weekly_monday'];
-                                                $tuesdayTotal += $row['weekly_tuesday'];
-                                                $wednesdayTotal += $row['weekly_wednesday'];
-                                                $thursdayTotal += $row['weekly_thursday'];
-                                                $fridayTotal += $row['weekly_friday'];
-
-                                                $subtotal = ($saturdayTotal + $sundayTotal + $mondayTotal + $tuesdayTotal + $wednesdayTotal + $thursdayTotal + $fridayTotal);
-                                                $total += $subtotal;
-                                                
-                                    ?>
-                                                <tr>
-                                                    <td class="col-sm-3">
-                                                        <select name="new_project_name[]" class="form-control project_name saved" style="min-width: 180px;"> 
-                                                          <?php echo fill_projectCode_select_box($con, $row); ?>
-                                                        </select>
-                                                        <input type="text" name="weekID[]" value="<?php $row['weekly_ID'] ;?>" hidden></input>
-                                                        <input type="text" name="weekStatus[]" value="<?php echo $row['weekly_status'] ;?>" hidden></input>
-                                                        <input type="text" name="weekly_approval[]" value="<?php echo $row['weekly_approval'] ;?>" hidden></input>
-                                                    </td>
-                                          
-                                                    <td class="col-sm-3" style="display: none;">
-                                                        <select name="new_work_type[]" class="form-control project_name saved"> 
-                                                          <?php echo fill_workType_select_box($con, $row); ?>
-                                                        </select>
-                                                    </td>
-                                                    
-                                                    <td class="col-sm-3">
-                                                        <input <?php echo $disabled ?> type="text" name="new_task_code[]" value="<?php echo $row['weekly_taskCode']; ?>" class="form-control saved" style="min-width: 100px;"></input>
-                                                    </td>
-                                                    
-                                                    <td class="col-sm-3" style="display:none">
-                                                        <input type="text" name="new_work_location[]" value="<?php echo $row['location_ID'] ;?>" class="form-control saved remarks"></input>
-                                                    </td>
-
-                                                    <td>
-                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_monday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours monday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_monday']; ?>"></input>
-                                                    </td>
-
-                                                    <td>
-                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_tuesday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours tuesday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_tuesday']; ?>"></input>
-                                                    </td>
-
-                                                    <td>
-                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_wednesday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours wednesday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_wednesday']; ?>"></input>
-                                                    </td>
-
-                                                    <td>
-                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_thursday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours thursday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_thursday']; ?>"></input>
-                                                    </td>
-
-                                                    <td>
-                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_friday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours friday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_friday']; ?>"></input>
-                                                    </td>
-
-                                                    <td>
-                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_saturday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours saturday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_saturday']; ?>"></input>
-                                                    </td>
-
-                                                    <td>
-                                                        <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_sunday[]" id="<?php echo $row['weekly_ID']; ?>" class="form-control dailyWorkedHours work-hours sunday saved <?php echo $row['weekly_ID']; ?>" step="0.5" min="0" max="24" value="<?php echo $row['weekly_sunday']; ?>"></input>
-                                                    </td>
-
-                                                    <td>
-                                                        <input size="4" maxlength="4" type="text" value="<?php echo $subtotal ?>" id="<?php echo $row['weekly_ID']; ?>" class="form-control work-hours  totalWeeklyWorkedHours<?php echo $row['weekly_ID'] ?>" step="0.5" min="0" max="24" readonly value="<?php echo $row['weekly_total']; ?>"></input>
-                                                    </td>
-
-                                                    <td>
-                                                        <button type="button" data-toggle="tooltip" title="Remarks" data-placement="top" class="btn btn-info btn-sm" onclick="show_remarks_modal($(this))">
-                                                            <i class="fas fa-file"></i>
-                                                        </button>
-                                                        <br/>
-                                                        <br/>
-                                                        <button <?php echo $disabled ?> type="button" name="remove" class="btn btn-danger btn-sm remove saved">
-                                                            <i class="fas fa-minus"></i>
-                                                        </button>
-                                                    </td>
-
-                                                </tr>
-                                            
-                                                <?php
-                                            }
-                                        }
-                                    ?>
+                                    <tr ng-repeat="task in weeklyUtilization">
+                                        <td class="col-sm-3">
+                                            <select name="new_project_name[]" class="form-control project_name saved" style="min-width: 180px;">
+                                                <option value="" ng-if="task.project_ID == ''">Select work type</option>
+                                                <option ng-repeat="project in projects" value="{{project.project_ID}}" ng-selected="task.project_ID === project.project_ID">{{project.project_name}}</option>
+                                            </select>
+                                            <input type="text" name="weekID[]" value="{{task.weekly_ID}}" hidden></input>
+                                            <input type="text" name="weekStatus[]" value="{{task.weekly_status}}" hidden></input>
+                                            <input type="text" name="weekly_approval[]" value="{{task.weekly_approval}}" hidden></input>
+                                        </td>
                                 
+                                        <td class="col-sm-3" style="display: none;">
+                                            <select name="new_work_type[]" class="form-control project_name saved"> 
+                                                <option ng-repeat="workType in workTypes" value="{{workType.work_ID}}" ng-selected="task.work_ID === workType.work_ID">{{workType.work_name}}</option>
+                                            </select>
+                                        </td>
+                                        
+                                        <td class="col-sm-3">
+                                            <input <?php echo $disabled ?> type="text" name="new_task_code[]" value="{{task.weekly_taskCode}}" class="form-control saved" style="min-width: 100px;"></input>
+                                        </td>
+                                        
+                                        <td class="col-sm-3" style="display:none">
+                                            <input type="text" name="new_work_location[]" value="{{task.location_ID}}" class="form-control saved remarks"></input>
+                                        </td>
+
+                                        <td>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_monday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours monday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_monday}}"></input>
+                                        </td>
+
+                                        <td>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_tuesday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours tuesday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_tuesday}}"></input>
+                                        </td>
+
+                                        <td>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_wednesday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours wednesday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_wednesday}}"></input>
+                                        </td>
+
+                                        <td>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_thursday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours thursday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_thursday}}"></input>
+                                        </td>
+
+                                        <td>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_friday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours friday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_friday}}"></input>
+                                        </td>
+
+                                        <td>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_saturday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours saturday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_saturday}}"></input>
+                                        </td>
+
+                                        <td>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_sunday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours sunday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_sunday}}"></input>
+                                        </td>
+
+                                        <td>
+                                            <input size="4" maxlength="4" type="text" value="<?php echo $subtotal ?>" id="{{task.weekly_ID}}" class="form-control work-hours  totalWeeklyWorkedHours {{task.weekly_ID}}" step="0.5" min="0" max="24" readonly value="{{task.weekly_total}}"></input>
+                                        </td>
+
+                                        <td>
+                                            <button type="button" data-toggle="tooltip" title="Remarks" data-placement="top" class="btn btn-info btn-sm" onclick="show_remarks_modal($(this))">
+                                                <i class="fas fa-file"></i>
+                                            </button>
+                                            <br/>
+                                            <br/>
+                                            <button <?php echo $disabled ?> type="button" name="remove" class="btn btn-danger btn-sm remove saved">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                        </td>
+
+                                    </tr>
                                 </tbody>
                                 <tfoot>
                                     <th></th>
                                     <th style="display: none;"></th>
                                     <th style="display: none;"></th>
                                     <th style="text-align: center; vertical-align: middle;">Total</th>
-                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $mondayTotal ?>" border="0" readonly min="0" name="monday_total[]" class="form-control work-hours mondayTotal" /></td>
-                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $tuesdayTotal ?>" border="0" readonly min="0" name="tuesday_total[]" class="form-control work-hours tuesdayTotal" /></td>
-                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $wednesdayTotal ?>" border="0" readonly min="0" name="wednesday_total[]" class="form-control work-hours wednesdayTotal" /></td>
-                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $thursdayTotal ?>" border="0" readonly min="0" name="thursday_total[]" class="form-control work-hours thursdayTotal" /></td>
-                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $fridayTotal ?>" border="0" readonly min="0" name="friday_total[]" class="form-control work-hours fridayTotal" /></td>
-                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $saturdayTotal ?>" border="0" readonly min="0" max="24" name="saturday_total[]" class="form-control work-hours saturdayTotal" /></td>
-                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $sundayTotal ?>" border="0" readonly min="0" name="sunday_total[]" class="form-control work-hours sundayTotal" /></td>
-                                    <td><input size="4" maxlength="4" type="text" value = "<?php echo $subtotal ?>" border="0" readonly min="0" name="overall_total[]" class="form-control work-hours overallTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" ng-value="dailyTotal.Monday | number : 1" border="0" readonly min="0" name="monday_total[]" class="form-control work-hours mondayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" ng-value="dailyTotal.Tuesday | number : 1" border="0" readonly min="0" name="tuesday_total[]" class="form-control work-hours tuesdayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" ng-value="dailyTotal.Wednesday | number : 1" border="0" readonly min="0" name="wednesday_total[]" class="form-control work-hours wednesdayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" ng-value="dailyTotal.Thursday | number : 1" border="0" readonly min="0" name="thursday_total[]" class="form-control work-hours thursdayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" ng-value="dailyTotal.Friday | number : 1" border="0" readonly min="0" name="friday_total[]" class="form-control work-hours fridayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" ng-value="dailyTotal.Saturday | number : 1" border="0" readonly min="0" max="24" name="saturday_total[]" class="form-control work-hours saturdayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" ng-value="dailyTotal.Sunday | number : 1" border="0" readonly min="0" name="sunday_total[]" class="form-control work-hours sundayTotal" /></td>
+                                    <td><input size="4" maxlength="4" type="text" ng-value="dailyTotal.Overall() | number : 1" border="0" readonly min="0" name="overall_total[]" class="form-control work-hours overallTotal" /></td>
                                     <td></td>
                                 </tfoot>
                             </table>
@@ -582,12 +487,12 @@ function fill_location_select_box($con, $rowData = [])
                         
 
                         
-                    <input type="hidden" name="saveTimesheet">
-                    <input type="hidden" id="save_and_submit" name="save_and_submit" value="no">
-                    <input type="hidden" value="<?php echo $weekStart ?>" name="week_start">
-                    <input type="hidden" value="<?php echo $weekEnd ?>" name="week_end">
-                    <input type="hidden" value="<?php echo $weekly_status ;?>" name="weekly_status">
-                    <input type="hidden" value="<?php echo $weekly_approval ;?>" name="weekly_approval">
+                        <input type="hidden" name="saveTimesheet">
+                        <input type="hidden" id="save_and_submit" name="save_and_submit" value="no">
+                        <input type="hidden" value="<?php echo $weekStart ?>" name="week_start">
+                        <input type="hidden" value="<?php echo $weekEnd ?>" name="week_end">
+                        <input type="hidden" value="{{weeklyStatus}}" name="weekly_status">
+                        <input type="hidden" value="{{weeklyApproval}}" name="weekly_approval">
                     </form>
                     <!-- Timesheet Table code END -->
                     </div>
@@ -691,35 +596,6 @@ function fill_location_select_box($con, $rowData = [])
     }
 
     $(document).ready(function(){
-
-        $(document).on('click', '.add', function(){
-        // var saturdayHours = 0;
-           var html = '';
-        //   var ctr = 0;
-           var now = $.now();
-           html += '<tr>';
-           html += '<td><select name="new_project_name[]" class="form-control project_name" style="min-width: 180px;"><option value="">Select Project</option><?php echo fill_projectCode_select_box($con); ?></select></td>';
-           html += '<td style="display: none;"><select name="new_work_type[]" class="form-control work_type"><option value="">Select work type</option><?php echo fill_workType_select_box($con); ?></select></td>';
-           html += '<td><input type="text" name="new_task_code[]" class="form-control task_code" style="min-width: 100px;"/></td>';
-           html += '<td style="display: none;"><input type="text" name="new_work_location[]" class="form-control task_code remarks" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_monday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours monday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_tuesday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours tuesday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_wednesday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours wednesday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_thursday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours thursday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_friday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours friday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_saturday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours saturday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" value = "0" step="0.5" min="0" max="24" name="new_sunday[]" id="' + now + '" class="form-control work-hours dailyWorkedHours sunday ' + now + '" /></td>';
-           html += '<td><input size="4" maxlength="4" type="number" value = "0" border="0" readonly min="0" id="' + now + '" class="form-control work-hours totalWeeklyWorkedHours' + now + '" /></td>';
-           html += '<td><button type="button" data-toggle="tooltip" title="Remarks" data-placement="top" class="btn btn-info btn-sm" onclick="show_remarks_modal($(this))"><i class="fas fa-file"></i></button><button type="button" name="remove" class="btn btn-danger btn-sm remove"><i class="fas fa-minus"></i></button></td>'
-           
-           
-        //    html += '<td></td>'
-           html += '</tr>';
-           
-           $('#timesheet_table').append(html);
-            
-        });
-        
         //getting weekly and daily totals script
         $(document).on('keyup click', '.dailyWorkedHours', function(){
             var overallTotal = 0;
@@ -736,52 +612,6 @@ function fill_location_select_box($con, $rowData = [])
         $('.apply-leave-date').datepicker({
             startDate: date
         });
-    });
-
-  
-    $(document).ready(function(){
-
-        var weekpicker, start_date, end_date;
-
-        function set_week_picker(date) {
-            start_date = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 1);
-            end_date = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 7);
-            weekpicker.datepicker('update', start_date);
-            weekpicker.val((start_date.getMonth() + 1) + '/' + start_date.getDate() + '/' + start_date.getFullYear() + ' - ' + (end_date.getMonth() + 1) + '/' + end_date.getDate() + '/' + end_date.getFullYear());
-        }
-
-
-        weekpicker = $('.week-picker');
-
-        weekpicker.datepicker({
-            autoclose: true,
-            forceParse: false,
-            container: '#week-picker-wrapper',
-             weekStart: 1
-        }).on("changeDate", function(e) {
-            set_week_picker(e.date);
-            window.location.href = window.location.href.replace( /[\?#].*|$/, "?date="+start_date.getFullYear() + '-' + ("0" + (start_date.getMonth() + 1)).slice(-2) + '-' + ("0" + (start_date.getDate())).slice(-2));
-        });
-        $('.week-prev').on('click', function() {
-            var prev = new Date(start_date.getTime());
-            prev.setDate(prev.getDate() - 7);
-            set_week_picker(prev);
-            window.location.href = window.location.href.replace( /[\?#].*|$/, "?date="+start_date.getFullYear() + '-' +("0" + (start_date.getMonth() + 1)).slice(-2)  + '-' + ("0" + (start_date.getDate())).slice(-2));
-        });
-        $('.week-next').on('click', function() {
-            var next = new Date(end_date.getTime());
-            next.setDate(next.getDate() + 1);
-            set_week_picker(next);
-            window.location.href = window.location.href.replace( /[\?#].*|$/, "?date="+start_date.getFullYear() + '-' +("0" + (start_date.getMonth() + 1)).slice(-2)  + '-' + ("0" + (start_date.getDate())).slice(-2));
-        });
-        <?php 
-        if( !empty($_GET['date'])) { 
-            $dateParam = explode('-', $_GET['date']);
-        ?>
-        set_week_picker(new Date(<?php echo $dateParam[0] ?>,<?php echo $dateParam[1]-1 ?>,<?php echo $dateParam[2] ?>));
-        <?php } else { ?>
-        set_week_picker(new Date);
-        <?php } ?>
     });
 
 </script>

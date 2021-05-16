@@ -1,18 +1,92 @@
 angular
 .module('hris', [])
-.controller('TimeSheetController', function ($scope, $http) {
+.controller('TimeSheetController', function ($scope, $http, $filter) {
+    const urlParams = new URLSearchParams(window.location.search);
+    
     // Data Binding
+    $scope.dailyTotal = {
+        Monday: 0,
+        Tuesday: 0,
+        Wednesday: 0,
+        Thursday: 0,
+        Friday: 0,
+        Saturday: 0,
+        Sunday: 0,
+        Overall: function () {
+            return $scope.dailyTotal.Monday + 
+            $scope.dailyTotal.Tuesday + 
+            $scope.dailyTotal.Wednesday + 
+            $scope.dailyTotal.Thursday + 
+            $scope.dailyTotal.Friday + 
+            $scope.dailyTotal.Saturday + 
+            $scope.dailyTotal.Sunday;
+        }
+    };
+    $scope.projects = [];
+    $scope.weekStartDate = new Date(urlParams.get('date'));
+    $scope.weekEndDate = new Date(new Date($scope.weekStartDate.getTime()).setDate($scope.weekStartDate.getDate() + 6));
+    $scope.weeklyApproval = '';
+    $scope.weeklyStatus = '';
+    $scope.weeklyUtilization = [];
     $scope.warningMessages = [];
+    $scope.workTypes = [];
 
     // Method Binding
+    $scope.addTask = AddTask;
     $scope.saveConfirm = SaveConfirm;
     $scope.submitConfirm = SubmitConfirm;
+
+    $(document).ready(function(){
+        var weekpicker, start_date, end_date;
+
+        function set_week_picker(date) {
+            start_date = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 1);
+            end_date = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 7);
+            weekpicker.datepicker('update', start_date);
+            weekpicker.val((start_date.getMonth() + 1) + '/' + start_date.getDate() + '/' + start_date.getFullYear() + ' - ' + (end_date.getMonth() + 1) + '/' + end_date.getDate() + '/' + end_date.getFullYear());
+            
+        }
+
+        weekpicker = $('.week-picker');
+
+        weekpicker.datepicker({
+            autoclose: true,
+            forceParse: false,
+            container: '#week-picker-wrapper',
+             weekStart: 1
+        }).on("changeDate", function(e) {
+            set_week_picker(e.date);
+            window.location.href = window.location.href.replace( /[\?#].*|$/, "?date="+start_date.getFullYear() + '-' + ("0" + (start_date.getMonth() + 1)).slice(-2) + '-' + ("0" + (start_date.getDate())).slice(-2));
+        });
+        $('.week-prev').on('click', function() {
+            var prev = new Date(start_date.getTime());
+            prev.setDate(prev.getDate() - 7);
+            set_week_picker(prev);
+            window.location.href = window.location.href.replace( /[\?#].*|$/, "?date="+start_date.getFullYear() + '-' +("0" + (start_date.getMonth() + 1)).slice(-2)  + '-' + ("0" + (start_date.getDate())).slice(-2));
+        });
+        $('.week-next').on('click', function() {
+            var next = new Date(end_date.getTime());
+            next.setDate(next.getDate() + 1);
+            set_week_picker(next);
+            window.location.href = window.location.href.replace( /[\?#].*|$/, "?date="+start_date.getFullYear() + '-' +("0" + (start_date.getMonth() + 1)).slice(-2)  + '-' + ("0" + (start_date.getDate())).slice(-2));
+        });
+
+        var date = urlParams.get('date');
+        if (date !== '') {
+            var year = parseInt(date.substring(0,4));
+            var month = parseInt(date.substring(5,7) - 1);
+            var day = parseInt(date.substring(8));
+            set_week_picker(new Date(year, month, day));
+        } else {
+            set_week_picker(new Date());
+        }
+    });
 
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip({
             html: true,
             template: '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
-        });   
+        });
     });
     
     $(document).on('keyup click', '.monday', 'monday', CalculateTotals);
@@ -24,7 +98,54 @@ angular
     $(document).on('keyup click', '.sunday', 'sunday', CalculateTotals);
     $(document).on('click', '.remove', RemoveRow);
 
+    GetProjects();
+    GetWorkTypes();
+    GetWeeklyUtilization();
+
     // Functions
+    function AddTask () {
+        console.log($scope.weeklyUtilization);
+        var employeeCode = $scope.weeklyUtilization[0].employeeCode;
+
+        $scope.weeklyUtilization.push({
+            "weekly_ID": $.now(),
+            "employeeCode": employeeCode,
+            "weekly_startDate": $filter('date')($scope.weekStartDate, 'yyyy-MM-dd'),
+            "weekly_endDate": $filter('date')($scope.weekEndDate, 'yyyy-MM-dd'),
+            "project_ID": "",
+            "work_ID": "1",
+            "activityOthers_ID": null,
+            "activityAdmin_ID": null,
+            "weekly_description": null,
+            "weekly_sunday": "0.0",
+            "weekly_monday": "0.0",
+            "weekly_tuesday": "0.0",
+            "weekly_wednesday": "0.0",
+            "weekly_thursday": "0.0",
+            "weekly_friday": "0.0",
+            "weekly_saturday": "0.0",
+            "weekly_total": null,
+            "weekly_overallTotal": null,
+            "location_ID": "",
+            "weekly_timeSubmitted": null,
+            "weekly_dateProcessed": null,
+            "weekly_status": $scope.weeklyStatus,
+            "weekly_approval": $scope.weeklyApproval,
+            "weekly_dateSubmitted": null,
+            "weekly_taskCode": "",
+            "weekly_saturdayComment": null,
+            "weekly_sundayComment": null,
+            "weekly_mondayComment": null,
+            "weekly_tuesdayComment": null,
+            "weekly_wednesdayComment": null,
+            "weekly_thursdayComment": null,
+            "weekly_fridayComment": null,
+            "weekly_timesheetCode": null,
+            "is_shown": null,
+            "project_name": "",
+            "work_name": "Regular Hour"
+        });
+    }
     function CalculateTotals(event) {        
         var day = event.data;
         
@@ -50,6 +171,49 @@ angular
             weeklyTotal += parseFloat($(this).val()); 
         });
         $('.totalWeeklyWorkedHours'+id).val(weeklyTotal);
+    }
+
+    function GetProjects() {
+        $http.get("TimeSheet/getProjects.php")
+        .then(function (response) {
+            $scope.projects = response.data;
+            console.log($scope.projects);
+        });
+        
+    }
+
+    function GetWeeklyUtilization () {
+        var startDate = $filter('date')($scope.weekStartDate, 'yyyy-MM-dd');
+        var endDate = $filter('date')($scope.weekEndDate, 'yyyy-MM-dd');
+        $http.get("TimeSheet/getWeeklyUtilization.php?startDate=" + startDate + "&endDate=" + endDate)
+            .then(function (response) {
+                $scope.weeklyUtilization = response.data;
+
+                for (var i = 0; i < $scope.weeklyUtilization.length; i++){
+                    var item = $scope.weeklyUtilization[i];
+                    $scope.weeklyApproval = item.weekly_approval;
+                    $scope.weeklyStatus = item.weekly_status;
+                    $scope.dailyTotal.Monday += parseFloat(item.weekly_monday);
+                    $scope.dailyTotal.Tuesday += parseFloat(item.weekly_tuesday);
+                    $scope.dailyTotal.Wednesday += parseFloat(item.weekly_wednesday);
+                    $scope.dailyTotal.Thursday += parseFloat(item.weekly_thursday);
+                    $scope.dailyTotal.Friday += parseFloat(item.weekly_friday);
+                    $scope.dailyTotal.Saturday += parseFloat(item.weekly_saturday);
+                    $scope.dailyTotal.Sunday += parseFloat(item.weekly_sunday);
+                }
+                console.log($scope.weeklyUtilization);
+                console.log($scope.dailyTotal);
+                console.log($scope.dailyTotal.Overall());
+            });
+    }
+
+    function GetWorkTypes() {
+        $http.get("TimeSheet/getWorkTypes.php")
+        .then(function (response) {
+            $scope.workTypes = response.data;
+            console.log($scope.workTypes);
+        });
+        
     }
 
     function RemoveRow () {
