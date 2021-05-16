@@ -451,7 +451,7 @@ include ('get_week_range.php');
                                         </td>
 
                                         <td>
-                                            <input size="4" maxlength="4" type="text" value="<?php echo $subtotal ?>" id="{{task.weekly_ID}}" class="form-control work-hours  totalWeeklyWorkedHours {{task.weekly_ID}}" step="0.5" min="0" max="24" readonly value="{{task.weekly_total}}"></input>
+                                            <input size="4" maxlength="4" type="number" id="{{task.weekly_ID}}" class="form-control work-hours  totalWeeklyWorkedHours{{task.weekly_ID}}" readonly value="{{task.weekly_total | number : 1}}"></input>
                                         </td>
 
                                         <td>

@@ -162,7 +162,7 @@ angular
         $('.' + day).each(function(){
             dailyTotal += parseFloat($(this).val()); 
         });
-        $('.' + day + 'Total').val(dailyTotal);
+        $('.' + day + 'Total').val($filter('number')(dailyTotal, 1));
         
         // Compute Weekly Total
         var weeklyTotal = 0;
@@ -170,7 +170,7 @@ angular
         $('.'+id).each(function(){
             weeklyTotal += parseFloat($(this).val()); 
         });
-        $('.totalWeeklyWorkedHours'+id).val(weeklyTotal);
+        $('.totalWeeklyWorkedHours'+id).val($filter('number')(weeklyTotal, 1));
     }
 
     function GetProjects() {
@@ -182,6 +182,18 @@ angular
         
     }
 
+    function ComputeTaskHoursUtilized(task) {
+        var total = 0;
+        total += parseFloat(task.weekly_monday);
+        total += parseFloat(task.weekly_tuesday);
+        total += parseFloat(task.weekly_wednesday);
+        total += parseFloat(task.weekly_thursday);
+        total += parseFloat(task.weekly_friday);
+        total += parseFloat(task.weekly_saturday);
+        total += parseFloat(task.weekly_sunday);
+        return total;
+    }
+
     function GetWeeklyUtilization () {
         var startDate = $filter('date')($scope.weekStartDate, 'yyyy-MM-dd');
         var endDate = $filter('date')($scope.weekEndDate, 'yyyy-MM-dd');
@@ -191,6 +203,7 @@ angular
 
                 for (var i = 0; i < $scope.weeklyUtilization.length; i++){
                     var item = $scope.weeklyUtilization[i];
+                    item.weekly_total = ComputeTaskHoursUtilized(item);
                     $scope.weeklyApproval = item.weekly_approval;
                     $scope.weeklyStatus = item.weekly_status;
                     $scope.dailyTotal.Monday += parseFloat(item.weekly_monday);
@@ -200,6 +213,7 @@ angular
                     $scope.dailyTotal.Friday += parseFloat(item.weekly_friday);
                     $scope.dailyTotal.Saturday += parseFloat(item.weekly_saturday);
                     $scope.dailyTotal.Sunday += parseFloat(item.weekly_sunday);
+                    
                 }
                 console.log($scope.weeklyUtilization);
                 console.log($scope.dailyTotal);
