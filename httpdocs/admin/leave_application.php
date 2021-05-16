@@ -318,7 +318,8 @@ include ('../includes/fetchData.php');
                                                 </button>
                                                 <button type='button' data-target='#{{getViewEditButton(leaveRequest.leaveGroup_status) + leaveRequest.leaveGroup_ID}}' data-toggle='modal' class='btn btn-block btn-success'
                                                     ng-click="loadViewEditModalData(leaveRequest)">
-                                                    View / Edit
+                                                    <span ng-if="leaveRequest.leaveGroup_status === 'Approved' || leaveRequest.leaveGroup_status === 'Declined'">View</span>
+                                                    <span ng-if="leaveRequest.leaveGroup_status !== 'Approved' && leaveRequest.leaveGroup_status !== 'Declined'">Edit</span>
                                                 </button>
                                             </td>
                                         </tr>
