@@ -959,11 +959,13 @@ include ('../includes/scripts.php');
             });
 
             var table1 = $('#example1').DataTable( {
+                "searching": false,
                 orderCellsTop: true,
                 fixedHeader: true
             } );
 
             var table2 = $('#example2').DataTable( {
+                "searching": false,
                 orderCellsTop: true,
                 fixedHeader: true
             } );
