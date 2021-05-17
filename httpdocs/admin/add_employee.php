@@ -390,18 +390,18 @@ function verify() {
     var form = document.getElementById("exampleFullForm");
 
     var requiredFields = [];
-    requiredFields.push({ Name: "First Name", Value: firstName });
     requiredFields.push({ Name: "Last Name", Value: lastName });
+    requiredFields.push({ Name: "First Name", Value: firstName });
     requiredFields.push({ Name: "Gender", Value: gender });
     requiredFields.push({ Name: "Contact Number", Value: contactNumber });
     requiredFields.push({ Name: "Birthdate", Value: birthdate });
     requiredFields.push({ Name: "Civil Status", Value: civilStatus });
-    requiredFields.push({ Name: "Address", Value: address });
-    requiredFields.push({ Name: "Photo", Value: photo });
     requiredFields.push({ Name: "Email Address", Value: emailAddress });
+    requiredFields.push({ Name: "Photo", Value: photo });
+    requiredFields.push({ Name: "Address", Value: address });
     requiredFields.push({ Name: "Access Level", Value: accessLevel });
-    requiredFields.push({ Name: "Core Time", Value: coreTime });
     requiredFields.push({ Name: "Date Hired", Value: dateHired });
+    requiredFields.push({ Name: "Core Time", Value: coreTime });s
     requiredFields.push({ Name: "Department", Value: department });
     requiredFields.push({ Name: "Position", Value: position });
     requiredFields.push({ Name: "Reporting To", Value: reportingTo });
