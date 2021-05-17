@@ -401,7 +401,6 @@ function verify() {
     requiredFields.push({ Name: "Address", Value: address });
     requiredFields.push({ Name: "Access Level", Value: accessLevel });
     requiredFields.push({ Name: "Date Hired", Value: dateHired });
-    requiredFields.push({ Name: "Core Time", Value: coreTime });s
     requiredFields.push({ Name: "Department", Value: department });
     requiredFields.push({ Name: "Position", Value: position });
     requiredFields.push({ Name: "Reporting To", Value: reportingTo });
