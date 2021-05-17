@@ -409,7 +409,7 @@ function verify() {
     var fieldList = "";
     for (var i = 0; i < requiredFields.length; i++) {
       var field = requiredFields[i];
-      if (field.Value == "") {
+      if (!field.Value) {
         fieldList += "<br/>" +  field.Name;
       }
     }
