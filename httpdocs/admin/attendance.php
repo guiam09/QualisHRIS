@@ -439,7 +439,7 @@ $num_hideTab = $stmt_hideTab->rowCount();
                                 $currentDay = date("Y-m-d",$today);
                                 $userID = $_SESSION['user_id'];
                                 $query = "SELECT * FROM tbl_attendance INNER JOIN tbl_employees ON tbl_attendance.employeeID = tbl_employees.employeeID
-                                            WHERE employeeCode='$userID' AND MONTH(attendanceDate)=MONTH(CURRENT_DATE()) AND YEAR(attendanceDate)=YEAR(CURRENT_DATE())  AND !(attendance_voided <=> 'VOID') AND hourWorked > 0 ORDER BY attendanceDate DESC, attendance_timeIn DESC ";
+                                            WHERE employeeCode='$userID' AND MONTH(attendanceDate)=MONTH(CURRENT_DATE()) AND YEAR(attendanceDate)=YEAR(CURRENT_DATE())  AND !(attendance_voided <=> 'VOID') ORDER BY attendanceDate DESC, attendance_timeIn DESC ";
                                 $stmt = $con->prepare($query);
                                 $stmt->execute();
                                 
