@@ -388,18 +388,39 @@ function verify() {
     var position =  $("#position").val();
     var reportingTo =  $("#reportingTo").val();
     var form = document.getElementById("exampleFullForm");
-    if(firstName == '' || lastName == '' || gender == '' || contactNumber == '' || birthdate == '' || civilStatus == '' || address == '' || photo == '' || emailAddress == '' || accessLevel == '' || coreTime == '' || dateHired == '' || department == ''
-    || position == '' || reportingTo == ''){
 
-       
+    var requiredFields = [];
+    requiredFields.push({ Name: "First Name", Value: firstName });
+    requiredFields.push({ Name: "Last Name", Value: lastName });
+    requiredFields.push({ Name: "Gender", Value: gender });
+    requiredFields.push({ Name: "Contact Number", Value: contactNumber });
+    requiredFields.push({ Name: "Birthdate", Value: birthdate });
+    requiredFields.push({ Name: "Civil Status", Value: civilStatus });
+    requiredFields.push({ Name: "Address", Value: address });
+    requiredFields.push({ Name: "Photo", Value: photo });
+    requiredFields.push({ Name: "Email Address", Value: emailAddress });
+    requiredFields.push({ Name: "Access Level", Value: accessLevel });
+    requiredFields.push({ Name: "Core Time", Value: coreTime });
+    requiredFields.push({ Name: "Date Hired", Value: dateHired });
+    requiredFields.push({ Name: "Department", Value: department });
+    requiredFields.push({ Name: "Position", Value: position });
+    requiredFields.push({ Name: "Reporting To", Value: reportingTo });
+    
+    var fieldList = "";
+    for (var i = 0; i < requiredFields.length; i++) {
+      var field = requiredFields[i];
+      if (field.Value == "") {
+        fieldList += "<br/>" +  field.Name;
+      }
+    }
+
+    var incompleteData = fieldList !== "";
+    if (incompleteData) {
         Swal.fire({
           type: 'error',
           title: 'INCOMPLETE DATA',
-          text: 'Need to input all required fields.'
-
+          html: 'Need to input all required fields.' + fieldList
         })
-       
-
     }else{
 
            $.ajax({
