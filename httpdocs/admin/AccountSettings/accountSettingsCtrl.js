@@ -69,7 +69,7 @@ angular
     }
   
 
-    function ValidatePassword() {
+    function ValidatePassword(event) {
         var currentPassword, newPassword, confirmPassword, output = true;
      
         currentPassword = document.frmChange.currentPassword;
@@ -78,23 +78,23 @@ angular
      
         if (!currentPassword.value) {
             currentPassword.focus();
-            output = false;
+            event.preventDefault();
         }
         if (!newPassword.value) {
             newPassword.focus();
-            output = false;
+            event.preventDefault();
         }
         else if (!confirmPassword.value) {
             confirmPassword.focus();
-            output = false;
+            event.preventDefault();
         }
+        console.log(newPassword.value != confirmPassword.value);
         if (newPassword.value != confirmPassword.value) {
             newPassword.value="";
             confirmPassword.value="";
             newPassword.focus();
-            output = false;
+            event.preventDefault();
         }
-        return output;
     }
 
     $(".revealCurrentPassword").on('click',function() {

@@ -124,9 +124,9 @@ $adminAccess = [];
                         <div class="form-group row">
                           <label for="staticEmail" class="col-sm-2 col-form-label">Email Address</label>
                           <input readonly type='text' name="enteredEmail" id='enteredEmail' class='col-sm-4 form-control border border-dark' value='<?php echo trim($userEmail, ' ') ?>'>"
-                          <button type="button" id='editEmailBtn' onclick="change_email()" class="btn btn-info edit-button">Edit Email</button>
-                          <button type="submit" id='saveEmailBtn' onclick="save_email()" class="btn btn-info save-button">Save</button>
-                          <button type="button" id='cancelEmailBtn' onclick="cancel_email()" class="btn btn-info cancel-button">Cancel</button>
+                          <button type="button" id='editEmailBtn' ng-click="change_email()" class="btn btn-info edit-button">Edit Email</button>
+                          <button type="submit" id='saveEmailBtn' ng-click="save_email()" class="btn btn-info save-button">Save</button>
+                          <button type="button" id='cancelEmailBtn' ng-click="cancel_email()" class="btn btn-info cancel-button">Cancel</button>
                         </div>
                       </form>
                       </div>
@@ -139,7 +139,7 @@ $adminAccess = [];
                       </div>
                     </div>
              
-                   <form name="frmChange" method="post" action="process_edit_details.php" onSubmit="return validatePassword()">
+                  <form name="frmChange" method="post" action="process_edit_details.php" ng-submit="validatePassword($event)">
                     <div class="form-group row">
                       <label for="staticEmail" class="col-sm-2 col-form-label">Employee Number</label>
                       <div class="col-sm-10">
@@ -180,7 +180,7 @@ $adminAccess = [];
            
                           <div class="form-group col-sm-4 form-material floating" data-plugin="formMaterial">
                             <div class="input-group">
-                              <input type="password" class="form-control" id="currentPassword" name="currentPassword" required placeholder="Current Password" on Blur="checkAvailability() /" ng-model="currentPassword">
+                              <input type="password" class="form-control" id="currentPassword" name="currentPassword" required placeholder="Current Password" on Blur="checkAvailability()" ng-model="currentPassword"/>
                               <span class="input-group-btn">
                                 <button class="btn btn-default revealCurrentPassword" type="button"> <i class="fa fa-fw fa-eye"></i></button>
                               </span>
@@ -260,7 +260,7 @@ $adminAccess = [];
                   <!--<span id="confirmPassword" class="required"></span>-->
                   <!--  </div>-->
                     <button type="submit" id="real_submit_button" style="display:none" name="updatePassword" class="btn btn-info">Change Password</button>
-                    <button type="button" onclick="change_password_confirm()" class="btn btn-info">Change Password</button>
+                    <button type="button" ng-click="change_password_confirm()" class="btn btn-info">Change Password</button>
                   </form>
                   </div>
                         </div>
