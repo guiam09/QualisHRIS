@@ -2,7 +2,9 @@ angular
 .module('hris', [])
 .controller('AccountSettingsController', function ($scope, $http) {
     // Data Binding
-
+    $scope.currentPassword = '';
+    $scope.newPassword = '';
+    $scope.confirmNewPassword = '';
     
     // Method Binding
     $scope.cancel_email = CancelEmail;
@@ -76,24 +78,20 @@ angular
      
         if (!currentPassword.value) {
             currentPassword.focus();
-            document.getElementById("currentPassword").innerHTML = " <br><p class='text-danger'>Required</p>";
             output = false;
         }
         if (!newPassword.value) {
             newPassword.focus();
-            document.getElementById("newPassword").innerHTML = "<br><p class='text-danger'>Required</p>";
             output = false;
         }
         else if (!confirmPassword.value) {
             confirmPassword.focus();
-            document.getElementById("confirmNewPassword").innerHTML = " <br><p class='text-danger'>Required</p>";
             output = false;
         }
         if (newPassword.value != confirmPassword.value) {
             newPassword.value="";
             confirmPassword.value="";
             newPassword.focus();
-            document.getElementById("confirmNewPassword").innerHTML = " <br><p class='text-danger'>Password Do not match</p>";
             output = false;
         }
         return output;
@@ -153,7 +151,7 @@ angular
             newPass.type = "password";
         }
     }
-    
+
     function checkAvailability2() {
         jQuery.ajax({
             url: "check_availability.php",

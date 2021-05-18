@@ -180,11 +180,12 @@ $adminAccess = [];
            
                           <div class="form-group col-sm-4 form-material floating" data-plugin="formMaterial">
                             <div class="input-group">
-                              <input type="password" class="form-control" id="currentPassword" name="currentPassword" required placeholder="Current Password" on Blur="checkAvailability() /">
+                              <input type="password" class="form-control" id="currentPassword" name="currentPassword" required placeholder="Current Password" on Blur="checkAvailability() /" ng-model="currentPassword">
                               <span class="input-group-btn">
                                 <button class="btn btn-default revealCurrentPassword" type="button"> <i class="fa fa-fw fa-eye"></i></button>
-                              </span>          
+                              </span>
                             </div>
+                            <p class='text-danger' style='margin-bottom: 0px;' ng-if="!currentPassword">Required</p>
                         </div>
                         <span id="user-availability-status"></span>
                     </div>
@@ -193,26 +194,27 @@ $adminAccess = [];
                       <label for="staticEmail" class="col-sm-2 col-form-label">New Password</label>
                       <div class="form-group col-sm-4 form-material floating" data-plugin="formMaterial">
                         <div class="input-group">
-                         <input type="password" maxlength="15" id="newPassword" name="newPassword" placeholder="New Password"class="form-control"/>
-                        <span class="input-group-btn">
-                                <button class="btn btn-default revealNewPassword" type="button"> <i class="fa fa-fw fa-eye"></i></button>
-                        </span> 
+                          <input type="password" maxlength="15" id="newPassword" name="newPassword" placeholder="New Password"class="form-control" ng-model="newPassword"/>
+                          <span class="input-group-btn">
+                            <button class="btn btn-default revealNewPassword" type="button"> <i class="fa fa-fw fa-eye"></i></button>
+                          </span>
                         </div>
-                    </div>
-                    <span id="newPassword" class="required"></span>
+                        <p class='text-danger' style='margin-bottom: 0px;' ng-if="!newPassword">Required</p>
+                      </div>
                     </div>
                     
                     <div class="form-group row">
                       <label for="staticEmail" class="col-sm-2 col-form-label">Confirm Password</label>
                       <div class="form-group col-sm-4 form-material floating" data-plugin="formMaterial">
                         <div class="input-group">
-                         <input type="password" maxlength="15" id="confirmNewPassword" name="confirmNewPassword" placeholder="Confirm Password"class="form-control"/>
-                        <span class="input-group-btn">
-                                <button class="btn btn-default revealConfirmNewPassword" type="button"> <i class="fa fa-fw fa-eye"></i></button>
-                        </span> 
+                          <input type="password" maxlength="15" id="confirmNewPassword" name="confirmNewPassword" placeholder="Confirm Password"class="form-control" ng-model="confirmNewPassword"/>
+                          <span class="input-group-btn">
+                            <button class="btn btn-default revealConfirmNewPassword" type="button"> <i class="fa fa-fw fa-eye"></i></button>
+                          </span> 
                         </div>
-                    </div>
-                    <span id="newPassword" class="required"></span>
+                        <p class='text-danger' style='margin-bottom: 0px;' ng-if="!confirmNewPassword">Required</p>
+                        <p class='text-danger' style='margin-bottom: 0px;' ng-if="newPassword !== confirmNewPassword">Password do not matched</p>
+                      </div>
                     </div>
                     
                     <!-- End new password eye mask -->
