@@ -1,6 +1,6 @@
 ﻿angular
 .module('hris', [])
-.controller('LeaveController', function ($scope, $http) {
+.controller('LeaveController', function ($scope, $http, $timeout) {
     var leaveRequestTable = null;
 
     $scope.approver = {};
@@ -37,6 +37,10 @@
     GetLeaveRequests();
     GetLeaveBalance();
     GetLeaveTypes();
+
+    $timeout(function () {
+        jQuery('#employeeId').select2();
+    }, 100);
 
     function ApplyLeave() {
         var leaveType = $('#applyLeaveType').val();

@@ -34,6 +34,7 @@ include ('../includes/fetchData.php');
 
     .select2-container {
         z-index: 9999;
+        width: 100% !important;
     }
 
     .select2-container--open {
@@ -91,7 +92,7 @@ include ('../includes/fetchData.php');
                                             <div class="col-md-3" ng-if="employee.positionID == 15 || employee.departmentID <= 2">
                                                 <div class="form-group form-material col-md-12">
                                                     <label class="form-control-label">Employee</label>
-                                                    <select class="form-control col-md-6" data-plugin="select2"  id="employeeId" name="employeeId" data-placeholder="Select Employee">
+                                                    <select class="form-control col-md-6" id="employeeId" name="employeeId" data-placeholder="Select Employee">
                                                         <?php include ('searchEmployeeList.php'); ?>
                                                     </select>
                                                 </div>
