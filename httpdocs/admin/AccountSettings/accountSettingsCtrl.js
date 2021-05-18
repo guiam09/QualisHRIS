@@ -74,7 +74,7 @@ angular
      
         currentPassword = document.frmChange.currentPassword;
         newPassword = document.frmChange.newPassword;
-        confirmPassword = document.frmChange.confirmPassword;
+        confirmNewPassword = document.frmChange.confirmNewPassword;
      
         if (!currentPassword.value) {
             currentPassword.focus();
@@ -84,14 +84,13 @@ angular
             newPassword.focus();
             event.preventDefault();
         }
-        else if (!confirmPassword.value) {
-            confirmPassword.focus();
+        else if (!confirmNewPassword.value) {
+            confirmNewPassword.focus();
             event.preventDefault();
         }
-        console.log(newPassword.value != confirmPassword.value);
-        if (newPassword.value != confirmPassword.value) {
+        if (newPassword.value != confirmNewPassword.value) {
             newPassword.value="";
-            confirmPassword.value="";
+            confirmNewPassword.value="";
             newPassword.focus();
             event.preventDefault();
         }

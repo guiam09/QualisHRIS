@@ -207,7 +207,7 @@ $adminAccess = [];
                       <label for="staticEmail" class="col-sm-2 col-form-label">Confirm Password</label>
                       <div class="form-group col-sm-4 form-material floating" data-plugin="formMaterial">
                         <div class="input-group">
-                          <input type="password" maxlength="15" id="confirmNewPassword" name="confirmNewPassword" placeholder="Confirm Password"class="form-control" ng-model="confirmNewPassword"/>
+                          <input type="password" maxlength="15" id="confirmNewPassword" name="confirmNewPassword" placeholder="Confirm Password"class="form-control" ng-model="confirmNewPassword" required/>
                           <span class="input-group-btn">
                             <button class="btn btn-default revealConfirmNewPassword" type="button"> <i class="fa fa-fw fa-eye"></i></button>
                           </span> 
