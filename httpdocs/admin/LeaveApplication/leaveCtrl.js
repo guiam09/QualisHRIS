@@ -228,6 +228,18 @@
         GetApprover(leaveRequest.leaveGroup_approver); 
         $scope.selectedLeaveRequest = leaveRequest;
         console.log($scope.selectedLeaveRequest);
+        $timeout(function () {    
+            var date = new Date();
+            date.setDate(date.getDate());
+            jQuery('#currentDate').datepicker({
+                startDate: date,
+                autoclose: true
+            });
+            jQuery('.apply-leave-date').datepicker({
+                startDate: date,
+                autoclose: true
+            });
+        }, 100);
     }
     
     function UpdateLeaveRequest() {

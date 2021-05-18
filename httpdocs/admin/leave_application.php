@@ -383,8 +383,8 @@ include ('../includes/fetchData.php');
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group">
-                                                                <div class="col-md-12 input-group input-daterange preferredleaveDate apply-leave-date" data-plugin="datepicker" >
-                                                                    <input type="date" id="leaveDateUpdate{{leaveDetail.leavedetails_ID}}" name="leaveDate[]" class="form-control datepicker" autocomplete="off" ng-value="leaveDetail.leavedetails_leaveFrom" />
+                                                                <div class="col-md-12 input-group input-daterange preferredleaveDate apply-leave-date">
+                                                                    <input type="text" id="leaveDateUpdate{{leaveDetail.leavedetails_ID}}" name="leaveDate[]" class="form-control datepicker" autocomplete="off" ng-value="leaveDetail.leavedetails_leaveFrom | date: 'MM-dd-yyyy'" readonly />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -567,8 +567,8 @@ include ('../includes/fetchData.php');
                                             </select>
                                         </td>
                                         <td class="hasInputData">
-                                            <div class="col-md-12 input-group input-daterange preferredleaveDate apply-leave-date" data-plugin="datepicker" id="currentDate">
-                                                <input onchange="row_check($(this))" type="date" id="applyLeaveDate" name="leave_date[]" class="form-control datepicker" autocomplete="off" readonly/>
+                                            <div class="col-md-12 input-group input-daterange preferredleaveDate apply-leave-date" id="currentDate">
+                                                <input onchange="row_check($(this))" type="text" id="applyLeaveDate" name="leave_date[]" class="form-control datepicker" autocomplete="off"/>
                                             </div>
                                         </td>
                                         <td class="hasInputData">
@@ -631,14 +631,6 @@ include ('../includes/scripts.php');
 <script type="text/javascript" src="LeaveApplication/leaveCtrl.js"></script>
 
 <script>
-    var date = new Date();
-    date.setDate(date.getDate() + 7);
-    $('#currentDate').datepicker({
-        startDate: date
-    });
-    $('#leaveDate').datepicker({
-        startDate: date
-    });
     $(document).ready(function() {
         $('#showLeaveTable').DataTable({
             "searching": false
@@ -718,14 +710,6 @@ include ('../includes/scripts.php');
 
         //auto add leave input fields
         var leaveRowCtr = 1;
-
-        // bug fix for closing calendar after selection
-        $('#currentDate').datepicker({
-            autoclose: true
-        });
-        $('#leaveDate').datepicker({
-            autoclose: true
-        });
     });
 
     function search_table()
@@ -764,10 +748,12 @@ include ('../includes/scripts.php');
         $('#leave_form_row_count').val(rows);
 
         var date = new Date();
-        date.setDate(date.getDate() + 7);
-        $('.apply-leave-date').datepicker({
-            startDate: date
-        });
+        date.setDate(date.getDate());
+        setTimeout(function () {
+            $('.apply-leave-date').datepicker({
+                startDate: date
+            });
+        }, 100)
     }
 
     function delete_row(id)
