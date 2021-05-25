@@ -151,9 +151,8 @@ angular
     function CalculateTotals(event) {        
         var day = event.data;
         
-        // Input value should be divisible by 0.5
-        var isInvalid = parseFloat($(this).val()) % 0.5 != 0;
-        if (isInvalid || $(this).val().toLowerCase().includes('e')) {
+        var inputValue = $(this).val();
+        if (IsValidInput(inputValue) === false) {
             $(this).addClass("invalid");
         } else {
             $(this).removeClass("invalid");
@@ -162,17 +161,49 @@ angular
         // Compute Daily Total
         var dailyTotal = 0;
         $('.' + day).each(function(){
-            dailyTotal += parseFloat($(this).val()); 
+            if (IsValidInput($(this).val()))
+                dailyTotal += parseFloat($(this).val());
+            else
+                dailyTotal += parseFloat(0);
         });
         $('.' + day + 'Total').val($filter('number')(dailyTotal, 1));
         
-        // Compute Weekly Total
+        // Compute Total per task
         var weeklyTotal = 0;
         var id = $(this).closest('input').attr('id');
         $('.'+id).each(function(){
-            weeklyTotal += parseFloat($(this).val()); 
+            if (IsValidInput($(this).val()))
+                weeklyTotal += parseFloat($(this).val());
+            else 
+                weeklyTotal += parseFloat(0); 
         });
         $('.totalWeeklyWorkedHours'+id).val($filter('number')(weeklyTotal, 1));
+
+        // Compute Overall Total
+        var overallTotal = 0;
+        $('.dailyWorkedHours').each(function(){
+            if (IsValidInput($(this).val()))
+                overallTotal += parseFloat($(this).val());
+            else
+                overallTotal += parseFloat(0);
+        });
+        $('.overallTotal').val($filter('number')(overallTotal, 1));
+    }
+
+    function IsValidInput (value) {
+        var isValid = false;
+        if (value.trim() === '') {
+            isValid = false;
+        } else if (value.toLowerCase().includes('e')) {
+            isValid = false;
+        } 
+        // Input value should be divisible by 0.5
+        else if (parseFloat(value) % 0.5 != 0) {
+            isValid = false;
+        } else {
+            isValid = true;
+        }
+        return isValid;
     }
 
     function GetProjects() {

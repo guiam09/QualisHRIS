@@ -40,7 +40,7 @@ th {
     border-radius: 0!important;
 }
 .work-hours {
-    width:4.5em; 
+    width:5em; 
     padding-right: 3px;
 }
 </style>
@@ -598,17 +598,6 @@ th {
     }
 
     $(document).ready(function(){
-        //getting weekly and daily totals script
-        $(document).on('keyup click', '.dailyWorkedHours', function(){
-            var overallTotal = 0;
-            $('.dailyWorkedHours').each(function(){
-            overallTotal += parseFloat($(this).val()); 
-            });
-            $('.overallTotal').val(overallTotal);              
-        });    
-        //end getting totals script
-    
-
         var date = new Date();
         date.setDate(date.getDate() + 7);
         $('.apply-leave-date').datepicker({
