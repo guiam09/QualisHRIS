@@ -28,7 +28,9 @@ include ('get_week_range.php');
 <!---->
 
 <style>
-
+th {
+    vertical-align: middle !important;
+}
 .invalid {
     border: 1px solid red !important;
 }
@@ -39,7 +41,7 @@ include ('get_week_range.php');
 }
 .work-hours {
     width:4.5em; 
-    padding-right: 3px;"
+    padding-right: 3px;
 }
 </style>
 
@@ -327,7 +329,7 @@ include ('get_week_range.php');
 
 
 
-      <div class="page-content container-fluid">
+      <div class="page-content container-fluid" style="padding: 0px;">
           <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -344,11 +346,11 @@ include ('get_week_range.php');
 <div class="container-fluid">
     <div class="row">
     <!-- left column -->
-        <div class="col-md-12">
+        <div class="col-md-12" style="padding: 0px;">
         <!-- general form elements -->
             <div class="panel">
                 <div class="panel-heading">
-                    <div class="row">
+                    <div class="row" style="padding: 15px 15px 0 15px;">
                         <div class="form-group col-md-5" id="week-picker-wrapper">
                             <label for="week" class="control-label">Select Week</label>
                             <div class="input-group">
@@ -362,7 +364,7 @@ include ('get_week_range.php');
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="padding: 0 15px 0 15px;">
                         <div class="col-md-6">
                             <h3 class="card-title">Weekly Time (<?php echo  $displayWeekStart . " - " . $displayWeekEnd; ?>)</h3>
                         </div>
@@ -382,25 +384,25 @@ include ('get_week_range.php');
                             <table class="table table-striped table-hover" id="timesheet_table">
                                 <tbody id="timesheet_table">    
                                     <tr>
-                                        <th style="width:25%">Project Code</th>
-                                        <th style="width:10%; display: none;">Work Type</th>
-                                        <th style="width:15%">Task Code</th>
-                                        <th style="width:10%; display: none;">Remarks</th>
-                                        <th style="width:5%">Mo</th>
-                                        <th style="width:5%">Tu</th>
-                                        <th style="width:5%">We</th>
-                                        <th style="width:5%">Th</th>
-                                        <th style="width:5%">Fr</th>
-                                        <th style="width:5%">Sa</th>
-                                        <th style="width:5%">Su</th>
-                                        <th style="width:5%">Total</th>
-                                        <th style="width:20%"> <button <?php echo $disabled ?> type="button" name="add" class="btn btn-default btn-sm add" ng-click="addTask()"><i class="fas fa-plus"></i></button></th>
+                                        <th style="min-width: 150px; width: 200px;">Project Code</th>
+                                        <th style="display: none;">Work Type</th>
+                                        <th style="min-width: 200px;">Task Code</th>
+                                        <th style="display: none;">Remarks</th>
+                                        <th class="work-hours">Mo</th>
+                                        <th class="work-hours">Tu</th>
+                                        <th class="work-hours">We</th>
+                                        <th class="work-hours">Th</th>
+                                        <th class="work-hours">Fr</th>
+                                        <th class="work-hours">Sa</th>
+                                        <th class="work-hours">Su</th>
+                                        <th class="work-hours">Total</th>
+                                        <th style="min-width: 100px; width: 100px;"> <button <?php echo $disabled ?> type="button" name="add" class="btn btn-default btn-sm add" ng-click="addTask()"><i class="fas fa-plus"></i></button></th>
                                     </tr>
                                     <!-- Display data from database -->
                                     <tr ng-if="weeklyUtilization.length > 0" ng-repeat="task in weeklyUtilization">
-                                        <td class="col-sm-3">
-                                            <select name="new_project_name[]" class="form-control project_name saved" style="min-width: 180px;">
-                                                <option value="" ng-if="task.project_ID == ''">Select work type</option>
+                                        <td>
+                                            <select name="new_project_name[]" class="form-control project_name saved">
+                                                <option value="" ng-if="task.project_ID == ''">Select project</option>
                                                 <option ng-repeat="project in projects" value="{{project.project_ID}}" ng-selected="task.project_ID === project.project_ID">{{project.project_name}}</option>
                                             </select>
                                             <input type="text" name="weekID[]" value="{{task.weekly_ID}}" hidden></input>
@@ -414,8 +416,8 @@ include ('get_week_range.php');
                                             </select>
                                         </td>
                                         
-                                        <td class="col-sm-3">
-                                            <input <?php echo $disabled ?> type="text" name="new_task_code[]" value="{{task.weekly_taskCode}}" class="form-control saved" style="min-width: 100px;"></input>
+                                        <td>
+                                            <input <?php echo $disabled ?> type="text" name="new_task_code[]" value="{{task.weekly_taskCode}}" class="form-control saved"></input>
                                         </td>
                                         
                                         <td class="col-sm-3" style="display:none">
@@ -423,46 +425,46 @@ include ('get_week_range.php');
                                         </td>
 
                                         <td>
-                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_monday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours monday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_monday}}"></input>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_monday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours monday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_monday}}"></input>
                                         </td>
 
                                         <td>
-                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_tuesday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours tuesday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_tuesday}}"></input>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_tuesday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours tuesday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_tuesday}}"></input>
                                         </td>
 
                                         <td>
-                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_wednesday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours wednesday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_wednesday}}"></input>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_wednesday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours wednesday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_wednesday}}"></input>
                                         </td>
 
                                         <td>
-                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_thursday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours thursday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_thursday}}"></input>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_thursday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours thursday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_thursday}}"></input>
                                         </td>
 
                                         <td>
-                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_friday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours friday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_friday}}"></input>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_friday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours friday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_friday}}"></input>
                                         </td>
 
                                         <td>
-                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_saturday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours saturday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_saturday}}"></input>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_saturday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours saturday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_saturday}}"></input>
                                         </td>
 
                                         <td>
-                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_sunday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours work-hours sunday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_sunday}}"></input>
+                                            <input size="4" maxlength="4" <?php echo $disabled ?> type="number" name="new_sunday[]" id="{{task.weekly_ID}}" class="form-control dailyWorkedHours sunday saved {{task.weekly_ID}}" step="0.5" min="0" max="24" value="{{task.weekly_sunday}}"></input>
                                         </td>
 
                                         <td>
-                                            <input size="4" maxlength="4" type="number" id="{{task.weekly_ID}}" class="form-control work-hours  totalWeeklyWorkedHours{{task.weekly_ID}}" readonly value="{{task.weekly_total | number : 1}}"></input>
+                                            <input size="4" maxlength="4" type="number" id="{{task.weekly_ID}}" class="form-control totalWeeklyWorkedHours{{task.weekly_ID}}" readonly value="{{task.weekly_total | number : 1}}"></input>
                                         </td>
 
                                         <td>
-                                            <button type="button" data-toggle="tooltip" title="Remarks" data-placement="top" class="btn btn-info btn-sm" onclick="show_remarks_modal($(this))">
-                                                <i class="fas fa-file"></i>
-                                            </button>
-                                            <br/>
-                                            <br/>
-                                            <button <?php echo $disabled ?> type="button" name="remove" class="btn btn-danger btn-sm remove saved">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
+                                            <div>
+                                                <button type="button" data-toggle="tooltip" title="Remarks" class="btn btn-info btn-sm" onclick="show_remarks_modal($(this))">
+                                                    <i class="fas fa-file"></i>
+                                                </button>
+                                                <button <?php echo $disabled ?> type="button" name="remove" class="btn btn-danger btn-sm remove saved">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                            </div>
                                         </td>
 
                                     </tr>
@@ -471,7 +473,7 @@ include ('get_week_range.php');
                                     <th></th>
                                     <th style="display: none;"></th>
                                     <th style="display: none;"></th>
-                                    <th style="text-align: center; vertical-align: middle;">Total</th>
+                                    <th style="text-align: right; vertical-align: middle;">Total</th>
                                     <td><input size="4" maxlength="4" type="text" ng-value="dailyTotal.Monday | number : 1" border="0" readonly min="0" name="monday_total[]" class="form-control work-hours mondayTotal" /></td>
                                     <td><input size="4" maxlength="4" type="text" ng-value="dailyTotal.Tuesday | number : 1" border="0" readonly min="0" name="tuesday_total[]" class="form-control work-hours tuesdayTotal" /></td>
                                     <td><input size="4" maxlength="4" type="text" ng-value="dailyTotal.Wednesday | number : 1" border="0" readonly min="0" name="wednesday_total[]" class="form-control work-hours wednesdayTotal" /></td>
