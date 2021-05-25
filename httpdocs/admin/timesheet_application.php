@@ -366,7 +366,7 @@ th {
                     </div>
                     <div class="row" style="padding: 0 15px 0 15px;">
                         <div class="col-md-6">
-                            <h3 class="card-title">Weekly Time (<?php echo  $displayWeekStart . " - " . $displayWeekEnd; ?>)</h3>
+                            <h3 class="card-title">Weekly Time ({{ weekStartDate | date : 'MMM dd, yyyy' }} - {{ weekEndDate | date : 'MMM dd, yyyy' }})</h3>
                         </div>
                         <div align="right" class="col-md-3">
                             <span>Status: <?php echo $timesheetStatus ?></span>
@@ -378,7 +378,7 @@ th {
                     </div>
                     <!-- Timesheet Table code Start -->
                     <!--<form method="POST" id="insert_form">-->
-                    <form method="POST" id="insert_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <form method="POST" id="insert_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?date=".$weekStart); ?>">
                         <input type="hidden" name="date" value="<?php echo !empty($_GET['date']) ? $_GET['date'] : '' ?>">
                         <div class=" card-body table-responsive p-0">
                             <table class="table table-striped table-hover" id="timesheet_table">

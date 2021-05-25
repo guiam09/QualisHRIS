@@ -23,8 +23,8 @@ angular
         }
     };
     $scope.projects = [];
-    $scope.weekStartDate = new Date(urlParams.get('date'));
-    $scope.weekEndDate = new Date(new Date($scope.weekStartDate.getTime()).setDate($scope.weekStartDate.getDate() + 6));
+    $scope.weekStartDate = new Date();
+    $scope.weekEndDate = new Date();
     $scope.weeklyApproval = '';
     $scope.weeklyStatus = '';
     $scope.weeklyUtilization = [];
@@ -98,6 +98,7 @@ angular
     $(document).on('keyup click', '.sunday', 'sunday', CalculateTotals);
     $(document).on('click', '.remove', RemoveRow);
 
+    GetWeekRange();
     GetUserInfo();
     GetProjects();
     GetWorkTypes();
@@ -203,6 +204,23 @@ angular
         return total;
     }
 
+    function GetWeekRange() {
+        var startDate = new Date();
+        if (urlParams.get('date') !== null) {
+            startDate = new Date(urlParams.get('date'));
+        } else {
+            var currentDate = new Date();
+            var diff = currentDate.getDay() - 1;
+            startDate.setDate(currentDate.getDate() - diff);
+        }
+        var endDate = new Date(startDate);
+        endDate.setDate(startDate.getDate() + 6);
+
+        $scope.weekStartDate = startDate;
+        $scope.weekEndDate = endDate;
+    }
+
+
     function GetWeeklyUtilization () {
         var startDate = $filter('date')($scope.weekStartDate, 'yyyy-MM-dd');
         var endDate = $filter('date')($scope.weekEndDate, 'yyyy-MM-dd');
@@ -224,9 +242,6 @@ angular
                     $scope.dailyTotal.Sunday += parseFloat(item.weekly_sunday);
                     
                 }
-                console.log($scope.weeklyUtilization);
-                console.log($scope.dailyTotal);
-                console.log($scope.dailyTotal.Overall());
             });
     }
 
