@@ -1,6 +1,6 @@
 ﻿angular
 .module('hris', [])
-.controller('LeaveController', function ($scope, $http, $timeout) {
+.controller('LeaveController', function ($scope, $http, $filter, $timeout) {
     var leaveRequestTable = null;
 
     $scope.approver = {};
@@ -13,7 +13,7 @@
 
     $scope.filter = {
         status: "",
-        dateRange: " ",
+        dateRange: "custom",
         dateTo: null,
         dateFrom: null
     };
@@ -33,6 +33,7 @@
     $scope.loadViewEditModalData = LoadViewEditModalData;
     $scope.updateLeaveRequest = UpdateLeaveRequest;   
 
+    GetWeekRange();
     GetEmployee();
     GetLeaveRequests();
     GetLeaveBalance();
@@ -114,16 +115,19 @@
     }
 
     function FilterLeaveRequests() {
-        var range = $('#showDateRange2').val();
+
+        console.log('filter');
         var from_date = document.getElementById('leave_from_date2').value;
         var to_date = document.getElementById('leave_to_date2').value;
         var status = document.getElementById('showStatus2').value;
+        console.log(from_date);
+        console.log(to_date);
 
         $.ajax({
             url: "LeaveApplication/filterLeaveRequests.php",
             method: "post",
             data: { 
-                range: range, 
+                range: "custom", 
                 from_date: from_date, 
                 to_date: to_date, 
                 status: status
@@ -210,6 +214,7 @@
                 $scope.leaveRequests = response.data[0];
                 console.log($scope.leaveRequests);
                 InitializeLeaveRequestTable();
+                FilterLeaveRequests();
             });
     }
 
@@ -221,6 +226,17 @@
             viewEditButton = "edit";
         }
         return viewEditButton;
+    }
+
+    function GetWeekRange() {
+        var startDate = new Date();
+        var currentDate = new Date();
+        var diff = currentDate.getDay() - 1;
+        startDate.setDate(currentDate.getDate() - diff);
+        var endDate = new Date(startDate);
+        endDate.setDate(startDate.getDate() + 6);
+        $scope.filter.dateFrom = $filter('date')(startDate, 'MM/dd/yyyy');
+        $scope.filter.dateTo = $filter('date')(endDate, 'MM/dd/yyyy');
     }
 
     function LoadViewEditModalData(leaveRequest) {

@@ -238,7 +238,7 @@ include ('../includes/fetchData.php');
                                                     </div>
                                                 </div>
                                                 
-                                                <div class="col-md-3">
+                                                <!-- <div class="col-md-3">
                                                     <div class="form-group form-material col-md-12">
                                                         <label class="form-control-label">Range</label><br />
                                                         <select ng-model="filter.dateRange" ng-change="filterLeaveRequests()" class="form-control col-md-12" data-plugin="select" data-minimum-results-for-search="Infinity" data-placeholder="Select Range" tab-index="-1" width="auto" id="showDateRange2">
@@ -250,9 +250,9 @@ include ('../includes/fetchData.php');
                                                             <option value="custom">Custom</option>
                                                         </select>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <!--<div class="date-range">-->
-                                                <div class="col-md-3" id='fromDateGroup2' style=display:none>
+                                                <div class="col-md-3" id='fromDateGroup2'>
                                                     <div class="form-group form-material col-md-12">
                                                         <label class="form-control-label">From</label>
                                                         <div class="col-md-12 input-group input-daterange" id="fromleavedatepicker2" data-plugin="datepicker">
@@ -260,7 +260,7 @@ include ('../includes/fetchData.php');
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3" id='toDateGroup2' style=display:none>
+                                                <div class="col-md-3" id='toDateGroup2'>
                                                     <div class="form-group form-material col-md-12">
                                                         <label class="form-control-label">To</label>
                                                         <div class="col-md-12 input-group input-daterange" id="toleavedatepicker2" data-plugin="datepicker">
@@ -648,18 +648,7 @@ include ('../includes/scripts.php');
                 document.getElementById('toDateGroup').style.display = 'none';
             }
         });
-
-        $('#showDateRange2').on('change', function() {
-            //        function showDateRange(value) {
-            var leaveType = $(this).val();
-            if (leaveType == "custom") {
-                document.getElementById('fromDateGroup2').style.display = 'block';
-                document.getElementById('toDateGroup2').style.display = 'block';
-            } else {
-                document.getElementById('fromDateGroup2').style.display = 'none';
-                document.getElementById('toDateGroup2').style.display = 'none';
-            }
-        });
+                
         // end showing custom date range
 
         // $('#populateLeaveTable2').on('change',function(){
