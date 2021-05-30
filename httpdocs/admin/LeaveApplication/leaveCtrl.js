@@ -12,6 +12,13 @@
     $scope.leaveInfo = [];
     $scope.leaveTypes = [];
 
+    $scope.filterApproval = {
+        employeeID: null,
+        status: "",
+        dateRange: "custom",
+        dateTo: null,
+        dateFrom: null
+    }
     $scope.filter = {
         status: "",
         dateRange: "custom",
@@ -250,6 +257,8 @@
         endDate.setDate(startDate.getDate() + 6);
         $scope.filter.dateFrom = $filter('date')(startDate, 'MM/dd/yyyy');
         $scope.filter.dateTo = $filter('date')(endDate, 'MM/dd/yyyy');
+        $scope.filterApproval.dateFrom = $filter('date')(startDate, 'MM/dd/yyyy');
+        $scope.filterApproval.dateTo = $filter('date')(endDate, 'MM/dd/yyyy');
     }
 
     function LoadViewEditModalData(leaveRequest) {

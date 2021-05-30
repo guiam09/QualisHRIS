@@ -115,7 +115,7 @@ include ('../includes/fetchData.php');
                                                 </div>
                                             </div>
                                             
-                                            <div class="col-md-3">
+                                            <!-- <div class="col-md-3">
                                                 <div class="form-group form-material col-md-12">
                                                     <label class="form-control-label">Range</label><br />
                                                     <select class="form-control col-md-12" data-plugin="select" data-minimum-results-for-search="Infinity" data-placeholder="Select Range" tab-index="-1" width="auto" id="showDateRange">
@@ -127,21 +127,21 @@ include ('../includes/fetchData.php');
                                                         <option value="custom">Custom</option>
                                                     </select>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <!--<div class="date-range">-->
-                                            <div class="col-md-3" id='fromDateGroup' style=display:none>
+                                            <div class="col-md-3" id='fromDateGroup'>
                                                 <div class="form-group form-material col-md-12">
                                                     <label class="form-control-label">From</label>
                                                     <div class="col-md-12 input-group input-daterange" id="fromleavedatepicker" data-plugin="datepicker">
-                                                        <input type="text" name="leave_from_date" id="leave_from_date" class="form-control datepicker" autocomplete="off" style="border:1px solid #e4eaec; border-radius:0.215rem">
+                                                        <input ng-model="filterApproval.dateFrom" type="text" name="leave_from_date" id="leave_from_date" class="form-control datepicker" autocomplete="off" style="border:1px solid #e4eaec; border-radius:0.215rem">
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3" id='toDateGroup' style=display:none>
+                                            <div class="col-md-3" id='toDateGroup'>
                                                 <div class="form-group form-material col-md-12">
                                                     <label class="form-control-label">To</label>
                                                     <div class="col-md-12 input-group input-daterange" id="toleavedatepicker" data-plugin="datepicker">
-                                                        <input type="text" name="leave_to_date" id="leave_to_date" class="form-control datepicker" autocomplete="off" style="border:1px solid #e4eaec; border-radius:0.215rem">
+                                                        <input ng-model="filterApproval.dateTo" type="text" name="leave_to_date" id="leave_to_date" class="form-control datepicker" autocomplete="off" style="border:1px solid #e4eaec; border-radius:0.215rem">
                                                     </div>
                                                 </div>
                                             </div>
