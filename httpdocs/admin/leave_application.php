@@ -28,6 +28,9 @@ include ('../includes/fetchData.php');
     }
 </style>
 <style>
+    .btn.disabled {
+        opacity: 1 !important;
+    }
     .modal {
         z-index: 1950;
     }
@@ -594,8 +597,11 @@ include ('../includes/fetchData.php');
                         <div class="row">
                             <div class="col-md-8">
                                 <label class="form-control-label">Approver</label>
-                                <select class="form-control col-md-12" data-plugin="selectpicker" id="applyLeaveApprover" name="adminIdApply" data-placeholder="Select Employee">
-                                    <?php include ('searchAdminList.php');?>
+                                <select disabled class="form-control col-md-12" id="applyLeaveApprover" name="adminIdApply" data-placeholder="Select Employee">
+                                    <option ng-if="admins.length > 0" ng-repeat="admin in admins" ng-value="admin.employeeID" ng-selected="admin.employeeID == employee.reportingTo">
+                                        {{ admin.lastName }}, {{ admin.firstName }} {{ admin.middleName }} - {{ admin.positionName }}
+                                    </option>
+                                    <span ng-if="admins.length <= 0" ></span>
                                 </select>
                             </div>
                         </div>

@@ -3,6 +3,7 @@
 .controller('LeaveController', function ($scope, $http, $filter, $timeout) {
     var leaveRequestTable = null;
 
+    $scope.admins = [];
     $scope.approver = {};
     $scope.employee = {};
     $scope.leaveRequests = [];
@@ -33,6 +34,7 @@
     $scope.loadViewEditModalData = LoadViewEditModalData;
     $scope.updateLeaveRequest = UpdateLeaveRequest;   
 
+    GetAdminList();
     GetWeekRange();
     GetEmployee();
     GetLeaveRequests();
@@ -41,6 +43,7 @@
 
     $timeout(function () {
         jQuery('#employeeId').select2();
+        jQuery('#applyLeaveApprover').selectpicker();
     }, 100);
 
     function ApplyLeave() {
@@ -148,6 +151,14 @@
         console.log(new Date(date, "m-d-Y"));
         return new Date(date, "m-d-Y");
         // return date("m-d-Y", strtotime(date));
+    }
+
+    function GetAdminList() {
+        $http.get("Employee/getAdminList.php")
+            .then(function (response) {
+                $scope.admins = response.data;
+                console.log(response.data);
+            });
     }
 
     function GetApprover (employeeId) {
