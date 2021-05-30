@@ -205,6 +205,14 @@
             .then(function (response) {
                 $scope.leaveInfo = response.data[0];
                 console.log($scope.leaveInfo);
+                $timeout(function() {
+                    var date = new Date();
+                    date.setDate(date.getDate());
+                    jQuery('.apply-leave-date').datepicker({
+                        startDate: date,
+                        autoclose: true
+                    });
+                }, 100);
             });
     }
 
@@ -248,10 +256,6 @@
             var date = new Date();
             date.setDate(date.getDate());
             jQuery('#currentDate').datepicker({
-                startDate: date,
-                autoclose: true
-            });
-            jQuery('.apply-leave-date').datepicker({
                 startDate: date,
                 autoclose: true
             });

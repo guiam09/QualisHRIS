@@ -568,7 +568,7 @@ include ('../includes/fetchData.php');
                                         </td>
                                         <td class="hasInputData">
                                             <div class="col-md-12 input-group input-daterange preferredleaveDate apply-leave-date" id="currentDate">
-                                                <input onchange="row_check($(this))" type="text" id="applyLeaveDate" name="leave_date[]" class="form-control datepicker" autocomplete="off"/>
+                                                <input onchange="row_check($(this))" type="text" id="applyLeaveDate" name="leave_date[]" class="form-control datepicker" style="background-color: white;" autocomplete="off" readonly/>
                                             </div>
                                         </td>
                                         <td class="hasInputData">
