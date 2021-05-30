@@ -34,9 +34,9 @@
     $scope.loadViewEditModalData = LoadViewEditModalData;
     $scope.updateLeaveRequest = UpdateLeaveRequest;   
 
-    GetAdminList();
-    GetWeekRange();
     GetEmployee();
+    GetEmployeeList();
+    GetWeekRange();
     GetLeaveRequests();
     GetLeaveBalance();
     GetLeaveTypes();
@@ -153,14 +153,6 @@
         // return date("m-d-Y", strtotime(date));
     }
 
-    function GetAdminList() {
-        $http.get("Employee/getAdminList.php")
-            .then(function (response) {
-                $scope.admins = response.data;
-                console.log(response.data);
-            });
-    }
-
     function GetApprover (employeeId) {
         $http.get("LeaveApplication/getEmployee.php?id=" + employeeId)
             .then(function (response) {
@@ -175,6 +167,13 @@
                 $scope.employee = response.data[0];
                 console.log(response.data[0]);
                 return $scope.employee;
+            });
+    }
+
+    function GetEmployeeList() {
+        $http.get("Employee/getEmployeeList.php")
+            .then(function (response) {
+                $scope.admins = response.data;
             });
     }
     
