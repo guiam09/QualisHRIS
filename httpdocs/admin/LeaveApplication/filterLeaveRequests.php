@@ -49,7 +49,7 @@
 
     $stmt = $con->prepare($query);
     $stmt->execute();
-    $result[] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     echo json_encode($result);
 ?>

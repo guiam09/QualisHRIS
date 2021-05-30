@@ -118,13 +118,9 @@
     }
 
     function FilterLeaveRequests() {
-
-        console.log('filter');
         var from_date = document.getElementById('leave_from_date2').value;
         var to_date = document.getElementById('leave_to_date2').value;
         var status = document.getElementById('showStatus2').value;
-        console.log(from_date);
-        console.log(to_date);
 
         $.ajax({
             url: "LeaveApplication/filterLeaveRequests.php",
@@ -136,12 +132,10 @@
                 status: status
             },
             dataType: "text",
-            success: function(response) {               
+            success: function(response) {              
                 DestoryLeaveRequestTable();
-                ApplyLeaveRequestData(JSON.parse(response)[0]);
+                ApplyLeaveRequestData(JSON.parse(response));
                 InitializeLeaveRequestTable();
-                
-                
             }
         });
     }
@@ -227,13 +221,14 @@
     }
 
     function GetLeaveRequests() {
-        $http.get("LeaveApplication/getLeaveRequests.php")
-            .then(function (response) {
-                $scope.leaveRequests = response.data[0];
-                console.log($scope.leaveRequests);
-                InitializeLeaveRequestTable();
+        // $http.get("LeaveApplication/getLeaveRequests.php")
+        //     .then(function (response) {
+        //         $scope.leaveRequests = response.data[0];
+        //         console.log($scope.leaveRequests);
+        //         // ApplyLeaveRequestData($scope.leaveRequests);
+        //         // InitializeLeaveRequestTable();
                 FilterLeaveRequests();
-            });
+        //     });
     }
 
     function GetViewEditButton(status) {
@@ -319,8 +314,10 @@
     }
     function DestoryLeaveRequestTable() {
         $(document).ready(function(){
-            leaveRequestTable.clear();
-            leaveRequestTable.destroy();
+            if (leaveRequestTable !== null) {
+                leaveRequestTable.clear();
+                leaveRequestTable.destroy();
+            }
         });
     }
 });
