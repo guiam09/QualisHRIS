@@ -101,7 +101,7 @@ include ('../includes/fetchData.php');
                                                 <div class="form-group form-material col-md-12">
                                                     <label class="form-control-label">Status</label><br />
                                                     <select class="form-control col-md-12" id="showStatus">
-                                                        <option value=""></option>
+                                                        <option value="">All</option>
                                                         <option>Pending</option>
                                                         <option>Approved</option>
                                                         <option>Declined</option>
@@ -227,7 +227,7 @@ include ('../includes/fetchData.php');
                                                     <div class="form-group form-material col-md-12">
                                                         <label class="form-control-label">Status</label><br />
                                                         <select ng-model="filter.status" ng-change="filterLeaveRequests()" class="form-control col-md-12" id="showStatus2">
-                                                            <option value=""></option>
+                                                            <option value="">All</option>
                                                             <option>Pending</option>
                                                             <option>Approved</option>
                                                             <option>Declined</option>
