@@ -555,9 +555,9 @@ th {
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="card-title">Remarks</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                </button>
+                </button> -->
                 <!--<h4 class="modal-title"><b><span class="employee_id"></span></b></h4>-->
             </div>
             <div class="modal-body ">

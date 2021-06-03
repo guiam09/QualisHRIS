@@ -289,10 +289,10 @@ include ('get_week_range.php');
                                 <div>
                                 <?php
                                 $query = "SELECT *,SUM(weekly_sunday) + SUM(weekly_monday) + SUM(weekly_tuesday) + SUM(weekly_wednesday) + SUM(weekly_thursday) + SUM(weekly_friday) + SUM(weekly_saturday) AS `total_hours` FROM tbl_weeklyutilization INNER JOIN tbl_employees ON tbl_employees.employeeCode = tbl_weeklyutilization.employeeCode
-                                    WHERE weekly_approval='Pending' and tbl_weeklyutilization.employeeCode != ".htmlspecialchars(strip_tags($_SESSION['user_id']))."  GROUP BY weekly_startDate, tbl_weeklyutilization.employeeCode ORDER BY weekly_endDate DESC";
+                                    WHERE weekly_approval='Pending' and weekly_status != 'Not Submitted' and tbl_weeklyutilization.employeeCode != ".htmlspecialchars(strip_tags($_SESSION['user_id']))."  GROUP BY weekly_startDate, tbl_weeklyutilization.employeeCode ORDER BY weekly_endDate DESC";
 
                                 $query = "SELECT *,SUM(weekly_sunday) + SUM(weekly_monday) + SUM(weekly_tuesday) + SUM(weekly_wednesday) + SUM(weekly_thursday) + SUM(weekly_friday) + SUM(weekly_saturday) AS `total_hours` FROM tbl_weeklyutilization INNER JOIN tbl_employees ON tbl_employees.employeeCode = tbl_weeklyutilization.employeeCode
-                                    WHERE weekly_approval='Pending' GROUP BY weekly_startDate, tbl_weeklyutilization.employeeCode ORDER BY weekly_endDate DESC";
+                                    WHERE weekly_approval='Pending' and weekly_status != 'Not Submitted' GROUP BY weekly_startDate, tbl_weeklyutilization.employeeCode ORDER BY weekly_endDate DESC";
 
                                 $stmt = $con->prepare($query);
                                 $stmt->execute();
@@ -550,7 +550,7 @@ GROUP BY tbl_weeklyutilization_history.employeeCode , weekly_startDate";
                         <tbody>
                             <tr>
                                 <th class="col-sm-1">Project Code</th>
-                                <th class="col-sm-1">Work Type</th>
+                                <!-- <th class="col-sm-1">Work Type</th> -->
                                 <th class="col-sm-1">Task Code</th>
                                 <th class="col-sm-1">Remarks</th>
                                 <th class="col-sm-1">Mon</th>
@@ -601,7 +601,7 @@ GROUP BY tbl_weeklyutilization_history.employeeCode , weekly_startDate";
                             ?>
                             <tr>
                                 <td><?php echo $row_table['project_name'];?></td>
-                                <td><?php echo $row_table['work_name'];?></td>
+                                <!-- <td><?php echo $row_table['work_name'];?></td> -->
                                 <td><?php echo $row_table['weekly_taskCode'];?></td>
                                 <td><?php echo $row_table['location_ID'];?></td>
                                 <td><?php echo $row_table['weekly_monday'];?></td>
@@ -619,7 +619,7 @@ GROUP BY tbl_weeklyutilization_history.employeeCode , weekly_startDate";
                             ?>
                             <tr>
                                 <td></td>
-                                <td></td>
+                                <!-- <td></td> -->
                                 <td></td>
                                 <th>Total</th>
                                 <th><?php echo $mondayTotal;?></th>
