@@ -76,7 +76,7 @@ include ('../includes/fetchData.php');
                             <div class="row">
                               <div class="form-group form-material col-md-4">
                                   <label class="form-control-label" for="inputBasicEmail">Gender <a class="text-danger">*</a></label>
-                              <select class="form-control focus" title="Please Select Gender" required name="gender" required data-plugin="selectpicker">
+                              <select class="form-control focus" title="Please Select Gender" required id="gender" name="gender" required data-plugin="selectpicker">
                                 <option></option>
                                   <option value="Male">Male</option>
                                   <option value="Female">Female</option>
@@ -98,7 +98,7 @@ include ('../includes/fetchData.php');
                             <div class="row">
                               <div class="form-group form-material col-md-4">
                                   <label class="form-control-label" for="inputBasicEmail">Civil Status <a class="text-danger">*</a></label>
-                              <select class="form-control focus" name="civilStatus" required data-plugin="selectpicker" title="Please Select Civil Status" required>
+                              <select class="form-control focus" id="civilStatus" name="civilStatus" required data-plugin="selectpicker" title="Please Select Civil Status" required>
                                 <option></option>
                                 <option>Single</option>
                                 <option>Married</option>
@@ -121,7 +121,7 @@ include ('../includes/fetchData.php');
                             <div class="row">
                                   <div class="form-group form-material col-md-4">
                                 <label class="form-control-label" for="inputBasicPassword">Address <a class="text-danger">*</a></label>
-                                <input type="textarea" class="form-control focus" placeholder="Street, Village, City" name="address" required>
+                                <input type="textarea" class="form-control focus" placeholder="Street, Village, City" id="address" name="address" required>
                               </div>
                             </div>
                             <!--<div class="row">-->
@@ -193,7 +193,7 @@ include ('../includes/fetchData.php');
                                   <div class="row">
                                     <div class="form-group form-material col-md-4">
                                         <label class="form-control-label" for="inputBasicEmail">Access Level <a class="text-danger">*</a></label>
-                                    <select class="form-control focus" data-plugin="select2" name="accessLevel" data-placeholder="Select Access Level">
+                                    <select class="form-control focus" data-plugin="select2" id="accessLevel" name="accessLevel" data-placeholder="Select Access Level">
                                       <option></option>
                                         <?php
                                         // select all data
@@ -372,22 +372,24 @@ include ('../includes/scripts.php');
 function verify() {
    
     var form = $(this).parents('form');
-    var firstName =  $("#firstName").val();
-    var lastName =  $("#lastName").val();
-    var gender =  $("#gender").val();
-    var contactNumber =  $("#contactNumber").val();
-    var birthdate =  $("#birthdate").val();
-    var civilStatus =  $("#civilStatus").val();
-    var address =  $("#address").val();
-    var photo =  $("#Image").val();
-    var emailAddress =  $("#emailAddress").val();
-    var accessLevel =  $("#accessLevel").val();
-    var coreTime =  $("#coreTime").val();
-    var dateHired =  $("#dateHired").val();
-    var department =  $("#department").val();
-    var position =  $("#position").val();
-    var reportingTo =  $("#reportingTo").val();
+    var firstName = $("#firstName").val();
+    var lastName = $("#lastName").val();
+    var gender = $("#gender").val();
+    var contactNumber = $("#contactNumber").val();
+    var birthdate = $("#birthdate").val();
+    var civilStatus = $("#civilStatus").val();
+    var address = $("#address").val();
+    var photo = $('input[name="Image"]').val();
+    var emailAddress = $("#emailAddress").val();
+    var accessLevel = $("#accessLevel").val();
+    var coreTime = $("#coreTime").val();
+    var dateHired = $("#dateHired").val();
+    var department = $("#department").val();
+    var position = $("#position").val();
+    var reportingTo = $("#reportingTo").val();
     var form = document.getElementById("exampleFullForm");
+
+    console.log(gender);
 
     var requiredFields = [];
     requiredFields.push({ Name: "Last Name", Value: lastName });
