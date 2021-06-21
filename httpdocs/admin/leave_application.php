@@ -597,7 +597,7 @@ include ('../includes/fetchData.php');
                         <div class="row">
                             <div class="col-md-8">
                                 <label class="form-control-label">Approver</label>
-                                <select disabled class="form-control col-md-12" id="applyLeaveApprover" name="adminIdApply" data-placeholder="Select Employee">
+                                <select class="form-control col-md-12" id="applyLeaveApprover" name="adminIdApply" data-placeholder="Select Employee">
                                     <option ng-if="admins.length > 0" ng-repeat="admin in admins" ng-value="admin.employeeID" ng-selected="admin.employeeID == employee.reportingTo">
                                         {{ admin.lastName }}, {{ admin.firstName }} {{ admin.middleName }} - {{ admin.positionName }}
                                     </option>
