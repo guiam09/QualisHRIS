@@ -44,7 +44,7 @@ include ('get_week_range.php');
 
     
 </style>
-<div class="page">
+<div class="page" ng-app='hris' ng-controller='TimeSheetManagementController'>
     <div class="page-header">
           <!--<h1 class="page-title"><i>Leave Application</i></h1>-->
     </div>
@@ -836,6 +836,10 @@ include ('../includes/scripts.php');
  ?>
 
 <script src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
+<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="../node_modules/angularjs-datatables/src/angular-datatables.js"></script>
+<script type="text/javascript" src="TimeSheetManagement/timeSheetManagementCtrl.js"></script>
+
 <script>
    function approveConfirm()
         {
