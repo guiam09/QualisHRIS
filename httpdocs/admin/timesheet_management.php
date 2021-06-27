@@ -75,34 +75,35 @@ include ('get_week_range.php');
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
                                 <div class="row" style="margin-top: 50px">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <div class="col-md-12">
                                         <label class="form-control-label">Week Ending</label><br />
                                         <input type="text" class="form-control col-md-12" id="datepicker">
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <div class="col-md-12">
                                             <label class="form-control-label">Employee Name</label><br />
-                                            <select class="form-control col-md-12" data-plugin="select2"  id="employee_name" name="employee_name" data-placeholder="Select Employee">
-                                            <?php
-                                            include('searchEmployeeListTimesheet.php');
-                                            ?>
+                                            <select class="form-control col-md-12" id="employee_name" name="employee_name" data-placeholder="Select Employee">
+                                                <option ng-repeat='employee in employees track by employee.employeeID' value='{{ formatEmployeeName(employee) }}'>
+                                                    {{ formatEmployeeName(employee) }}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <div class="col-md-6">
+                                    <div class="col-sm-3">
+                                        <div class="col-md-12">
                                         <label class="form-control-label">Status</label><br />
-                                        <select class="form-control col-md-12" data-plugin="select2" data-minimum-results-for-search="Infinity" data-placeholder="Select status" tab-index="-1" width="auto" id="status_filter">
+                                        <select class="form-control col-md-12" data-plugin="select2" data-minimum-results-for-search="Infinity" tab-index="-1" width="auto" id="status_filter">
                                             <option value="">All</option>
-                                            <option>Pending</option>
-                                            <option>Approved</option>
-                                            <option>Amended Pending</option>
-                                            <option>Amended Approved</option>
-                                            <option>Declined</option>
-                                            <option>Amended Declined</option>
+                                            <option ng-repeat='status in statuses'>{{status}}</option>
                                         </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="col-md-12">
+                                            <label class="form-control-label">&nbsp;</label><br />
+                                            <button type="button" class="btn btn-default" ng-click="clearFilters()">Clear Filters</button>
                                         </div>
                                     </div>
                                 </div>
