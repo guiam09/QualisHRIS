@@ -132,7 +132,16 @@ include ('../db/connection.php');
                 </a>
               </li>
         
-
+              <li class="site-menu-item ';
+                   
+                   if($CURRENT_PAGE == "Timesheet Summary"){
+                       echo "active";
+                   }
+            echo '">
+                <a class="animsition-link" href="timesheet_summary.php">
+                  <span class="site-menu-title">Timesheet Summary</span>
+                </a>
+              </li>
             </ul>
 
           </li>';
