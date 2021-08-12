@@ -25,7 +25,7 @@ include ('../includes/fetchData.php');
 
 
     <!-- Page -->
-    <div class="page">
+    <div class="page" ng-app="hris" ng-controller="TimesheetSummaryController">
       <div class="page-header">
           <h1 class="page-title"><i>Timesheet Summary</i></h1>
 
@@ -67,18 +67,23 @@ include ('../includes/fetchData.php');
                                    <th>Total</th>
                                </tr>
                              </thead>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>0.0</td>
-                                <td>0.0</td>
-                                <td>0.0</td>
-                                <td>0.0</td>
-                                <td>0.0</td>
-                                <td>0.0</td>
-                                <td>0.0</td>
-                                <td>0.0</td>
+                             <tbody>
+                                <tr ng-repeat="t in timesheets">
+                                    <!-- <td>{{ t.weekly_startDate }} - {{ t.weekly_endDate }}</td> -->
+                                    <td>{{ t.weekly_endDate }}</td>
+                                    <td>{{ t.employeeName }}</td>
+                                    <td>{{ t.project_name }}</td>
+                                    <td>{{ t.weekly_taskCode }}</td>
+                                    <td>{{ t.weekly_monday }}</td>
+                                    <td>{{ t.weekly_tuesday }}</td>
+                                    <td>{{ t.weekly_wednesday }}</td>
+                                    <td>{{ t.weekly_thursday }}</td>
+                                    <td>{{ t.weekly_friday }}</td>
+                                    <td>{{ t.weekly_saturday }}</td>
+                                    <td>{{ t.weekly_sunday }}</td>
+                                    <td>{{ t.weekly_total | number : 1 }}</td>
+                                </tr>
+                            </tbody>
                              <?php
                             //  // select all data
                             //  $query = "SELECT * FROM tbl_auditLogs JOIN tbl_employees ON tbl_auditLogs.modified_by_id = tbl_employees.employeeID ORDER BY modified_timestamp DESC";
@@ -132,7 +137,7 @@ include ('../includes/fetchData.php');
 
     <!-- Footer -->
 <?php
-include ('../includes/footer.php');
+// include ('../includes/footer.php');
 include ('../includes/scripts.php');
  ?>
 <script>https://code.jquery.com/jquery-3.3.1.js</script>
@@ -146,23 +151,16 @@ include ('../includes/scripts.php');
 <script>https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js</script>
 <script>https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js</script>
 
+<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="../node_modules/angularjs-datatables/src/angular-datatables.js"></script>
+<script type="text/javascript" src="Reports/timeSheetSummaryCtrl.js"></script>
 
 
 <script>
 $('.clockpicker').clockpicker()
-.find('input').change(function(){
- twelvehour: true
-});
-
-$(document).ready(function() {
-    $('#example').DataTable( {
-        "order": [],
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-} );
+  .find('input').change(function(){
+    twelvehour: true
+  });
 
 </script>
   </body>
