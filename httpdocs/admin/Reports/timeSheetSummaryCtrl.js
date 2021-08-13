@@ -2,6 +2,8 @@ angular
 .module('hris', [])
 .controller('TimesheetSummaryController', function ($scope, $http, $filter, $timeout) { 
     console.log('Start TimesheetSummaryController');
+    document.title = "Timesheet Summary"
+
     var timesheetTable = null;
 
     $scope.processedTimeSheets = [];
@@ -68,12 +70,19 @@ angular
 
     function InitializeTable() {
         $(document).ready(function(){
-            timesheetTable = $('#example').DataTable({
+            timesheetTable = jQuery('#timesheetTable').DataTable({
                 // "searching": false,
                 "order": [],
                 dom: 'Bfrtip',
                 buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
+                    'copy', 
+                    'csv', 
+                    {
+                        extend: 'excelHtml5',
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                    }
                 ]
             });
             console.log(timesheetTable);
