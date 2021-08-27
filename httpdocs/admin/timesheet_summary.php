@@ -36,20 +36,33 @@ include ('../includes/fetchData.php');
 
                     <div class="col-md-12">
                         <div class="panel nav-tabs-horizontal" data-plugin="tabs">
-                          <div class="panel-heading p-30 pb-0 pt-10">
-                            <ul class="nav nav-pills" role="tablist">
+                        
+                          <!-- <div class="panel-heading p-30 pb-0 pt-10">
+                            <ul class="nav nav-pills" role="tablist"> -->
+
                               <!--<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#cardTab1"-->
                               <!--    aria-controls="cardTab1" role="tab" aria-expanded="true">Core Time</a></li>-->
                               <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#cardTab2" aria-controls="cardTab2"
                                   role="tab">Positions</a></li> -->
                               <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#cardTab3" aria-controls="cardTab3"
                                   role="tab">tab2</a></li> -->
-                            </ul>
-                          </div>
+
+                            <!-- </ul>
+                          </div> -->
                           <div class="panel-body">
                             <div class="tab-content">
                               <div class="tab-pane active" id="cardTab1" role="tabpanel">
                                 <div class="panel-body container-fluid">
+
+                                  <div class="col-md-4" id='fromDateGroup'>
+                                    <div class="form-group form-material col-md-12">
+                                      <label class="form-control-label">Select Month</label>
+                                      <div class="col-md-12 input-group input-daterange" id="selectedMonth">
+                                        <input ng-model="selectedMonth" ng-change="filterTimeSheets()" type="text" name="monthSelection" id="monthSelection" class="form-control datepicker-timesheet-summary" autocomplete="off" style="border:1px solid #e4eaec; border-radius:0.215rem; z-index: 1500;">
+                                      </div>
+                                    </div>
+                                  </div>
+
                              <table class="table table-hover table-striped w-full" id="timesheetTable">
                              <thead>
                                <tr>
@@ -68,7 +81,7 @@ include ('../includes/fetchData.php');
                                </tr>
                              </thead>
                              <tbody>
-                                <tr ng-repeat="t in timesheets">
+                                <tr ng-repeat="t in filteredTimeSheets">
                                     <!-- <td>{{ t.weekly_startDate }} - {{ t.weekly_endDate }}</td> -->
                                     <td>{{ t.weekly_endDate }}</td>
                                     <td>{{ t.employeeName }}</td>

@@ -7,9 +7,49 @@ angular
     var timesheetTable = null;
 
     $scope.processedTimeSheets = [];
+    // $scope.selectedMonth = new Date();
+    $scope.filteredTimeSheets = [];
     $scope.timesheets = [];
+
+    // Method-binding
+    $scope.filterTimeSheets = FilterTimeSheets;
+    
+    // Initialization
     // GetProcessedTimesheets();
     GetProcessedTimeSheetDetails();
+
+    $timeout(function () {
+        jQuery("#selectedMonth").datepicker({
+            autoclose: true,
+            defaultDate: new Date(2021, 08, 1),
+            format: 'MM yyyy',
+            minViewMode: "months",
+            startView: "months",
+            zIndexOffset: 1500
+        });
+        var date = new Date();
+        var currentMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+        jQuery('.datepicker-timesheet-summary').datepicker('update', currentMonth);        
+    }, 100);
+
+
+    function FilterTimeSheets() {
+        var date = jQuery('.datepicker-timesheet-summary').datepicker('getDate');
+        var monthStart = new Date(date.getFullYear(), date.getMonth(), 1);
+        var monthEnd = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+        var timesheets = angular.copy($scope.timesheets);
+        var filteredTimeSheets = timesheets.filter(function (timesheet) {
+            var weekStart = new Date(timesheet.weekly_startDate);
+            var weekEnd = new Date(timesheet.weekly_endDate);
+
+            return ((weekStart >= monthStart && weekStart <= monthEnd) || (weekEnd >= monthStart && weekEnd <= monthEnd));
+        });
+
+        DestoryTable();
+        ApplyTimesheetTableData(filteredTimeSheets);
+        InitializeTable();
+    }
 
     function GetProcessedTimesheets() {
         $http.get("TimeSheetManagement/getProcessedTimeSheets.php")
@@ -52,10 +92,10 @@ angular
                         parseFloat(response.data[i].weekly_saturday) +
                         parseFloat(response.data[i].weekly_sunday);
                 }
-                console.log(response.data);
-                
+                $scope.timesheets = response.data;
+
                 DestoryTable();
-                ApplyTimesheetTableData(response.data);
+                ApplyTimesheetTableData($scope.timesheets);
                 InitializeTable();
 
                 // $(document).ready(function() {
@@ -71,7 +111,7 @@ angular
     function InitializeTable() {
         $(document).ready(function(){
             timesheetTable = jQuery('#timesheetTable').DataTable({
-                // "searching": false,
+                "searching": false,
                 "order": [],
                 dom: 'Bfrtip',
                 buttons: [
@@ -85,12 +125,11 @@ angular
                     }
                 ]
             });
-            console.log(timesheetTable);
         });
     }
     function ApplyTimesheetTableData(timesheets) {
         $(document).ready(function(){
-            $scope.timesheets = timesheets;
+            $scope.filteredTimeSheets = timesheets;
             $scope.$apply();
         });
     }
