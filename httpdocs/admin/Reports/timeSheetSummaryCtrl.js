@@ -4,6 +4,7 @@ angular
     console.log('Start TimesheetSummaryController');
     document.title = "Timesheet Summary"
 
+    var days = ["weekly_monday", "weekly_tuesday", "weekly_wednesday", "weekly_thursday", "weekly_friday", "weekly_saturday", "weekly_sunday"];
     var timesheetTable = null;
 
     $scope.processedTimeSheets = [];
@@ -45,6 +46,30 @@ angular
 
             return ((weekStart >= monthStart && weekStart <= monthEnd) || (weekEnd >= monthStart && weekEnd <= monthEnd));
         });
+        
+        for (var i = 0; i < filteredTimeSheets.length; i++) {
+            var weekStart = new Date(filteredTimeSheets[i].weekly_startDate);
+            var weekEnd = new Date(filteredTimeSheets[i].weekly_endDate);
+
+            if (weekStart.getMonth() != date.getMonth()) {
+                var monthEnd = new Date(weekStart.getFullYear(), weekStart.getMonth() + 1, 0);
+
+                var d = 0;
+                for (var j = weekStart.getDate(); j <= monthEnd.getDate(); j++) {
+                    filteredTimeSheets[i][days[d]] = "";
+                    d++;
+                }
+            } 
+            else if (weekEnd.getMonth() != date.getMonth()) {
+                var monthStart = new Date(weekEnd.getFullYear(), weekStart.getMonth(), 1);
+
+                var d = 6;
+                for (var j = monthStart.getDate(); j <= weekEnd.getDate(); j++) {
+                    filteredTimeSheets[i][days[d]] = "";
+                    d--;
+                }
+            }
+        }
 
         DestoryTable();
         ApplyTimesheetTableData(filteredTimeSheets);
