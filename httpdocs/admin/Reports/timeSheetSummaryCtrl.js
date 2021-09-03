@@ -57,6 +57,7 @@ angular
             var weekEnd = new Date(filteredTimeSheets[i].weekly_endDate);
 
             if (weekStart.getMonth() != date.getMonth()) {
+                filteredTimeSheets[i].weekly_startDate = $filter('date')(monthStart, "yyyy-MM-dd");
                 var monthEnd = new Date(weekStart.getFullYear(), weekStart.getMonth() + 1, 0);
 
                 var d = 0;
@@ -66,6 +67,7 @@ angular
                 }
             } 
             else if (weekEnd.getMonth() != date.getMonth()) {
+                filteredTimeSheets[i].weekly_endDate = $filter('date')(monthEnd, "yyyy-MM-dd");
                 var monthStart = new Date(weekEnd.getFullYear(), weekStart.getMonth(), 1);
 
                 var d = 6;
