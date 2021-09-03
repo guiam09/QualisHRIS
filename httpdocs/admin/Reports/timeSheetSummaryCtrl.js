@@ -36,6 +36,11 @@ angular
 
     function FilterTimeSheets() {
         var date = jQuery('.datepicker-timesheet-summary').datepicker('getDate');
+        
+        // Change the document title base on the month selected
+        var monthName = $filter('date')(date, "MMM");
+        document.title = monthName.toUpperCase() + date.getFullYear() + " " + "Timesheet Summary";
+
         var monthStart = new Date(date.getFullYear(), date.getMonth(), 1);
         var monthEnd = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 
