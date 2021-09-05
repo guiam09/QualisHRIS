@@ -117,14 +117,14 @@ include ('../includes/sidebar.php');
     
     ?>
 
-            <div class="card card-block p-0">
+            <!-- <div class="card card-block p-0">
               <div class="counter counter-lg counter-inverse bg-red-600 vertical-align h-150">
                 <div class="vertical-align-middle">
                   <div class="counter-icon mb-5"><i class="icon fa-code" aria-hidden="true"></i></div>
                   <span class="counter-number">You Currently Have <?php echo $num2 ?> Projects</span>
                 </div>
               </div>
-            </div>
+            </div> -->
 
      
           </div>
