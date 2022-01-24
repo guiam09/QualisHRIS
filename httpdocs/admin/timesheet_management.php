@@ -28,6 +28,10 @@ include ('get_week_range.php');
 
     .modal {
         z-index: 1950;
+        position: absolute;
+        top: 25%; 
+        margin-left: -150px;
+        margin-top: -150px;
     }
 
     .select2-container {
@@ -550,10 +554,10 @@ GROUP BY tbl_weeklyutilization_history.employeeCode , weekly_startDate";
                         <thead></thead>
                         <tbody>
                             <tr>
-                                <th class="col-sm-1">Project Code</th>
+                                <th class="col-sm-1" style="min-width: 200px;">Project Code</th>
                                 <!-- <th class="col-sm-1">Work Type</th> -->
                                 <th class="col-sm-1">Task Code</th>
-                                <th class="col-sm-1">Remarks</th>
+                                <th class="col-sm-1" style="min-width: 200px;">Remarks</th>
                                 <th class="col-sm-1">Mon</th>
                                 <th class="col-sm-1">Tue</th>
                                 <th class="col-sm-1">Wed</th>
@@ -672,10 +676,10 @@ GROUP BY tbl_weeklyutilization_history.employeeCode , weekly_startDate";
                     </thead>
                     <tbody>
                     <tr>
-                        <th class="col-sm-1">Project Code</th>
+                        <th class="col-sm-1" style="min-width: 200px;">Project Code</th>
                         <th class="col-sm-1">Work Type</th>
                         <th class="col-sm-1">Task Code</th>
-                        <th class="col-sm-1">Remarks</th>
+                        <th class="col-sm-1" style="min-width: 200px;">Remarks</th>
                         <th class="col-sm-1">Mon</th>
                         <th class="col-sm-1">Tue</th>
                         <th class="col-sm-1">Wed</th>

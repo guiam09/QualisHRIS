@@ -64,22 +64,22 @@ include ('../includes/sidebar.php');
                         <div class="panel-body container-fluid">
             <?php
              $query3 = "SELECT employeeID FROM tbl_employees";
-  $stmt3 = $con->prepare($query3);
-  $stmt3->execute();
-  $num3 = $stmt3->rowCount();
+              $stmt3 = $con->prepare($query3);
+              $stmt3->execute();
+              $num3 = $stmt3->rowCount();
 
 
-             $query2 = "SELECT project_ID FROM tbl_project";
-  $stmt2 = $con->prepare($query2);
-  $stmt2->execute();
-  $num2 = $stmt2->rowCount();
+              $query2 = "SELECT project_ID FROM tbl_project";
+              $stmt2 = $con->prepare($query2);
+              $stmt2->execute();
+              $num2 = $stmt2->rowCount();
 
-          $session = $_SESSION['user_id'];
-  $query11 = "SELECT * FROM tbl_leavedetails INNER JOIN tbl_leave ON tbl_leavedetails.leaveID = tbl_leave.leaveID INNER JOIN tbl_employees ON tbl_leavedetails.employeeID = tbl_employees.employeeID WHERE approval = '$session' AND leaveStatus = 'Pending'";
-  $stmt11 = $con->prepare($query11);
-  $stmt11->execute();
-  $num11 = $stmt11->rowCount();
-
+              $session = $_SESSION['user_id'];
+              $sessionEmp = $_SESSION['employeeID'];
+              $query11 = "SELECT * FROM tbl_leavedetails INNER JOIN tbl_leavegroup ON tbl_leavedetails.leaveGroup_ID = tbl_leavegroup.leaveGroup_ID INNER JOIN tbl_employees ON tbl_leavedetails.employeeID = tbl_employees.employeeID WHERE tbl_leavegroup.leaveGroup_status = 'Pending' AND tbl_leavegroup.leaveGroup_approver ='$sessionEmp'";
+              $stmt11 = $con->prepare($query11);
+              $stmt11->execute();
+              $num11 = $stmt11->rowCount();
             ?>
             
                                  <div class="card-group">

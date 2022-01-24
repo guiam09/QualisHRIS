@@ -166,7 +166,6 @@
         $http.get("LeaveApplication/getEmployee.php?id=")
             .then(function (response) {
                 $scope.employee = response.data[0];
-                console.log(response.data[0]);
                 return $scope.employee;
             });
     }
@@ -181,7 +180,6 @@
     function GetLeaveTypes() {
         $http.get("LeaveApplication/getLeaves.php")
             .then(function (response) {
-                console.log(response.data[0]);
                 $scope.leaveTypes = response.data[0];
         });
     }
@@ -190,8 +188,6 @@
         $http.get("LeaveApplication/getLeaveBalance.php")
             .then(function (response) {
                 $scope.leaveBalance = response.data[0];
-                console.log($scope.leaveBalance);
-
                 $(document).ready(function() {
                     var table = $('#example3').DataTable({
                         "searching": false,
@@ -318,7 +314,6 @@
         $(document).ready(function(){
             $scope.leaveRequests = leaveRequests;
             $scope.$apply();
-            console.log($scope.leaveRequests);
         });
     }
     function DestoryLeaveRequestTable() {
