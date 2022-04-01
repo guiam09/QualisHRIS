@@ -9,8 +9,7 @@
         $num_employee = $stmt_employee->rowCount();
         // check if more than 0 record found
         if($num_employee>0){
-            echo  '<option value="">Select Employee...</option>';
-
+            echo  '<option value="All">All</option>';
             while ($row_employee = $stmt_employee->fetch(PDO::FETCH_ASSOC)){
             
         echo  '<option value="'.$row_employee['employeeID'].'">'.$row_employee['lastName'].", ".$row_employee['firstName']." ".$row_employee['middleName'];

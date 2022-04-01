@@ -90,29 +90,35 @@ include ('../includes/sidebar.php');
               $stmt = $con->prepare($query);
               $stmt->execute();
               $num = $stmt->rowCount();
-            if($num>0){
-                echo '            <div class="card card-block p-0">
-              <div class="counter counter-lg counter-inverse bg-blue-600 vertical-align h-150">
-                <div class="vertical-align-middle">
-                  <div class="counter-icon mb-5"><i class="icon fa-user" aria-hidden="true"></i></div>
-                  <span class="counter-number">There Are '.$num3.' User/s.</span>
-                </div>
-              </div>
-            </div>';
+            // if($num>0){
+            //     echo '            <div class="card card-block p-0">
+            //   <div class="counter counter-lg counter-inverse bg-blue-600 vertical-align h-150">
+            //     <div class="vertical-align-middle">
+            //       <div class="counter-icon mb-5"><i class="icon fa-user" aria-hidden="true"></i></div>
+            //       <span class="counter-number">There Are '.$num3.' User/s.</span>
+            //     </div>
+            //   </div>
+            // </div>';
            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                
                 if($row['accessedModules']=='leaveManagementModule'){
-                   echo '       <div class="card card-block p-0">
+                   echo '      <div class="card card-block p-0">
+                   <a href="leave_application.php">
               <div class="counter counter-lg counter-inverse bg-purple-600 vertical-align h-150">
+             
                 <div class="vertical-align-middle">
+               
                   <div class="counter-icon mb-5"><i class="icon fa-car" aria-hidden="true"></i></div>
                   <span class="counter-number">You Have '.$num11.' Pending Leave Applications For Your Approval</span>
+                 
                 </div>
+              
               </div>
+              </a>
             </div>';
                }
                
-           }
+           
             }
     
     ?>

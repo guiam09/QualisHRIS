@@ -384,9 +384,8 @@ th {
                             <table class="table table-striped table-hover" id="timesheet_table">
                                 <tbody id="timesheet_table">    
                                     <tr>
-                                        <th style="min-width: 150px; width: 200px;">Project Code</th>
-                                        <th style="display: none;">Work Type</th>
-                                        <th style="min-width: 200px;">Task Code</th>
+                                        <th style="width: 400px;">Project Code</th>
+                                        <th style="width: 400px;">Task Code</th>
                                         <th style="display: none;">Remarks</th>
                                         <th class="work-hours">Mo</th>
                                         <th class="work-hours">Tu</th>

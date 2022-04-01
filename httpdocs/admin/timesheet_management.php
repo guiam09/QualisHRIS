@@ -555,8 +555,7 @@ GROUP BY tbl_weeklyutilization_history.employeeCode , weekly_startDate";
                         <tbody>
                             <tr>
                                 <th class="col-sm-1" style="min-width: 200px;">Project Code</th>
-                                <!-- <th class="col-sm-1">Work Type</th> -->
-                                <th class="col-sm-1">Task Code</th>
+                                <th class="col-sm-1" style="min-width: 200px;">Task Code</th>
                                 <th class="col-sm-1" style="min-width: 200px;">Remarks</th>
                                 <th class="col-sm-1">Mon</th>
                                 <th class="col-sm-1">Tue</th>
@@ -677,8 +676,7 @@ GROUP BY tbl_weeklyutilization_history.employeeCode , weekly_startDate";
                     <tbody>
                     <tr>
                         <th class="col-sm-1" style="min-width: 200px;">Project Code</th>
-                        <th class="col-sm-1">Work Type</th>
-                        <th class="col-sm-1">Task Code</th>
+                        <th class="col-sm-1" style="min-width: 200px;">Task Code</th>
                         <th class="col-sm-1" style="min-width: 200px;">Remarks</th>
                         <th class="col-sm-1">Mon</th>
                         <th class="col-sm-1">Tue</th>

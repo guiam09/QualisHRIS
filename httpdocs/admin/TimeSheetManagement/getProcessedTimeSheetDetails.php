@@ -12,7 +12,7 @@
             INNER JOIN tbl_project ON tbl_weeklyutilization.project_ID = tbl_project.project_ID
             INNER JOIN tbl_worktype ON tbl_weeklyutilization.work_ID = tbl_worktype.work_ID
             LEFT JOIN tbl_employees e ON tbl_weeklyutilization.employeeCode = e.employeeCode
-            ORDER BY tbl_weeklyutilization.weekly_endDate DESC";
+            ORDER BY e.lastName, tbl_weeklyutilization.weekly_endDate DESC";
     } else {
         $query = "SELECT *,
                 e.lastName,
@@ -22,7 +22,7 @@
             INNER JOIN tbl_project ON tbl_weeklyutilization_history.project_ID = tbl_project.project_ID
             INNER JOIN tbl_worktype ON tbl_weeklyutilization_history.work_ID = tbl_worktype.work_ID
             LEFT JOIN tbl_employees e ON tbl_weeklyutilization.employeeCode = e.employeeCode
-            ORDER BY tbl_weeklyutilization.weekly_endDate DESC";
+            ORDER BY e.lastName, tbl_weeklyutilization.weekly_endDate DESC";
     }
 
     $stmt = $con->prepare($query);

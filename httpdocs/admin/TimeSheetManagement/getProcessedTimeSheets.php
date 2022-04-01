@@ -11,7 +11,7 @@
                 INNER JOIN
             tbl_employees ON tbl_weeklyutilization.employeeCode = tbl_employees.employeeCode
         WHERE
-            weekly_approval IN ('Approved' , 'Declined')
+            weekly_approval IN ('Approved')
         GROUP BY weekly_startDate , tbl_weeklyutilization.employeeCode 
         UNION ALL SELECT 
             *,
